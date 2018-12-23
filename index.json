@@ -1,0 +1,388 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "carbonfootprint",
+            "intents": [
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "applianceIntent",
+                    "slots": [
+                        {
+                            "name": "time",
+                            "type": "AMAZON.DURATION"
+                        },
+                        {
+                            "name": "quantity",
+                            "type": "AMAZON.NUMBER"
+                        },
+                        {
+                            "name": "appliances",
+                            "type": "appliances"
+                        },
+                        {
+                            "name": "appliance_spec",
+                            "type": "appliance_spec"
+                        },
+                        {
+                            "name": "size",
+                            "type": "appliance_spec"
+                        },
+                        {
+                            "name": "country",
+                            "type": "AMAZON.Country"
+                        },
+                        {
+                            "name": "emission_type",
+                            "type": "emission_type"
+                        }
+                    ],
+                    "samples": [
+                        "what are {emission_type} emissions for {quantity} {size} {appliance_spec} {appliances} for {time} of usage",
+                        "please tell me {emission_type} emission for an {appliance_spec} {appliances} in {country}",
+                        "tell me the amount of {emission_type} emitted when a {size} {appliances} is used for {time}",
+                        "When two {size} {appliances} are used for {time} in {country} how much {emission_type} is emitted",
+                        "{emission_type} emissions for {quantity} {size} {appliances} in {country} for {time}",
+                        "{emission_type} emissions for a {quantity} {size} {appliance_spec} {appliances} for {time} of usage",
+                        "what are emmisions for a {size} {appliances} in {country}",
+                        "How much {emission_type} is emitted when a {appliance_spec} {appliances} is used in {country}",
+                        "what are emissions for {size} {appliance_spec} {appliances}",
+                        "what are different emissions for a {size} {appliances} in {country}",
+                        "emissions for a {appliances} {appliance_spec} in {country}",
+                        "what is {emission_type} emissions for a {appliance_spec} {appliances}",
+                        "emissions for a {size} {appliance_spec} {appliances} in {country}",
+                        "{emission_type} emissions for {time} usage of a {appliance_spec} {appliances} in {country}",
+                        "{emission_type} emissions due to {size} {appliance_spec} {appliances} used for {time} in {country}"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "emission_type",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "N2O",
+                                "synonyms": [
+                                    "nitrous",
+                                    "nitrous oxide",
+                                    "N2O"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "CH4",
+                                "synonyms": [
+                                    "methane",
+                                    "CH4"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "CO2",
+                                "synonyms": [
+                                    "carbon",
+                                    "carbon dioxide",
+                                    "CO2"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "appliance_spec",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "type",
+                                "synonyms": [
+                                    "quick recovery",
+                                    "instantaneous",
+                                    "queen",
+                                    "king",
+                                    "with element",
+                                    "automatic",
+                                    "standard",
+                                    "S",
+                                    "Plasma",
+                                    "LCD",
+                                    "CRT",
+                                    "600L",
+                                    "500L",
+                                    "250L",
+                                    "Convection",
+                                    "Conventional",
+                                    "LED",
+                                    "incandescent",
+                                    "fluoroscent",
+                                    "CFL",
+                                    "portable",
+                                    "vertical",
+                                    "450L",
+                                    "300L",
+                                    "200L",
+                                    "ceiling",
+                                    "exhaust",
+                                    "monitor and printer",
+                                    "with monitor",
+                                    "wired in",
+                                    "rotary",
+                                    "cabinet",
+                                    "double",
+                                    "single",
+                                    "fixed",
+                                    "portable",
+                                    "ducted"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "curler",
+                                "synonyms": [
+                                    "curler"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "size",
+                                "synonyms": [
+                                    "large",
+                                    "medium",
+                                    "small"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "appliances",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "water heater",
+                                "synonyms": [
+                                    "water heaters",
+                                    "water heater"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "water bed",
+                                "synonyms": [
+                                    "water beds",
+                                    "water bed"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "radio",
+                                "synonyms": [
+                                    "radios",
+                                    "radio"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "juice extractor",
+                                "synonyms": [
+                                    "juice extractors",
+                                    "juice extractor"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "toaster",
+                                "synonyms": [
+                                    "toasters",
+                                    "toaster"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "oven",
+                                "synonyms": [
+                                    "ovens",
+                                    "oven"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "spa heater",
+                                "synonyms": [
+                                    "spa heaters",
+                                    "spa heater"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "welder",
+                                "synonyms": [
+                                    "welders",
+                                    "welder"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "dvd player",
+                                "synonyms": [
+                                    "dvd players",
+                                    "dvd player"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "saw",
+                                "synonyms": [
+                                    "saws",
+                                    "saw"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "microven",
+                                "synonyms": [
+                                    "microwave",
+                                    "microwaves",
+                                    "microvens",
+                                    "microven"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "griddle",
+                                "synonyms": [
+                                    "griddle"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "hotplate",
+                                "synonyms": [
+                                    "hotplates",
+                                    "hotplate"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "iron",
+                                "synonyms": [
+                                    "irons",
+                                    "iron"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Swimming Pool Pump",
+                                "synonyms": [
+                                    "Pool Pumps",
+                                    "Pool Pump",
+                                    "Swimming Pool Pumps",
+                                    "Swimming Pool Pump"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "vacuum cleaner",
+                                "synonyms": [
+                                    "vacuum cleaners",
+                                    "vacuum cleaner"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Salt water chlorinator",
+                                "synonyms": [
+                                    "Salt water chlorinators",
+                                    "Salt water chlorinator"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Towel Rail",
+                                "synonyms": [
+                                    "towel rails",
+                                    "towel rail"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "stereo",
+                                "synonyms": [
+                                    "stereos",
+                                    "stereo"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Coffee Percolator",
+                                "synonyms": [
+                                    "coffee Percolators",
+                                    "Coffee Percolator"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Kettle",
+                                "synonyms": [
+                                    "Kettles",
+                                    "Kettle"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Kiln Pottery",
+                                "synonyms": [
+                                    "Kiln Potteries",
+                                    "Kiln Pottery"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
