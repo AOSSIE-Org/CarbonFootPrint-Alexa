@@ -181,6 +181,327 @@
                     "values": [
                         {
                             "name": {
+                                "value": "hair",
+                                "synonyms": [
+                                    "hair"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "dishwasher",
+                                "synonyms": [
+                                    "dish washer",
+                                    "dishwasher"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "heat pump",
+                                "synonyms": [
+                                    "heat pumps",
+                                    "heat pump"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "shaver",
+                                "synonyms": [
+                                    "shavers",
+                                    "shaver"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "bio septic system",
+                                "synonyms": [
+                                    "bio septic systems",
+                                    "bio septic system"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sewing machine",
+                                "synonyms": [
+                                    "sewing machines",
+                                    "sewing machine"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "domestic water pressure pump",
+                                "synonyms": [
+                                    "water pumps",
+                                    "water pump",
+                                    "domestic water pressure pumps",
+                                    "domestic water pressure pump"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ceramic halogen",
+                                "synonyms": [
+                                    "ceramic halogen"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "grill",
+                                "synonyms": [
+                                    "grills",
+                                    "grill"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "slow cooker",
+                                "synonyms": [
+                                    "slow cookers",
+                                    "slow cooker"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "range hood",
+                                "synonyms": [
+                                    "range hoods",
+                                    "range hood"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "lighting",
+                                "synonyms": [
+                                    "lightings",
+                                    "lighting"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "freezer",
+                                "synonyms": [
+                                    "freezers",
+                                    "freezer"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "deep fryer",
+                                "synonyms": [
+                                    "deep fryers",
+                                    "deep fryer"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "washing machine",
+                                "synonyms": [
+                                    "washing machines",
+                                    "washing machine"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "television",
+                                "synonyms": [
+                                    "TVs",
+                                    "TV",
+                                    "televisions",
+                                    "television"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "record player",
+                                "synonyms": [
+                                    "record player"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "hair dryer",
+                                "synonyms": [
+                                    "hair dryers",
+                                    "hair dryer"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "fan",
+                                "synonyms": [
+                                    "fans",
+                                    "fan"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "air cooler",
+                                "synonyms": [
+                                    "air coolers",
+                                    "air cooler"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "drill",
+                                "synonyms": [
+                                    "drills",
+                                    "drill"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "garbage disposal unit",
+                                "synonyms": [
+                                    "garbage disposal",
+                                    "garbage disposal unit"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "air conditioner",
+                                "synonyms": [
+                                    "ACs",
+                                    "AC",
+                                    "air conditioners",
+                                    "air conditioner"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "clothes dryer",
+                                "synonyms": [
+                                    "clothes dryer"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "nebuliser",
+                                "synonyms": [
+                                    "nebulisers",
+                                    "nebuliser"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ironing machine",
+                                "synonyms": [
+                                    "ironing machines",
+                                    "ironing machine"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "food mixer",
+                                "synonyms": [
+                                    "food mixers",
+                                    "food mixer"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "computer",
+                                "synonyms": [
+                                    "PCs",
+                                    "PC",
+                                    "computers",
+                                    "computer"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "hair styler",
+                                "synonyms": [
+                                    "hair stylers",
+                                    "hair styler"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "hair curler",
+                                "synonyms": [
+                                    "hair curlers",
+                                    "hair curler"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "blanket",
+                                "synonyms": [
+                                    "blankets",
+                                    "blanket"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "laptop",
+                                "synonyms": [
+                                    "laptops",
+                                    "laptop"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "refrigerator",
+                                "synonyms": [
+                                    "refrigerators",
+                                    "refrigerator"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "fry pan",
+                                "synonyms": [
+                                    "frying pans",
+                                    "frying pan",
+                                    "fry pans",
+                                    "fry pan"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "storage heater",
+                                "synonyms": [
+                                    "storage heaters",
+                                    "storage heater"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
                                 "value": "water heater",
                                 "synonyms": [
                                     "water heaters",
