@@ -107,7 +107,7 @@ let handlers = {
         }
 
         if (hours != undefined && hours !== "") {
-            hours = moment.duration("PT1H", moment.ISO_8601).asHours();
+            hours = moment.duration(hours, moment.ISO_8601).asHours();
             newParams.duration = hours;
         } else {
             newParams.duration = 1;
