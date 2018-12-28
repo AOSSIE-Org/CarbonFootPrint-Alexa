@@ -1,7 +1,7 @@
 {
     "interactionModel": {
         "languageModel": {
-            "invocationName": "carbonfootprint",
+            "invocationName": "carbon footprint",
             "intents": [
                 {
                     "name": "AMAZON.FallbackIntent",
@@ -44,7 +44,7 @@
                         },
                         {
                             "name": "size",
-                            "type": "appliance_spec"
+                            "type": "appliance_size"
                         },
                         {
                             "name": "country",
@@ -161,16 +161,6 @@
                                 "value": "curler",
                                 "synonyms": [
                                     "curler"
-                                ]
-                            }
-                        },
-                        {
-                            "name": {
-                                "value": "size",
-                                "synonyms": [
-                                    "large",
-                                    "medium",
-                                    "small"
                                 ]
                             }
                         }
@@ -698,6 +688,21 @@
                                 "synonyms": [
                                     "Kiln Potteries",
                                     "Kiln Pottery"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "appliance_size",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "size",
+                                "synonyms": [
+                                    "large",
+                                    "medium",
+                                    "small"
                                 ]
                             }
                         }
