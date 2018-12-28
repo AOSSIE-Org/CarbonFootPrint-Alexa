@@ -1,54 +1,161 @@
 "use strict";
-var Alexa = require("alexa-sdk");
-var SKILL_NAME = "Carbon Footprint";
-var APP_ID = "";
+let Alexa = require("alexa-sdk");
+let request = require("request");
+let moment = require('moment');
 
+const SKILL_NAME = "Carbon Footprint";
+const APP_ID = "{{your app id}}";
+
+const BASE_URL = "https://carbonhub.org/v1";
+const API_KEY = "{{your api key}}";
+const EMISSIONS_ENDPOINT = BASE_URL + "/emissions";
 
 exports.handler = function (event, context, callback) {
-    var alexa = Alexa.handler(event, context);
+    let alexa = Alexa.handler(event, context);
     alexa.APP_ID = APP_ID;
     alexa.registerHandlers(handlers);
     alexa.execute();
 }
 
-var handlers = {
+let callEmissionsApi = function (options) {
+    return new Promise(function (resolve, reject) {
+        request(options, function (error, response, body) {
+            resolve(body)
+        })
+    })
+}
+
+let handlers = {
     'LaunchRequest': function () {
-        this.emit('appliance');
+        this.emit(':ask', 'Hello');
     },
 
     'applianceIntent': function () {
         this.emit('appliance');
     },
-    'appliance': function () {
+    'appliance': async function () {
         let newParams = {};
+        let applianceType;
+        let appliances;
+        let country;
+        let emissionType;
+        let hours;
+        let size;
+        let quantity;
 
-        if (this.event.request.intent.slots.appliance_spec.value && this.event.request.intent.slots.appliance_spec.value !== "")
-            newParams.type = this.event.request.intent.slots.appliance_spec.value;
+        try {
+            applianceType = this.event.request.intent.slots.appliance_spec.value;
+        } catch (error) {
+        }
 
-        if (this.event.request.intent.slots.appliances.value && this.event.request.intent.slots.appliances.value !== "")
-            newParams.appliance = this.event.request.intent.slots.appliances.value;
+        try {
+            appliances = this.event.request.intent.slots.appliances.value;
+        } catch (error) {
+        }
 
-        if (this.event.request.intent.slots.country.value && this.event.request.intent.slots.country.value !== "")
-            newParams.geo_country = this.event.request.intent.slots.country.value;
+        try {
+            country = this.event.request.intent.slots.country.value;
+        } catch (error) {
+        }
 
-        if (this.event.request.intent.slots.emission_type.value && this.event.request.intent.slots.emission_type.value !== "")
-            newParams.emission_type = this.event.request.intent.slots.emission_type.value;
+        try {
+            emissionType = this.event.request.intent.slots.emission_type.resolutions.resolutionsPerAuthority[0].values[0].value.name;
+        } catch (error) {
+        }
 
-        if (this.event.request.intent.slots.time.value && this.event.request.intent.slots.time.value !== "")
-            newParams.duration = this.event.request.intent.slots.time.value;
+        try {
+            hours = this.event.request.intent.slots.time.value;
+        } catch (error) {
+        }
 
-        if (this.event.request.intent.slots.size.value && this.event.request.intent.slots.size.value !== "")
-            newParams.size = this.event.request.intent.slots.size.value;
+        try {
+            size = this.event.request.intent.slots.size.value;
+        } catch (error) {
+        }
 
-        if (this.event.request.intent.slots.quantity.value && this.event.request.intent.slots.quantity.value !== "")
-            newParams.quantity = this.event.request.intent.slots.quantity.value;
+        try {
+            quantity = this.event.request.intent.slots.quantity.value;
+        } catch (error) {
+        }
 
-        this.emit(':tell', newParams.type + newParams.appliance + newParams.geo_country + newParams.emission_type + newParams.duration + newParams.size + newParams.quantity);
+        if (quantity != undefined && quantity !== "") {
+            newParams.quantity = quantity;
+        } else {
+            newParams.quantity = 1;
+        }
+
+        if (country != undefined && country !== "") {
+            newParams.region = country;
+        } else {
+            newParams.region = "Default";
+        }
+
+        if (emissionType != undefined && emissionType !== "") {
+            newParams.emission_type = emissionType;
+        }
+
+        if (appliances != undefined && appliances !== "") {
+            newParams.item = appliances;
+        }
+
+        if (applianceType != undefined && applianceType !== "") {
+            newParams.item = newParams.item + " " + applianceType;
+        }
+
+        if (size != undefined && size !== "") {
+            newParams.item = newParams.item + " " + size;
+        }
+
+        if (hours != undefined && hours !== "") {
+            hours = moment.duration("PT1H", moment.ISO_8601).asHours();
+            newParams.duration = hours;
+        } else {
+            newParams.duration = 1;
+        }
+
+        let options = {
+            method: 'POST',
+            url: EMISSIONS_ENDPOINT,
+            headers: {
+                'cache-control': 'no-cache',
+                'access-key': API_KEY,
+                'Content-Type': 'application/json'
+            },
+            body: {
+                item: newParams.item,
+                region: newParams.region,
+                quantity: newParams.quantity,
+                multiply: newParams.duration
+            },
+            json: true
+        };
+
+        console.log("request ->", newParams, options);
+
+        let response = await callEmissionsApi(options);
+        let speechOutput = "";
+        let num;
+        let unit;
+
+        console.log("response->", response);
+
+        if (response.success == true) {
+            num = response.emissions[newParams.emission_type];
+            unit = response.unit;
+        } else {
+            speechOutput = response.error;
+        }
+
+        if (num && unit) {
+            speechOutput = newParams.item + " produces " + num.toFixed(2) + " " + unit + " of " + newParams.emission_type;
+        }
+
+        this.emit(':tell', speechOutput);
 
     },
     'AMAZON.HelpIntent': function () {
-        var speechOutput = "";
-        var reprompt = "";
+        let speechOutput = "";
+        let reprompt = "";
         this.emit(":ask", speechOutput, reprompt);
 
     },
