@@ -761,6 +761,112 @@
                             }
                         }
                     ]
+                },
+                {
+                    "name": "fuel",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "fuelCNG",
+                                "synonyms": [
+                                    "Compressed Natural Gas",
+                                    "Compressed Natural gas",
+                                    "Compressed natural gas",
+                                    "compressed natural gas",
+                                    "CNG"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "fuelLPG",
+                                "synonyms": [
+                                    "Petroleum Gas",
+                                    "petroleum gas",
+                                    "liquid petroleum gas",
+                                    "Liquid Petroleum Gas",
+                                    "LPG"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "fuelB20",
+                                "synonyms": [
+                                    "B 20",
+                                    "B20"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "fuelBioDiesel",
+                                "synonyms": [
+                                    "Bio Diesel",
+                                    "BioDiesel"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "fuelEthanol",
+                                "synonyms": [
+                                    "Ethanol"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "fuelE85",
+                                "synonyms": [
+                                    "E 85",
+                                    "E85"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "fuelE25",
+                                "synonyms": [
+                                    "E25",
+                                    "E 25"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "fuelE10",
+                                "synonyms": [
+                                    "E 10",
+                                    "E10"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "fuelGasoline",
+                                "synonyms": [
+                                    "Gasoline"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "fuelDiesel",
+                                "synonyms": [
+                                    "Diesel"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "fuelPetrol",
+                                "synonyms": [
+                                    "petrol"
+                                ]
+                            }
+                        }
+                    ]
                 }
             ]
         }
