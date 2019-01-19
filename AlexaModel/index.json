@@ -121,6 +121,11 @@
                         "{emission_type} emissions for flight from {origin} to {destination}",
                         "what are {emission_type} emissions for a flight from {origin} to {destination}"
                     ]
+                },
+                {
+                    "name": "fuel_intent",
+                    "slots": [],
+                    "samples": []
                 }
             ],
             "types": [
