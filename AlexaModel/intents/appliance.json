@@ -1,0 +1,51 @@
+                {
+                    "name": "applianceIntent",
+                    "slots": [
+                        {
+                            "name": "time",
+                            "type": "AMAZON.DURATION"
+                        },
+                        {
+                            "name": "quantity",
+                            "type": "AMAZON.NUMBER"
+                        },
+                        {
+                            "name": "appliances",
+                            "type": "appliances"
+                        },
+                        {
+                            "name": "appliance_spec",
+                            "type": "appliance_spec"
+                        },
+                        {
+                            "name": "size",
+                            "type": "appliance_size"
+                        },
+                        {
+                            "name": "country",
+                            "type": "AMAZON.Country"
+                        },
+                        {
+                            "name": "emission_type",
+                            "type": "emission_type"
+                        }
+                    ],
+                    "samples": [
+                        "what are {emission_type} emissions for {quantity} {size} {appliance_spec} {appliances} for {time} of usage",
+                        "please tell me {emission_type} emission for an {appliance_spec} {appliances} in {country}",
+                        "tell me the amount of {emission_type} emitted when a {size} {appliances} is used for {time}",
+                        "When two {size} {appliances} are used for {time} in {country} how much {emission_type} is emitted",
+                        "{emission_type} emissions for {quantity} {size} {appliances} in {country} for {time}",
+                        "{emission_type} emissions for a {quantity} {size} {appliance_spec} {appliances} for {time} of usage",
+                        "what are emmisions for a {size} {appliances} in {country}",
+                        "How much {emission_type} is emitted when a {appliance_spec} {appliances} is used in {country}",
+                        "what are emissions for {size} {appliance_spec} {appliances}",
+                        "what are different emissions for a {size} {appliances} in {country}",
+                        "emissions for a {appliances} {appliance_spec} in {country}",
+                        "what is {emission_type} emissions for a {appliance_spec} {appliances}",
+                        "emissions for a {size} {appliance_spec} {appliances} in {country}",
+                        "{emission_type} emissions for {time} usage of a {appliance_spec} {appliances} in {country}",
+                        "{emission_type} emissions due to {size} {appliance_spec} {appliances} used for {time} in {country}"
+                    ]
+                }
+            
