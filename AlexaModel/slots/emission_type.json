@@ -1,0 +1,34 @@
+ {
+                    "name": "emission_type",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "N2O",
+                                "synonyms": [
+                                    "nitrous",
+                                    "nitrous oxide",
+                                    "N2O"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "CH4",
+                                "synonyms": [
+                                    "methane",
+                                    "CH4"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "CO2",
+                                "synonyms": [
+                                    "carbon",
+                                    "carbon dioxide",
+                                    "CO2"
+                                ]
+                            }
+                        }
+                    ]
+                }

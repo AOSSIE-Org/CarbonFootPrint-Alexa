@@ -1,0 +1,22 @@
+{
+                    "name": "electricity_intent",
+                    "slots": [
+                        {
+                            "name": "quantity",
+                            "type": "AMAZON.NUMBER"
+                        },
+                        {
+                            "name": "country",
+                            "type": "AMAZON.Country"
+                        },
+                        {
+                            "name": "emission_type",
+                            "type": "emission_type"
+                        }
+                    ],
+                    "samples": [
+                        "how much emissions are produced due to {quantity} kwh of electricty consumed",
+                        "{emission_type} emissions for {quantity} units of electricity consumed in {country}",
+                        "{emission_type} emissions for electricity consumed in {country}"
+                    ]
+                }

@@ -1,0 +1,27 @@
+{
+                    "name": "flight_intent",
+                    "slots": [
+                        {
+                            "name": "passangers",
+                            "type": "AMAZON.NUMBER"
+                        },
+                        {
+                            "name": "origin",
+                            "type": "AMAZON.Airport"
+                        },
+                        {
+                            "name": "destination",
+                            "type": "AMAZON.Airport"
+                        },
+                        {
+                            "name": "emission_type",
+                            "type": "emission_type"
+                        }
+                    ],
+                    "samples": [
+                        "emissions for flights from {origin} to {destination}",
+                        "emissions for flight from {origin} to {destination} with {passangers} passengers",
+                        "{emission_type} emissions for flight from {origin} to {destination}",
+                        "what are {emission_type} emissions for a flight from {origin} to {destination}"
+                    ]
+                }
