@@ -78,16 +78,16 @@ let handlers = {
         } catch (error) {
         }
 
+        newParams.quantity = 1;
+        newParams.region = "Default";
+        newParams.duration = 1;
+
         if (quantity != undefined && quantity !== "") {
             newParams.quantity = quantity;
-        } else {
-            newParams.quantity = 1;
         }
 
         if (country != undefined && country !== "") {
             newParams.region = country;
-        } else {
-            newParams.region = "Default";
         }
 
         if (emissionType != undefined && emissionType !== "") {
@@ -109,8 +109,6 @@ let handlers = {
         if (hours != undefined && hours !== "") {
             hours = moment.duration(hours, moment.ISO_8601).asHours();
             newParams.duration = hours;
-        } else {
-            newParams.duration = 1;
         }
 
         let options = {
