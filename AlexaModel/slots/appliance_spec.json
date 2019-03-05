@@ -1,57 +1,57 @@
 {
-                    "name": "appliance_spec",
-                    "values": [
-                        {
-                            "name": {
-                                "value": "type",
-                                "synonyms": [
-                                    "quick recovery",
-                                    "instantaneous",
-                                    "queen",
-                                    "king",
-                                    "with element",
-                                    "automatic",
-                                    "standard",
-                                    "S",
-                                    "Plasma",
-                                    "LCD",
-                                    "CRT",
-                                    "600L",
-                                    "500L",
-                                    "250L",
-                                    "Convection",
-                                    "Conventional",
-                                    "LED",
-                                    "incandescent",
-                                    "fluoroscent",
-                                    "CFL",
-                                    "portable",
-                                    "vertical",
-                                    "450L",
-                                    "300L",
-                                    "200L",
-                                    "ceiling",
-                                    "exhaust",
-                                    "monitor and printer",
-                                    "with monitor",
-                                    "wired in",
-                                    "rotary",
-                                    "cabinet",
-                                    "double",
-                                    "single",
-                                    "fixed",
-                                    "portable",
-                                    "ducted"
-                                ]
-                            }
-                        },
-                        {
-                            "name": {
-                                "value": "curler",
-                                "synonyms": [
-                                    "curler"
-                                ]
-                            }
-                        }
-                    ]
-                }
+    "name": "appliance_spec",
+    "values": [
+        {
+            "name": {
+                "value": "type",
+                "synonyms": [
+                    "quick recovery",
+                    "instantaneous",
+                    "queen",
+                    "king",
+                    "with element",
+                    "automatic",
+                    "standard",
+                    "S",
+                    "Plasma",
+                    "LCD",
+                    "CRT",
+                    "600L",
+                    "500L",
+                    "250L",
+                    "Convection",
+                    "Conventional",
+                    "LED",
+                    "incandescent",
+                    "fluoroscent",
+                    "CFL",
+                    "portable",
+                    "vertical",
+                    "450L",
+                    "300L",
+                    "200L",
+                    "ceiling",
+                    "exhaust",
+                    "monitor and printer",
+                    "with monitor",
+                    "wired in",
+                    "rotary",
+                    "cabinet",
+                    "double",
+                    "single",
+                    "fixed",
+                    "portable",
+                    "ducted"
+                ]
+            }
+        },
+        {
+            "name": {
+                "value": "curler",
+                "synonyms": [
+                    "curler"
+                ]
+            }
+        }
+    ]
+}
