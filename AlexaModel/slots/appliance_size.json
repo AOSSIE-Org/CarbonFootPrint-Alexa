@@ -1,15 +1,15 @@
 {
-                    "name": "appliance_size",
-                    "values": [
-                        {
-                            "name": {
-                                "value": "size",
-                                "synonyms": [
-                                    "large",
-                                    "medium",
-                                    "small"
-                                ]
-                            }
-                        }
-                    ]
-                }
+    "name": "appliance_size",
+    "values": [
+        {
+        "name": {
+            "value": "size",
+            "synonyms": [
+                "large",
+                "medium",
+                "small"
+                ]
+            }
+        }
+    ]
+}
