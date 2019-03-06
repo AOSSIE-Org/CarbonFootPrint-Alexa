@@ -4,15 +4,16 @@
 const Alexa = require('ask-sdk');
 let request = require("request");
 let moment = require('moment');
+let config = require('./config');
 
 // Skill details
-const SKILL_NAME = "Carbon Footprint";
-const APP_ID = "{{your APP_ID}}";
+const SKILL_NAME = config.skillName;
+const APP_ID = config.appId;
 
 // Setting API details
 const BASE_URL = "https://carbonhub.org/v1";
-const API_KEY = "{{your API_KEY}}";
-const EMISSIONS_ENDPOINT = BASE_URL + "/emissions";
+const API_KEY = config.apiKey;
+const EMISSIONS_ENDPOINT = config.baseUrl + "/emissions";
 
 
 // Calling the API
