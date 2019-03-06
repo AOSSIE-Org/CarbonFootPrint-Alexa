@@ -7,11 +7,11 @@ let moment = require('moment');
 
 // Skill details
 const SKILL_NAME = "Carbon Footprint";
-const APP_ID = "";
+const APP_ID = "{{your APP_ID}}";
 
 // Setting API details
 const BASE_URL = "https://carbonhub.org/v1";
-const API_KEY = "9d921ca9-0f2b-5b45-a479-0e269683dc4b";
+const API_KEY = "{{your API_KEY}}";
 const EMISSIONS_ENDPOINT = BASE_URL + "/emissions";
 
 
