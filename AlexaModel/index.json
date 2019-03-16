@@ -124,8 +124,26 @@
                 },
                 {
                     "name": "fuel_intent",
-                    "slots": [],
-                    "samples": []
+                    "slots": [
+                        {
+                            "name": "emission_type",
+                            "type": "emission_type"
+                        },
+                        {
+                            "name": "fuel",
+                            "type": "fuel"
+                        },
+                        {
+                            "name": "quantity",
+                            "type": "AMAZON.NUMBER"
+                        }
+                    ],
+                    "samples": [
+                        "emissions due to consumption of {quantity} Litres {fuel}",
+                        "{emission_type} emissions for consumption of {quantity} litres {fuel}",
+                        "emissions for {quantity} kg {fuel}",
+                        "{emission_type} emissions for {quantity} L of {fuel}"
+                    ]
                 }
             ],
             "types": [
