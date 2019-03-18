@@ -28,7 +28,7 @@ The Alexa Skill provides you access to this information through voice on practic
 The deployment of the Amazon Alexa Skill is done in two parts: Deployment of Alexa Model and Deployment of AWS Lambda Function. 
 
 #### PART I:
-Step 1: Create a new skill at (Amazon Alexa developer portal)[https://developer.amazon.com/].
+Step 1: Create a new skill at [Amazon Alexa developer portal](https://developer.amazon.com/).
 
 Step 2: Now you will find a JSON editor option, click on it and you will get a option to drag and drop json file.  
 
@@ -54,7 +54,7 @@ Step 2: Go to [CarbonHub](https://carbonhub.org) and generate an API key, copy i
 
 Step 3: Now create a zip file of node modules, index.js, package.json and package-lock.json.
 
-Step 4: Create a new function at (AWS Lambda)[https://aws.amazon.com/lambda]
+Step 4: Create a new function at [AWS Lambda](https://aws.amazon.com/lambda).
 
 Step 5: Add Alexa Skill Kit to that function and upload the zip file. Save it.
 
