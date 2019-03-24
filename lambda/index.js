@@ -228,6 +228,97 @@ const electricity_intent = {
   }
 };
 
+// Handling Fuel related utterences 
+const fuel_intent = {
+  canHandle(handlerInput) {
+    const request = handlerInput.requestEnvelope.request;
+    return request.type === 'LaunchRequest'
+    ||(request.type === 'IntentRequest'
+        && request.intent.name === 'fuel_intent');
+  },
+  async handle(handlerInput) {
+
+    let newParams = {};
+    let fuel;
+    let emissionType;
+    let quantity;
+    let unit;
+
+// Getting values of slots and also handling in case of errors
+    fuel = handlerInput.requestEnvelope.request.intent.slots.fuel.value;
+    unit = 'Litre(s)';
+
+    if (fuel = 'fuelCNG') {
+      unit = 'kg';
+    }
+
+    try {
+      emissionType = handlerInput.requestEnvelope.request.intent.slots.emission_type.resolutions.resolutionsPerAuthority[0].values[0].value.name;
+    } catch (error) {
+      emissionType = 'CO2';
+    }
+
+    try {
+      quantity = handlerInput.requestEnvelope.request.intent.slots.quantity.value;
+    } catch (error) {
+      quantity = 1;
+    }
+
+// Assigning values to newParams and setting default values in case slot returns undefined
+    newParams.item = fuel;
+
+      if (unit != undefined && unit !== "") {
+        newParams.unit = unit;
+      } else {
+        newParams.unit = 'Litre()';
+      }
+
+      if (quantity != undefined && quantity !== "") {
+        newParams.quantity = quantity;
+      } else {
+        newParams.quantity = 1;
+      }
+
+      if (emissionType != undefined && emissionType !== "") {
+        newParams.emission_type = emissionType;
+      } else {
+        newParams.emission_type = 'CO2';
+      }
+
+// Setting up options to send request to API 
+    let options = {
+      method: 'POST',
+      url: EMISSIONS_ENDPOINT,
+      headers: {
+        'cache-control': 'no-cache',
+        'access-key': API_KEY,
+        'Content-Type': 'application/json'
+      },
+      body: {
+        item: newParams.item,
+        quantity: newParams.quantity,
+        unit: newParams.unit
+      },
+      json: true
+    };
+
+// JSON sent to API
+    console.log("request ->", newParams, options);
+
+// Receiving response from API
+    let response = await callEmissionsApi(options);
+    let speechOutput = "";
+
+// JSON received from API    
+    console.log("response->", response);
+    speechOutput = responseGen(response,newParams);
+ 
+    return handlerInput.responseBuilder
+      .speak(speechOutput)
+      .getResponse();
+  }
+};
+
 // Generate skill's response from API's response
 let responseGen = function (response,newParams) {
   let speechOutput = "";
