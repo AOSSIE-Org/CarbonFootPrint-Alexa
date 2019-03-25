@@ -452,6 +452,7 @@ exports.handler = skillBuilder
   .addRequestHandlers(
     applianceIntent,
     electricity_intent,
+    fuel_intent,
     HelpHandler,
     ExitHandler,
     SessionEndedRequestHandler
