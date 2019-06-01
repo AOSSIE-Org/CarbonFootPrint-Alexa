@@ -7,11 +7,11 @@
         },
         {
             "name": "origin",
-            "type": "AMAZON.Airport"
+            "type": "flight"
         },
         {
             "name": "destination",
-            "type": "AMAZON.Airport"
+            "type": "flight"
         },
         {
             "name": "emission_type",
