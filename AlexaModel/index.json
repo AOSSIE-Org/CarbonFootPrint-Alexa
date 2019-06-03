@@ -144,6 +144,35 @@
                         "emissions for {quantity} kg {fuel}",
                         "{emission_type} emissions for {quantity} L of {fuel}"
                     ]
+                },
+                {
+                    "name": "train_intent",
+                    "slots": [
+                        {
+                            "name": "origin",
+                            "type": "flight"
+                        },
+                        {
+                            "name": "passenger",
+                            "type": "AMAZON.NUMBER"
+                        },
+                        {
+                            "name": "destination",
+                            "type": "flight"
+                        },
+                        {
+                            "name": "emission_type",
+                            "type": "emission_type"
+                        }
+                    ],
+                    "samples": [
+                        "emissions for train journey from {origin} to {destination}",
+                        "emissions due travel from {origin} to {destination} by train",
+                        "how much emissions are produced due to train journey from {origin} to {destination} with {passenger} passengers onboard",
+                        "{emission_type} emissions to train journey from {origin} to {destination} with {passenger} passenger",
+                        "{emission_type} emissions due to train journey from {origin} with {passenger} passengers",
+                        "{emission_type} emissions due to train journey to {destination} with {passenger} passengers"
+                    ]
                 }
             ],
             "types": [
