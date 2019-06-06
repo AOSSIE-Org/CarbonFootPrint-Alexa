@@ -398,6 +398,99 @@ const flight_intent = {
   }
 };
 
+// Handling Train related utterences 
+const train_intent = {
+  canHandle(handlerInput) {
+    const request = handlerInput.requestEnvelope.request;
+    return request.type === 'LaunchRequest'
+    ||(request.type === 'IntentRequest'
+        && request.intent.name === 'train_intent');
+  },
+  async handle(handlerInput) {
+    let newParams = {};
+    let passenger;
+    let origin;
+    let destination;
+    let emissionType;
+
+// Getting values of slots and also handling in case of errors
+  try {
+      origin = handlerInput.requestEnvelope.request.intent.slots.torigin.value;
+    } catch(error) {
+      origin = 'Default';
+    }
+    try {
+      destination = handlerInput.requestEnvelope.request.intent.slots.tdestination.value;
+  } catch(error) {
+    destination = 'Default';
+  }
+    try {
+      emissionType = handlerInput.requestEnvelope.request.intent.slots.emission_type.resolutions.resolutionsPerAuthority[0].values[0].value.name;
+    } catch (error) {
+      emissionType = 'CO2';
+    }
+    try {
+      passenger = handlerInput.requestEnvelope.request.intent.slots.passenger.value;
+    } catch (error) {
+      passenger = 1;
+    }
+
+// Assigning values to newParams and setting default values in case slot returns undefined
+    if (origin != undefined && origin !== "") {
+      newParams.origin = origin;
+    } else {
+      newParams.origin = 'Default';
+    }
+    if (destination != undefined && destination !== "") {
+      newParams.destination = destination;
+    } else {
+      newParams.destination = 'Default';
+    }
+    if (passenger != undefined && passenger !== "") {
+      newParams.passenger = passenger;
+    } else {
+      newParams.passenger = 1;
+    }
+    if (emissionType != undefined && emissionType !== "") {
+      newParams.emission_type = emissionType;
+    } else {
+      newParams.emission_type = 'CO2';
+    }
+
+// Setting up options to send request to API 
+    let options = {
+      method: 'POST',
+      url: "https://carbonhub.org/v1/trains",
+      headers: {
+        'cache-control': 'no-cache',
+        'access-key': API_KEY,
+        'Content-Type': 'application/json'
+      },
+      body: {
+        origin: newParams.origin,
+        destination: newParams.destination,
+        passenger: newParams.passenger
+      },
+      json: true
+    };
+
+// JSON sent to API
+    console.log("request ->", newParams, options);
+
+// Receiving response from API
+    let response = await callEmissionsApi(options);
+    let speechOutput = "";
+
+// JSON received from API    
+    console.log("response->", response);
+    speechOutput = responseGen(response,newParams);
+ 
+    return handlerInput.responseBuilder
+      .speak(speechOutput)
+      .getResponse();
+  }
+};
+
 // Generate skill's response from API's response
 let responseGen = function (response,newParams) {
   let speechOutput = "";
@@ -533,6 +626,7 @@ exports.handler = skillBuilder
     electricity_intent,
     fuel_intent,
     flight_intent,
+    train_intent,
     HelpHandler,
     ExitHandler,
     SessionEndedRequestHandler
