@@ -1,0 +1,29 @@
+{
+    "name": "train_intent",
+    "slots": [{
+            "name": "torigin",
+            "type": "AMAZON.City"
+        },
+        {
+            "name": "passenger",
+            "type": "AMAZON.NUMBER"
+        },
+        {
+            "name": "tdestination",
+            "type": "AMAZON.City"
+        },
+        {
+            "name": "emission_type",
+            "type": "emission_type"
+        }
+    ],
+    "samples": [
+        "train's emission for travel from {torigin} to {tdestination}",
+        "{emission_type} emitted while travelling from {torigin} to {tdestination} by train with {passenger} passengers",
+        "{emission_type} emitted while travelling from {torigin} to {tdestination} by train",
+        "emissions for train journey from {torigin} to {tdestination}",
+        "emissions due travel from {torigin} to {tdestination} by train",
+        "how much emissions are produced due to train journey from {torigin} to {tdestination} with {passenger} passengers onboard",
+        "{emission_type} emissions to train journey from {torigin} to {tdestination} with {passenger} passenger"
+    ]
+}
