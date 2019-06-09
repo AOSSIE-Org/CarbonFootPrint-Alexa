@@ -469,7 +469,7 @@ const train_intent = {
       body: {
         origin: newParams.origin,
         destination: newParams.destination,
-        passengers: newParams.passenger
+        passengers  : newParams.passenger
       },
       json: true
     };
@@ -483,7 +483,12 @@ const train_intent = {
 
 // JSON received from API    
     console.log("response->", response);
-    speechOutput = responseGen(response,newParams);
+    let correct_answer;
+    let num, unit;
+    num = response.emissions[newParams.emission_type];
+    unit = response.unit;
+    correct_answer = "Train produces " + num.toFixed(2) + " " + unit + " of " + newParams.emission_type + " while travelling from " + newParams.origin + " to " + newParams.destination;
+    speechOutput = responseGen(response,newParams,correct_answer);
  
     return handlerInput.responseBuilder
       .speak(speechOutput)
@@ -492,7 +497,7 @@ const train_intent = {
 };
 
 // Generate skill's response from API's response
-let responseGen = function (response,newParams) {
+let responseGen = function (response,newParams, correct_answer) {
   let speechOutput = "";
   let num;
   let unit;
@@ -504,7 +509,7 @@ let responseGen = function (response,newParams) {
   }
 
   if (num && unit) {
-    speechOutput = newParams.item + " produces " + num.toFixed(2) + " " + unit + " of " + newParams.emission_type;
+    speechOutput = correct_answer;
   }
 
 // Handling unsuccessful response from API
