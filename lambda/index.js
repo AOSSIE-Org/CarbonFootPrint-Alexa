@@ -469,7 +469,7 @@ const train_intent = {
       body: {
         origin: newParams.origin,
         destination: newParams.destination,
-        passenger: newParams.passenger
+        passengers: newParams.passenger
       },
       json: true
     };
