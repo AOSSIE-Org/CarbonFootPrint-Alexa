@@ -487,7 +487,7 @@ const train_intent = {
     let num, unit;
     num = response.emissions[newParams.emission_type];
     unit = response.unit;
-    correct_answer = "Train produces " + num.toFixed(2) + " " + unit + " of " + newParams.emission_type + " while travelling from " + newParams.origin + " to " + newParams.destination;
+    correct_answer = "Train produces " + num.toFixed(2) + " " + unit + " of " + newParams.emission_type + " while travelling from " + newParams.origin + " to " + newParams.destination + " with " + newParams.passenger + " passengers.";
     speechOutput = responseGen(response,newParams,correct_answer);
  
     return handlerInput.responseBuilder
