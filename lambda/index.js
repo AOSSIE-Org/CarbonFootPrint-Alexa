@@ -328,7 +328,7 @@ const flight_intent = {
   async handle(handlerInput) {
 
     let newParams = {};
-    let passanger;
+    let passenger;
     let origin;
     let destination;
     let emissionType;
