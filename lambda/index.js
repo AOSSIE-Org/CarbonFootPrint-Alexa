@@ -351,7 +351,7 @@ const flight_intent = {
 // Assigning values to newParams and setting default values in case slot returns undefined
     newParams.origin = origin;
     newParams.destination = destination;
-    if (passanger != undefined && passanger !== "") {
+    if (passenger != undefined && passenger !== "") {
       newParams.passenger = passenger;
     } else {
       newParams.passenger = 1;
