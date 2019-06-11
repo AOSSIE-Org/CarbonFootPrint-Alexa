@@ -343,18 +343,18 @@ const flight_intent = {
       emissionType = 'CO2';
     }
     try {
-      passanger = handlerInput.requestEnvelope.request.intent.slots.passanger.value;
+      passenger = handlerInput.requestEnvelope.request.intent.slots.passenger.value;
     } catch (error) {
-      passanger = 1;
+      passenger = 1;
     }
 
 // Assigning values to newParams and setting default values in case slot returns undefined
     newParams.origin = origin;
     newParams.destination = destination;
     if (passanger != undefined && passanger !== "") {
-      newParams.passanger = passanger;
+      newParams.passenger = passenger;
     } else {
-      newParams.passanger = 1;
+      newParams.passenger = 1;
     }
     if (emissionType != undefined && emissionType !== "") {
       newParams.emission_type = emissionType;
@@ -374,7 +374,7 @@ const flight_intent = {
       body: {
         origin: newParams.origin,
         destination: newParams.destination,
-        passanger: newParams.passanger
+        passengers: newParams.passenger
       },
       json: true
     };
