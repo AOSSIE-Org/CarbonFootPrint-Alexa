@@ -4,17 +4,15 @@
 const Alexa = require('ask-sdk');
 let request = require("request");
 let moment = require('moment');
-let config = require('./config');
 
 // Skill details
-const SKILL_NAME = config.skillName;
-const APP_ID = config.appId;
+const SKILL_NAME = "Carbon footprint";
+const APP_ID = "";
 
 // Setting API details
 const BASE_URL = "https://carbonhub.org/v1";
-const API_KEY = config.apiKey;
-const EMISSIONS_ENDPOINT = config.baseUrl + "/emissions";
-
+const API_KEY = process.env.API_KEY;
+const EMISSIONS_ENDPOINT = BASE_URL + "/emissions";
 
 // Calling the API
 let callEmissionsApi = function (options) {
@@ -35,7 +33,7 @@ const applianceIntent = {
   },
   async handle(handlerInput) {
 
-  	let newParams = {};
+    let newParams = {};
     let applianceType;
     let appliances;
     let country;
@@ -50,31 +48,31 @@ const applianceIntent = {
     try {
         country = handlerInput.requestEnvelope.request.intent.slots.country.value;
     } catch (error) {
-    	country = 'Default';
+      country = 'Default';
     }
 
     try {
       emissionType = handlerInput.requestEnvelope.request.intent.slots.emission_type.resolutions.resolutionsPerAuthority[0].values[0].value.name;
     } catch (error) {
-    	emissionType = 'CO2';
+      emissionType = 'CO2';
     }
 
     try {
       hours = handlerInput.requestEnvelope.request.intent.slots.time.value;
     } catch (error) {
-    	hours = 1;
+      hours = 1;
     }
 
     try {
       size = handlerInput.requestEnvelope.request.intent.slots.size.value;
     } catch (error) {
-    	size = "";
+      size = "";
     }
 
     try {
       quantity = handlerInput.requestEnvelope.request.intent.slots.quantity.value;
     } catch (error) {
-    	quantity = 1;
+      quantity = 1;
     }
 
 // Assigning values to newParams and setting default values in case slot returns undefined
@@ -105,7 +103,7 @@ const applianceIntent = {
     if (size != undefined && size !== "") {
       newParams.item = newParams.item + " " + size;
     }
-	  hours = moment.duration(hours, moment.ISO_8601).asHours();
+    hours = moment.duration(hours, moment.ISO_8601).asHours();
     newParams.duration = hours;
 
 // Setting up options to send request to API 
