@@ -334,11 +334,11 @@ const flight_intent = {
     let emissionType;
 
 // Getting values of slots and also handling in case of errors
-    origin = handlerInput.requestEnvelope.request.intent.slots.origin.resolutions.resolutionsPerAuthority[0].values[0].value.name;
-    destination = handlerInput.requestEnvelope.request.intent.slots.destination.resolutions.resolutionsPerAuthority[0].values[0].value.name;
+    origin = handlerInput.requestEnvelope.request.intent.slots.origin.value.resolutions.resolutionsPerAuthority[0].values[0].value.name;
+    destination = handlerInput.requestEnvelope.request.intent.slots.destination.value.resolutions.resolutionsPerAuthority[0].values[0].value.name;
 
     try {
-      emissionType = handlerInput.requestEnvelope.request.intent.slots.emission_type.resolutions.resolutionsPerAuthority[0].values[0].value.name;
+      emissionType = handlerInput.requestEnvelope.request.intent.slots.emission_type.value.resolutions.resolutionsPerAuthority[0].values[0].value.name;
     } catch (error) {
       emissionType = 'CO2';
     }
