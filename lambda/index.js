@@ -380,7 +380,7 @@ const flight_intent = {
     };
 
 // JSON sent to API
-    console.log("request ->", newParams, options);
+    //console.log("request ->", newParams, options);
 
 // Receiving response from API
     let response = await callEmissionsApi(options);
