@@ -1,0 +1,22 @@
+{
+  "name": "lambda",
+  "version": "1.0.0",
+  "description": "",
+  "engines": {
+    "node": ">=8.10"
+  },
+  "main": "index.js",
+  "scripts": {
+    "install": "mocha",
+    "test": "mocha test/test1.js test/test2.js test/test3.js test/test4.js test/test5.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "alexa-skill-test-framework": "^1.2.4",
+    "mocha": "^6.1.4",
+    "ask-sdk": "^2.4.0",
+    "moment": "^2.23.0",
+    "request": "^2.88.0"
+  }
+}

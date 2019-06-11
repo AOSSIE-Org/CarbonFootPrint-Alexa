@@ -390,7 +390,12 @@ const flight_intent = {
 
 // JSON received from API    
     console.log("response->", response);
-    speechOutput = responseGen(response,newParams);
+    let correct_answer;
+    let num, unit;
+    num = response.emissions[newParams.emission_type];
+    unit = response.unit;
+    correct_answer = "Flight produces " + num.toFixed(2) + " " + unit + " of " + newParams.emission_type + " while travelling from " + newParams.origin + " to " + newParams.destination + " with " + newParams.passenger + " passengers.";
+    speechOutput = responseGen(response,newParams,correct_answer);
  
     return handlerInput.responseBuilder
       .speak(speechOutput)
