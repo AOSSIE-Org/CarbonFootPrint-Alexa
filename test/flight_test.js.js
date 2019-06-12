@@ -11,7 +11,7 @@ describe('Carbon footprint', function() {
         this.timeout(10000);
         alexaTest.test([{
             request: alexaTest.getIntentRequest('flight_intent', {
-                'passenger': 100,
+                'passengers': 100,
                 'origin': {
                     'resolutions': {
                         'resolutionsPerAuthority': [{
@@ -56,7 +56,7 @@ describe('Carbon footprint', function() {
         }]);
         alexaTest.test([{
             request: alexaTest.getIntentRequest('flight_intent', {
-                'passenger': 10,
+                'passengers': 10,
                 'origin': {
                     'resolutions': {
                         'resolutionsPerAuthority': [{
@@ -101,7 +101,7 @@ describe('Carbon footprint', function() {
         }]);
         alexaTest.test([{
             request: alexaTest.getIntentRequest('flight_intent', {
-                'passenger': 10,
+                'passengers': 10,
                 'origin': {
                     'resolutions': {
                         'resolutionsPerAuthority': [{
@@ -146,7 +146,7 @@ describe('Carbon footprint', function() {
         }]);
         alexaTest.test([{
             request: alexaTest.getIntentRequest('flight_intent', {
-                'passenger': 10,
+                'passengers': 10,
                 'origin': {
                     'resolutions': {
                         'resolutionsPerAuthority': [{
@@ -191,7 +191,7 @@ describe('Carbon footprint', function() {
         }]);
         alexaTest.test([{
             request: alexaTest.getIntentRequest('flight_intent', {
-                'passenger': 10,
+                'passengers': 10,
                 'origin': {
                     'resolutions': {
                         'resolutionsPerAuthority': [{

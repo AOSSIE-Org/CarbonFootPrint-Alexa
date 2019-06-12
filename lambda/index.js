@@ -328,11 +328,10 @@ const flight_intent = {
   async handle(handlerInput) {
 
     let newParams = {};
-    let passenger;
+    let passengers;
     let origin;
     let destination;
     let emissionType;
-
 // Getting values of slots and also handling in case of errors
     origin = handlerInput.requestEnvelope.request.intent.slots.origin.value.resolutions.resolutionsPerAuthority[0].values[0].value.name;
     destination = handlerInput.requestEnvelope.request.intent.slots.destination.value.resolutions.resolutionsPerAuthority[0].values[0].value.name;
@@ -343,18 +342,18 @@ const flight_intent = {
       emissionType = 'CO2';
     }
     try {
-      passenger = handlerInput.requestEnvelope.request.intent.slots.passenger.value;
+      passengers = handlerInput.requestEnvelope.request.intent.slots.passengers.value;
     } catch (error) {
-      passenger = 1;
+      passengers = 1;
     }
 
 // Assigning values to newParams and setting default values in case slot returns undefined
     newParams.origin = origin;
     newParams.destination = destination;
-    if (passenger != undefined && passenger !== "") {
-      newParams.passenger = passenger;
+    if (passengers != undefined && passengers !== "") {
+      newParams.passengers = passengers;
     } else {
-      newParams.passenger = 1;
+      newParams.passengers = 1;
     }
     if (emissionType != undefined && emissionType !== "") {
       newParams.emission_type = emissionType;
@@ -374,7 +373,7 @@ const flight_intent = {
       body: {
         origin: newParams.origin,
         destination: newParams.destination,
-        passengers: newParams.passenger
+        passengers: newParams.passengers
       },
       json: true
     };
@@ -392,7 +391,7 @@ const flight_intent = {
     let num, unit;
     num = response.emissions[newParams.emission_type];
     unit = response.unit;
-    correct_answer = "Flight produces " + num.toFixed(2) + " " + unit + " of " + newParams.emission_type + " while travelling from " + newParams.origin + " to " + newParams.destination + " with " + newParams.passenger + " passengers.";
+    correct_answer = "Flight produces " + num.toFixed(2) + " " + unit + " of " + newParams.emission_type + " while travelling from " + newParams.origin + " to " + newParams.destination + " with " + newParams.passengers + " passengers.";
     speechOutput = responseGen(response,newParams,correct_answer);
  
     return handlerInput.responseBuilder
@@ -411,7 +410,7 @@ const train_intent = {
   },
   async handle(handlerInput) {
     let newParams = {};
-    let passenger;
+    let passengers;
     let origin;
     let destination;
     let emissionType;
@@ -433,9 +432,9 @@ const train_intent = {
       emissionType = 'CO2';
     }
     try {
-      passenger = handlerInput.requestEnvelope.request.intent.slots.passenger.value;
+      passengers = handlerInput.requestEnvelope.request.intent.slots.passengers.value;
     } catch (error) {
-      passenger = 1;
+      passengers = 1;
     }
 
 // Assigning values to newParams and setting default values in case slot returns undefined
@@ -449,10 +448,10 @@ const train_intent = {
     } else {
       newParams.destination = 'Default';
     }
-    if (passenger != undefined && passenger !== "") {
-      newParams.passenger = passenger;
+    if (passengers != undefined && passengers !== "") {
+      newParams.passengers = passengers;
     } else {
-      newParams.passenger = 1;
+      newParams.passengers = 1;
     }
     if (emissionType != undefined && emissionType !== "") {
       newParams.emission_type = emissionType;
@@ -472,7 +471,7 @@ const train_intent = {
       body: {
         origin: newParams.origin,
         destination: newParams.destination,
-        passengers  : newParams.passenger
+        passengers  : newParams.passengers
       },
       json: true
     };
@@ -490,7 +489,7 @@ const train_intent = {
     let num, unit;
     num = response.emissions[newParams.emission_type];
     unit = response.unit;
-    correct_answer = "Train produces " + num.toFixed(2) + " " + unit + " of " + newParams.emission_type + " while travelling from " + newParams.origin + " to " + newParams.destination + " with " + newParams.passenger + " passengers.";
+    correct_answer = "Train produces " + num.toFixed(2) + " " + unit + " of " + newParams.emission_type + " while travelling from " + newParams.origin + " to " + newParams.destination + " with " + newParams.passengers + " passengers.";
     speechOutput = responseGen(response,newParams,correct_answer);
  
     return handlerInput.responseBuilder
