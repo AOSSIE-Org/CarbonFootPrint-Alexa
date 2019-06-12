@@ -378,15 +378,10 @@ const flight_intent = {
       json: true
     };
 
-// JSON sent to API
-    //console.log("request ->", newParams, options);
-
 // Receiving response from API
     let response = await callEmissionsApi(options);
     let speechOutput = "";
-
-// JSON received from API    
-    console.log("response->", correct_answer);
+    
     let correct_answer;
     let num, unit;
     num = response.emissions[newParams.emission_type];
@@ -557,6 +552,8 @@ let responseGen = function (response,newParams, correct_answer) {
       speechOutput = "An unknown error occured. Please contact our support.\nError: " + response.error;
     }
   }
+
+console.log(speechOutput);
 
 // Returning the final generated result
   return speechOutput;
