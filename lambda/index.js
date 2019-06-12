@@ -386,7 +386,7 @@ const flight_intent = {
     let speechOutput = "";
 
 // JSON received from API    
-    console.log("response->", response);
+    console.log("response->", correct_answer);
     let correct_answer;
     let num, unit;
     num = response.emissions[newParams.emission_type];
