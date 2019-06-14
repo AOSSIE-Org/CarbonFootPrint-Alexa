@@ -2,14 +2,20 @@
   "name": "lambda",
   "version": "1.0.0",
   "description": "",
+  "engines": {
+    "node": ">=8.10"
+  },
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "install": "mocha",
+    "test": "mocha test/flight_test.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "alexa-sdk": "^1.0.25",
+    "alexa-skill-test-framework": "^1.2.4",
+    "mocha": "^6.1.4",
+    "ask-sdk": "^2.4.0",
     "moment": "^2.23.0",
     "request": "^2.88.0"
   }
