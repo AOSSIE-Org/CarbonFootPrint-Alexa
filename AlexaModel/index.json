@@ -153,7 +153,7 @@
                             "type": "AMAZON.City"
                         },
                         {
-                            "name": "passenger",
+                            "name": "passengers",
                             "type": "AMAZON.NUMBER"
                         },
                         {
@@ -167,12 +167,39 @@
                     ],
                     "samples": [
                         "train's emission for travel from {torigin} to {tdestination}",
-                        "{emission_type} emitted while travelling from {torigin} to {tdestination} by train with {passenger} passengers",
+                        "{emission_type} emitted while travelling from {torigin} to {tdestination} by train with {passengers} passengers",
                         "{emission_type} emitted while travelling from {torigin} to {tdestination} by train",
                         "emissions for train journey from {torigin} to {tdestination}",
                         "emissions due travel from {torigin} to {tdestination} by train",
-                        "how much emissions are produced due to train journey from {torigin} to {tdestination} with {passenger} passengers onboard",
-                        "{emission_type} emissions to train journey from {torigin} to {tdestination} with {passenger} passenger"
+                        "how much emissions are produced due to train journey from {torigin} to {tdestination} with {passengers} passengers onboard",
+                        "{emission_type} emissions to train journey from {torigin} to {tdestination} with {passengers} passenger"
+                    ]
+                },
+                {
+                    "name": "poultry_intent",
+                    "slots": [
+                        {
+                            "name": "poultry_region",
+                            "type": "poultry_regions"
+                        },
+                        {
+                            "name": "poultry_list",
+                            "type": "poultry_list"
+                        },
+                        {
+                            "name": "poultry_quantity",
+                            "type": "AMAZON.NUMBER"
+                        }
+                    ],
+                    "samples": [
+                        "carbon emissions for {poultry_list} production in {poultry_region}",
+                        "carbon emissions for production of {poultry_quantity} {poultry_list} in {poultry_region}",
+                        "how much emissions are caused by {poultry_quantity} kg of {poultry_list} production in {poultry_region}",
+                        "emissions by production of {poultry_quantity} kg {poultry_list} meat",
+                        "emissions for {poultry_list} production in {poultry_region}",
+                        "emissions for {poultry_quantity} kg {poultry_list} production",
+                        "carbon emissions for {poultry_quantity} kg {poultry_list} production",
+                        "emissions for {poultry_list} production"
                     ]
                 }
             ],
@@ -68532,6 +68559,131 @@
                             "id": "Nagpur",
                             "name": {
                                 "value": "Nagpur"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "poultry_regions",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "pennsylvania",
+                                "synonyms": [
+                                    "pennsylvania"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "new jersey",
+                                "synonyms": [
+                                    "new jersey"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "nebraska",
+                                "synonyms": [
+                                    "nebraska"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "michigan",
+                                "synonyms": [
+                                    "michigan"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Iowa",
+                                "synonyms": [
+                                    "Iowa",
+                                    "iowa"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ohio",
+                                "synonyms": [
+                                    "ohio"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "idaho",
+                                "synonyms": [
+                                    "idaho"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "british columbia",
+                                "synonyms": [
+                                    "bc",
+                                    "british columbia"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "poultry_list",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "turkey",
+                                "synonyms": [
+                                    "turkey"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "pork",
+                                "synonyms": [
+                                    "pork"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "lamp",
+                                "synonyms": [
+                                    "lamp"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "broiler chicken",
+                                "synonyms": [
+                                	"chicken",
+                                    "broiler chicken"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "beef",
+                                "synonyms": [
+                                    "beef"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "egg",
+                                "synonyms": [
+                                    "egg"
+                                ]
                             }
                         }
                     ]
