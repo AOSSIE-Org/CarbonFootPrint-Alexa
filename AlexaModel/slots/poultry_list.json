@@ -1,0 +1,54 @@
+{
+    "name": "poultry_list",
+    "values": [
+        {
+            "name": {
+                "value": "turkey",
+                "synonyms": [
+                    "turkey"
+                ]
+            }
+        },
+        {
+            "name": {
+                "value": "pork",
+                "synonyms": [
+                    "pork"
+                ]
+            }
+        },
+        {
+            "name": {
+                "value": "lamp",
+                "synonyms": [
+                    "lamp"
+                ]
+            }
+        },
+        {
+            "name": {
+                "value": "broiler chicken",
+                "synonyms": [
+                	"chicken",
+                    "broiler chicken"
+                ]
+            }
+        },
+        {
+            "name": {
+                "value": "beef",
+                "synonyms": [
+                    "beef"
+                ]
+            }
+        },
+        {
+            "name": {
+                "value": "egg",
+                "synonyms": [
+                    "egg"
+                ]
+            }
+        }
+    ]
+}

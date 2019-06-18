@@ -493,19 +493,101 @@ const train_intent = {
   }
 };
 
+// Handling Poultry related utterences 
+const poultry_intent = {
+  canHandle(handlerInput) {
+    const request = handlerInput.requestEnvelope.request;
+    return request.type === 'LaunchRequest'
+    ||(request.type === 'IntentRequest'
+        && request.intent.name === 'poultry_intent');
+  },
+  async handle(handlerInput) {
+    let newParams = {};
+    let emission_type;
+    let poultry_quantity;
+    let poultry_list;
+    let poultry_region;
+
+// Getting values of slots and also handling in case of errors
+  try {
+      poultry_region = handlerInput.requestEnvelope.request.intent.slots.poultry_region.resolutions.resolutionsPerAuthority[0].values[0].value.name;
+    } catch(error) {
+      poultry_region = 'Default';
+    }
+    try {
+      poultry_quantity = handlerInput.requestEnvelope.request.intent.slots.poultry_quantity.value;
+  } catch(error) {
+    destination = 1;
+  }
+  
+  poultry_list = handlerInput.requestEnvelope.request.intent.slots.poultry_list.resolutions.resolutionsPerAuthority[0].values[0].value.name;
+  newParams.poultry_list = poultry_list;
+  emission_type = 'CO2';
+// Assigning values to newParams and setting default values in case slot returns undefined
+    if (poultry_region != undefined && poultry_region !== "") {
+      newParams.poultry_region = poultry_region;
+    } else {
+      newParams.poultry_region = 'Default';
+    }
+    if (poultry_quantity != undefined && poultry_quantity !== "") {
+      newParams.poultry_quantity = poultry_quantity;
+    } else {
+      newParams.poultry_quantity = 1;
+    }
+    
+// Setting up options to send request to API 
+    let options = {
+      method: 'POST',
+      url: "https://carbonhub.org/v1/poultry",
+      headers: {
+        'cache-control': 'no-cache',
+        'access-key': API_KEY,
+        'Content-Type': 'application/json'
+      },
+      body: {
+        type: newParams.poultry_list,
+        region: newParams.poultry_region,
+        quantity: newParams.poultry_quantity
+      },
+      json: true
+    };
+
+// JSON sent to API
+    console.log("request ->", newParams, options);
+
+// Receiving response from API
+    let response = await callEmissionsApi(options);
+    let speechOutput = "";
+
+// JSON received from API    
+    console.log("response->", response);
+    let correct_answer;
+    let num, unit, punit;
+    punit = ' ';
+    if (newParams.poultry_list != 'egg') {
+      punit = 'kg';
+    }
+    num = response.emissions[emission_type];
+    unit = response.unit;
+    correct_answer = "CO2 emission for production of " + newParams.poultry_quantity + punit + newParams.poultry_list + ' is ' + num.toFixed(2) + " " + unit;
+    if (newParams.poultry_region != 'Default') {
+      correct_answer = correct_answer + ' in ' + newParams.poultry_region;
+    }
+    console.log(correct_answer);
+    speechOutput = responseGen(response,newParams,correct_answer);
+ 
+    return handlerInput.responseBuilder
+      .speak(speechOutput)
+      .getResponse();
+  }
+};
+
 // Generate skill's response from API's response
 let responseGen = function (response,newParams, correct_answer) {
   let speechOutput = "";
-  let num;
-  let unit;
 
 // Generating result for successful response from API
   if (response.success == true) {
-    num = response.emissions[newParams.emission_type];
-    unit = response.unit;
-  }
-
-  if (num && unit) {
     speechOutput = correct_answer;
   }
 

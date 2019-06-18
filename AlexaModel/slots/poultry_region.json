@@ -1,0 +1,71 @@
+{
+    "name": "poultry_regions",
+    "values": [
+        {
+            "name": {
+                "value": "pennsylvania",
+                "synonyms": [
+                    "pennsylvania"
+                ]
+            }
+        },
+        {
+            "name": {
+                "value": "new jersey",
+                "synonyms": [
+                    "new jersey"
+                ]
+            }
+        },
+        {
+            "name": {
+                "value": "nebraska",
+                "synonyms": [
+                    "nebraska"
+                ]
+            }
+        },
+        {
+            "name": {
+                "value": "michigan",
+                "synonyms": [
+                    "michigan"
+                ]
+            }
+        },
+        {
+            "name": {
+                "value": "Iowa",
+                "synonyms": [
+                    "Iowa",
+                    "iowa"
+                ]
+            }
+        },
+        {
+            "name": {
+                "value": "ohio",
+                "synonyms": [
+                    "ohio"
+                ]
+            }
+        },
+        {
+            "name": {
+                "value": "idaho",
+                "synonyms": [
+                    "idaho"
+                ]
+            }
+        },
+        {
+            "name": {
+                "value": "british columbia",
+                "synonyms": [
+                    "bc",
+                    "british columbia"
+                ]
+            }
+        }
+    ]
+}

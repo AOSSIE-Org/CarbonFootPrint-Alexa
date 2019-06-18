@@ -1,0 +1,27 @@
+{
+    "name": "poultry_intent",
+    "slots": [
+        {
+            "name": "poultry_region",
+            "type": "poultry_regions"
+        },
+        {
+            "name": "poultry_list",
+            "type": "poultry_list"
+        },
+        {
+            "name": "poultry_quantity",
+            "type": "AMAZON.NUMBER"
+        }
+    ],
+    "samples": [
+        "carbon emissions for {poultry_list} production in {poultry_region}",
+        "carbon emissions for production of {poultry_quantity} {poultry_list} in {poultry_region}",
+        "how much emissions are caused by {poultry_quantity} kg of {poultry_list} production in {poultry_region}",
+        "emissions by production of {poultry_quantity} kg {poultry_list} meat",
+        "emissions for {poultry_list} production in {poultry_region}",
+        "emissions for {poultry_quantity} kg {poultry_list} production",
+        "carbon emissions for {poultry_quantity} kg {poultry_list} production",
+        "emissions for {poultry_list} production"
+    ]
+}
