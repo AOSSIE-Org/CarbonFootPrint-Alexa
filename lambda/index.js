@@ -510,17 +510,17 @@ const poultry_intent = {
 
 // Getting values of slots and also handling in case of errors
   try {
-      poultry_region = handlerInput.requestEnvelope.request.intent.slots.poultry_region.resolutions.resolutionsPerAuthority[0].values[0].value.name;
+      poultry_region = handlerInput.requestEnvelope.request.intent.slots.poultry_region.value.resolutions.resolutionsPerAuthority[0].values[0].value.name;
     } catch(error) {
       poultry_region = 'Default';
     }
     try {
-      poultry_quantity = handlerInput.requestEnvelope.request.intent.slots.poultry_quantity.value;
+      poultry_quantity = handlerInput.requestEnvelope.request.intent.slots.poultry_quantity.value.value;
   } catch(error) {
     destination = 1;
   }
   
-  poultry_list = handlerInput.requestEnvelope.request.intent.slots.poultry_list.resolutions.resolutionsPerAuthority[0].values[0].value.name;
+  poultry_list = handlerInput.requestEnvelope.request.intent.slots.poultry_list.value.resolutions.resolutionsPerAuthority[0].values[0].value.name;
   newParams.poultry_list = poultry_list;
   emission_type = 'CO2';
 // Assigning values to newParams and setting default values in case slot returns undefined
@@ -552,20 +552,16 @@ const poultry_intent = {
       json: true
     };
 
-// JSON sent to API
-    console.log("request ->", newParams, options);
-
 // Receiving response from API
     let response = await callEmissionsApi(options);
     let speechOutput = "";
 
-// JSON received from API    
-    console.log("response->", response);
+// Setting up correct answer
     let correct_answer;
     let num, unit, punit;
     punit = ' ';
     if (newParams.poultry_list != 'egg') {
-      punit = 'kg';
+      punit = 'kg ';
     }
     num = response.emissions[emission_type];
     unit = response.unit;
@@ -573,7 +569,6 @@ const poultry_intent = {
     if (newParams.poultry_region != 'Default') {
       correct_answer = correct_answer + ' in ' + newParams.poultry_region;
     }
-    console.log(correct_answer);
     speechOutput = responseGen(response,newParams,correct_answer);
  
     return handlerInput.responseBuilder
@@ -713,6 +708,7 @@ exports.handler = skillBuilder
     fuel_intent,
     flight_intent,
     train_intent,
+    poultry_intent,
     HelpHandler,
     ExitHandler,
     SessionEndedRequestHandler
