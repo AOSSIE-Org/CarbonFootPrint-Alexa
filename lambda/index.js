@@ -577,6 +577,71 @@ const poultry_intent = {
   }
 };
 
+// Handling Vehicle related utterences 
+const vehicle_intent = {
+  canHandle(handlerInput) {
+    const request = handlerInput.requestEnvelope.request;
+    return request.type === 'LaunchRequest'
+    ||(request.type === 'IntentRequest'
+        && request.intent.name === 'vehicle_intent');
+  },
+  async handle(handlerInput) {
+    let newParams = {};
+    let fuel_type, origin, destination, mileage, emission_type;
+
+// Getting values of slots and also handling in case of errors
+    fuel_type = handlerInput.requestEnvelope.request.intent.slots.fuel_type.value.resolutions.resolutionsPerAuthority[0].values[0].value.name;
+    fuel_type = fuel_type.substring(4);
+    destination = handlerInput.requestEnvelope.request.intent.slots.vdestination.value.value;
+    origin = handlerInput.requestEnvelope.request.intent.slots.vorigin.value.value;
+    mileage = handlerInput.requestEnvelope.request.intent.slots.mileage.value.value;
+    try {
+      emission_type = handlerInput.requestEnvelope.request.intent.slots.emission_type.value.resolutions.resolutionsPerAuthority[0].values[0].value.name;
+    } catch(error) {
+      emission_type = 'CO2';
+    }
+    newParams.type = fuel_type;
+    newParams.destination = destination;
+    newParams.origin = origin;
+    newParams.mileage = 20;
+    if (mileage !== undefined || mileage !== "") {
+      newParams.mileage = mileage;
+    }
+// Setting up options to send request to API 
+    let options = {
+      method: 'POST',
+      url: "https://carbonhub.org/v1/vehicle",
+      headers: {
+        'cache-control': 'no-cache',
+        'access-key': API_KEY,
+        'Content-Type': 'application/json'
+      },
+      body: {
+        type: newParams.type,
+        origin: newParams.origin,
+        destination: newParams.destination,
+        mileage: newParams.mileage
+      },
+      json: true
+    };
+
+// Receiving response from API
+    let response = await callEmissionsApi(options);
+    let speechOutput = "";
+// Setting up correct answer
+    let correct_answer;
+    let num, unit;
+    num = response.emissions[emission_type];
+    unit = response.unit;
+    correct_answer = num.toFixed(2) + " " + unit + " of " + emission_type + " is produced in a journey from " + newParams.origin + " to " + newParams.destination + " on a vehicle with mileage of " + newParams.mileage + " kmpl.";
+    speechOutput = responseGen(response,newParams,correct_answer);
+ 
+    return handlerInput.responseBuilder
+      .speak(speechOutput)
+      .getResponse();
+  }
+};
+
 // Generate skill's response from API's response
 let responseGen = function (response,newParams, correct_answer) {
   let speechOutput = "";
@@ -709,6 +774,7 @@ exports.handler = skillBuilder
     flight_intent,
     train_intent,
     poultry_intent,
+    vehicle_intent,
     HelpHandler,
     ExitHandler,
     SessionEndedRequestHandler
