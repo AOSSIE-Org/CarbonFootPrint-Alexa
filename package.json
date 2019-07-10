@@ -8,7 +8,7 @@
   "main": "index.js",
   "scripts": {
     "install": "mocha",
-    "test": "mocha test/flight_test.js test/poultry_test.js test/vehicle_test.js"
+    "test": "mocha test/flight_test.js test/poultry_test.js test/vehicle_test.js test/train_test.js "
   },
   "author": "",
   "license": "ISC",

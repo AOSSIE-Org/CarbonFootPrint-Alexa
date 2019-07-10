@@ -412,22 +412,22 @@ const train_intent = {
 
 // Getting values of slots and also handling in case of errors
   try {
-      origin = handlerInput.requestEnvelope.request.intent.slots.torigin.value;
+      origin = handlerInput.requestEnvelope.request.intent.slots.torigin.value.value;
     } catch(error) {
       origin = 'Default';
     }
     try {
-      destination = handlerInput.requestEnvelope.request.intent.slots.tdestination.value;
+      destination = handlerInput.requestEnvelope.request.intent.slots.tdestination.value.value;
   } catch(error) {
     destination = 'Default';
   }
     try {
-      emissionType = handlerInput.requestEnvelope.request.intent.slots.emission_type.resolutions.resolutionsPerAuthority[0].values[0].value.name;
+      emissionType = handlerInput.requestEnvelope.request.intent.slots.emission_type.value.resolutions.resolutionsPerAuthority[0].values[0].value.name;
     } catch (error) {
       emissionType = 'CO2';
     }
     try {
-      passengers = handlerInput.requestEnvelope.request.intent.slots.passengers.value;
+      passengers = handlerInput.requestEnvelope.request.intent.slots.passengers.value.value;
     } catch (error) {
       passengers = 1;
     }
@@ -471,15 +471,11 @@ const train_intent = {
       json: true
     };
 
-// JSON sent to API
-    console.log("request ->", newParams, options);
-
 // Receiving response from API
     let response = await callEmissionsApi(options);
     let speechOutput = "";
 
 // JSON received from API    
-    console.log("response->", response);
     let correct_answer;
     let num, unit;
     num = response.emissions[newParams.emission_type];
