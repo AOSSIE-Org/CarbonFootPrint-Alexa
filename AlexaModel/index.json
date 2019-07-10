@@ -2,8 +2,7 @@
     "interactionModel": {
         "languageModel": {
             "invocationName": "carbon footprint",
-            "intents": [
-                {
+            "intents": [{
                     "name": "AMAZON.FallbackIntent",
                     "samples": []
                 },
@@ -25,18 +24,37 @@
                 },
                 {
                     "name": "applianceIntent",
-                    "slots": [
-                        {
+                    "slots": [{
                             "name": "time",
-                            "type": "AMAZON.DURATION"
+                            "type": "AMAZON.DURATION",
+                            "samples": [
+                                "appliance is used for {time} hours",
+                                "appliance is used for {time} hour",
+                                "the appliance is used for {time} hour",
+                                "the appliance is used for {time} hours",
+                                "{time} hour",
+                                "{time} hours",
+                                "{time}"
+                            ]
                         },
                         {
                             "name": "quantity",
-                            "type": "AMAZON.NUMBER"
+                            "type": "AMAZON.NUMBER",
+                            "samples": [
+                                "{quantity} appliances are used",
+                                "{quantity}"
+                            ]
                         },
                         {
                             "name": "appliances",
-                            "type": "appliances"
+                            "type": "appliances",
+                            "samples": [
+                                "{size} {appliance_spec} {appliances}",
+                                "{appliance_spec} {appliances}",
+                                "{appliances}",
+                                "I am asking for {appliances}",
+                                "I want to ask for {appliances}"
+                            ]
                         },
                         {
                             "name": "appliance_spec",
@@ -48,16 +66,168 @@
                         },
                         {
                             "name": "country",
-                            "type": "AMAZON.Country"
+                            "type": "AMAZON.Country",
+                            "samples": [
+                                "I am asking for {country}",
+                                "I am asking about {country}",
+                                "{country}"
+                            ]
                         },
                         {
                             "name": "emission_type",
                             "type": "emission_type"
+                        },
+                        {
+                            "name": "about",
+                            "type": "about"
+                        },
+                        {
+                            "name": "dt",
+                            "type": "dt"
+                        },
+                        {
+                            "name": "em",
+                            "type": "em"
                         }
                     ],
                     "samples": [
+                        "{about} {em} {dt} {quantity} {size} {appliance_spec} {appliances} in {country} {dt} {time} hours",
+                        "{about} {em} {dt} {quantity} {appliance_spec} {appliances} in {country} {dt} {time} hours",
+                        "{about} {em} {dt} {quantity} {appliances} in {country} {dt} {time} hours",
+                        "{about} {em} {dt} {size} {appliance_spec} {appliances} in {country} {dt} {time} hours",
+                        "{about} {em} {dt} {appliance_spec} {appliances} in {country} {dt} {time} hours",
+                        "{about} {em} {dt} {appliances} in {country} {dt} {time} hours",
+                        "{about} {emission_type} {em} {dt} {quantity} {size} {appliance_spec} {appliances} in {country} {dt} {time} hours",
+                        "{about} {emission_type} {em} {dt} {quantity} {appliance_spec} {appliances} in {country} {dt} {time} hours",
+                        "{about} {emission_type} {em} {dt} {quantity} {appliances} in {country} {dt} {time} hours",
+                        "{about} {emission_type} {em} {dt} {size} {appliance_spec} {appliances} in {country} {dt} {time} hours",
+                        "{about} {emission_type} {em} {dt} {appliance_spec} {appliances} in {country} {dt} {time} hours",
+                        "{about} {emission_type} {em} {dt} {appliances} in {country} {dt} {time} hours",
+                        "{about} {em} {dt} appliances in {country} {dt} {time} hours",
+                        "{about} {emission_type} {em} {dt} appliances in {country} {dt} {time} hours",
+                        "{about} appliance {em} in {country} {dt} {time} hours",
+                        "{about} {em} {dt} {quantity} {size} {appliance_spec} {appliances} {dt} {time} hours",
+                        "{about} {em} {dt} {quantity} {appliance_spec} {appliances} {dt} {time} hours",
+                        "{about} {em} {dt} {quantity} {appliances} {dt} {time} hours",
+                        "{about} {em} {dt} {size} {appliance_spec} {appliances} {dt} {time} hours",
+                        "{about} {em} {dt} {appliance_spec} {appliances} {dt} {time} hours",
+                        "{about} {em} {dt} {appliances} {dt} {time} hours",
+                        "{about} {emission_type} {em} {dt} {quantity} {size} {appliance_spec} {appliances} {dt} {time} hours",
+                        "{about} {emission_type} {em} {dt} {quantity} {appliance_spec} {appliances} {dt} {time} hours",
+                        "{about} {emission_type} {em} {dt} {quantity} {appliances} {dt} {time} hours",
+                        "{about} {emission_type} {em} {dt} {size} {appliance_spec} {appliances} {dt} {time} hours",
+                        "{about} {emission_type} {em} {dt} {appliance_spec} {appliances} {dt} {time} hours",
+                        "{about} {emission_type} {em} {dt} {appliances} {dt} {time} hours",
+                        "{about} {em} {dt} appliances {dt} {time} hours",
+                        "{about} {emission_type} {em} {dt} appliances {dt} {time} hours",
+                        "{about} appliance {em} {dt}  {time} hours",
+                        "{about} {em} {dt} {quantity} {size} {appliance_spec} {appliances} in {country}",
+                        "{about} {em} {dt} {quantity} {appliance_spec} {appliances} in {country}",
+                        "{about} {em} {dt} {quantity} {appliances} in {country}",
+                        "{about} {em} {dt} {size} {appliance_spec} {appliances} in {country}",
+                        "{about} {em} {dt} {appliance_spec} {appliances} in {country}",
+                        "{about} {em} {dt} {appliances} in {country}",
+                        "{about} {emission_type} {em} {dt} {quantity} {size} {appliance_spec} {appliances} in {country}",
+                        "{about} {emission_type} {em} {dt} {quantity} {appliance_spec} {appliances} in {country}",
+                        "{about} {emission_type} {em} {dt} {quantity} {appliances} in {country}",
+                        "{about} {emission_type} {em} {dt} {size} {appliance_spec} {appliances} in {country}",
+                        "{about} {emission_type} {em} {dt} {appliance_spec} {appliances} in {country}",
+                        "{about} {emission_type} {em} {dt} {appliances} in {country}",
+                        "{about} {em} {dt} appliances in {country}",
+                        "{about} {emission_type} {em} {dt} appliances in {country}",
+                        "{about} appliance {em} in {country}",
+                        "{about} {em} {dt} {quantity} {size} {appliance_spec} {appliances}",
+                        "{about} {em} {dt} {quantity} {appliance_spec} {appliances}",
+                        "{about} {em} {dt} {quantity} {appliances}",
+                        "{about} {em} {dt} {size} {appliance_spec} {appliances}",
+                        "{about} {em} {dt} {appliance_spec} {appliances}",
+                        "{about} {em} {dt} {appliances}",
+                        "{about} {emission_type} {em} {dt} {quantity} {size} {appliance_spec} {appliances}",
+                        "{about} {emission_type} {em} {dt} {quantity} {appliance_spec} {appliances}",
+                        "{about} {emission_type} {em} {dt} {quantity} {appliances}",
+                        "{about} {emission_type} {em} {dt} {size} {appliance_spec} {appliances}",
+                        "{about} {emission_type} {em} {dt} {appliance_spec} {appliances}",
+                        "{about} {emission_type} {em} {dt} {appliances}",
+                        "{about} {em} {dt} appliances",
+                        "{about} {emission_type} {em} {dt} appliances",
+                        "{about} appliance {em}",
+                        "{about} what are {emission_type} emissions for {quantity} {size} {appliance_spec} {appliances} for {time} of usage",
+                        "{about} {emission_type} emission for an {appliance_spec} {appliances} in {country}",
+                        "{about} the amount of {emission_type} emitted when a {size} {appliances} is used for {time}",
+                        "{about} When two {size} {appliances} are used for {time} in {country} how much {emission_type} is emitted",
+                        "{about} {emission_type} emissions for {quantity} {size} {appliances} in {country} for {time} ",
+                        "{about} {emission_type} emissions for a {quantity} {size} {appliance_spec} {appliances} for {time} of usage",
+                        "{about} what are emmisions for a {size} {appliances} in {country}",
+                        "{about} How much {emission_type} is emitted when a {appliance_spec} {appliances} is used in {country}",
+                        "{about} what are emissions for {size} {appliance_spec} {appliances}",
+                        "{about} what are different emissions for a {size} {appliances} in {country}",
+                        "{about} emissions for a {appliances} {appliance_spec} in {country}",
+                        "{about} what is {emission_type} emissions for a {appliance_spec} {appliances}",
+                        "{about} emissions for a {size} {appliance_spec} {appliances} in {country}",
+                        "{about} {emission_type} emissions for {time} usage of a {appliance_spec} {appliances} in {country}",
+                        "{about} {emission_type} emissions due to {size} {appliance_spec} {appliances} used for {time} in {country}",
+                        "{em} {dt} {quantity} {size} {appliance_spec} {appliances} in {country} {dt} {time} hours",
+                        "{em} {dt} {quantity} {appliance_spec} {appliances} in {country} {dt} {time} hours",
+                        "{em} {dt} {quantity} {appliances} in {country} {dt} {time} hours",
+                        "{em} {dt} {size} {appliance_spec} {appliances} in {country} {dt} {time} hours",
+                        "{em} {dt} {appliance_spec} {appliances} in {country} {dt} {time} hours",
+                        "{em} {dt} {appliances} in {country} {dt} {time} hours",
+                        "{emission_type} {em} {dt} {quantity} {size} {appliance_spec} {appliances} in {country} {dt} {time} hours",
+                        "{emission_type} {em} {dt} {quantity} {appliance_spec} {appliances} in {country} {dt} {time} hours",
+                        "{emission_type} {em} {dt} {quantity} {appliances} in {country} {dt} {time} hours",
+                        "{emission_type} {em} {dt} {size} {appliance_spec} {appliances} in {country} {dt} {time} hours",
+                        "{emission_type} {em} {dt} {appliance_spec} {appliances} in {country} {dt} {time} hours",
+                        "{emission_type} {em} {dt} {appliances} in {country} {dt} {time} hours",
+                        "{em} {dt} appliances in {country} {dt} {time} hours",
+                        "{emission_type} {em} {dt} appliances in {country} {dt} {time} hours",
+                        "appliance {em} in {country} {dt} {time} hours",
+                        "{em} {dt} {quantity} {size} {appliance_spec} {appliances} {dt} {time} hours",
+                        "{em} {dt} {quantity} {appliance_spec} {appliances} {dt} {time} hours",
+                        "{em} {dt} {quantity} {appliances} {dt} {time} hours",
+                        "{em} {dt} {size} {appliance_spec} {appliances} {dt} {time} hours",
+                        "{em} {dt} {appliance_spec} {appliances} {dt} {time} hours",
+                        "{em} {dt} {appliances} {dt} {time} hours",
+                        "{emission_type} {em} {dt} {quantity} {size} {appliance_spec} {appliances} {dt} {time} hours",
+                        "{emission_type} {em} {dt} {quantity} {appliance_spec} {appliances} {dt} {time} hours",
+                        "{emission_type} {em} {dt} {quantity} {appliances} {dt} {time} hours",
+                        "{emission_type} {em} {dt} {size} {appliance_spec} {appliances} {dt} {time} hours",
+                        "{emission_type} {em} {dt} {appliance_spec} {appliances} {dt} {time} hours",
+                        "{emission_type} {em} {dt} {appliances} {dt} {time} hours",
+                        "{em} {dt} appliances {dt} {time} hours",
+                        "{emission_type} {em} {dt} appliances {dt} {time} hours",
+                        "appliance {em} {dt}  {time} hours",
+                        "{em} {dt} {quantity} {size} {appliance_spec} {appliances} in {country}",
+                        "{em} {dt} {quantity} {appliance_spec} {appliances} in {country}",
+                        "{em} {dt} {quantity} {appliances} in {country}",
+                        "{em} {dt} {size} {appliance_spec} {appliances} in {country}",
+                        "{em} {dt} {appliance_spec} {appliances} in {country}",
+                        "{em} {dt} {appliances} in {country}",
+                        "{emission_type} {em} {dt} {quantity} {size} {appliance_spec} {appliances} in {country}",
+                        "{emission_type} {em} {dt} {quantity} {appliance_spec} {appliances} in {country}",
+                        "{emission_type} {em} {dt} {quantity} {appliances} in {country}",
+                        "{emission_type} {em} {dt} {size} {appliance_spec} {appliances} in {country}",
+                        "{emission_type} {em} {dt} {appliance_spec} {appliances} in {country}",
+                        "{emission_type} {em} {dt} {appliances} in {country}",
+                        "{em} {dt} appliances in {country}",
+                        "{emission_type} {em} {dt} appliances in {country}",
+                        "appliance {em} in {country}",
+                        "{em} {dt} {quantity} {size} {appliance_spec} {appliances}",
+                        "{em} {dt} {quantity} {appliance_spec} {appliances}",
+                        "{em} {dt} {quantity} {appliances}",
+                        "{em} {dt} {size} {appliance_spec} {appliances}",
+                        "{em} {dt} {appliance_spec} {appliances}",
+                        "{em} {dt} {appliances}",
+                        "{emission_type} {em} {dt} {quantity} {size} {appliance_spec} {appliances}",
+                        "{emission_type} {em} {dt} {quantity} {appliance_spec} {appliances}",
+                        "{emission_type} {em} {dt} {quantity} {appliances}",
+                        "{emission_type} {em} {dt} {size} {appliance_spec} {appliances}",
+                        "{emission_type} {em} {dt} {appliance_spec} {appliances}",
+                        "{emission_type} {em} {dt} {appliances}",
+                        "{em} {dt} appliances",
+                        "{emission_type} {em} {dt} appliances",
+                        "appliance {em}",
                         "what are {emission_type} emissions for {quantity} {size} {appliance_spec} {appliances} for {time} of usage",
-                        "please tell me {emission_type} emission for an {appliance_spec} {appliances} in {country}",
+                        "{emission_type} emission for an {appliance_spec} {appliances} in {country}",
                         "tell me the amount of {emission_type} emitted when a {size} {appliances} is used for {time}",
                         "When two {size} {appliances} are used for {time} in {country} how much {emission_type} is emitted",
                         "{emission_type} emissions for {quantity} {size} {appliances} in {country} for {time}",
@@ -75,139 +245,701 @@
                 },
                 {
                     "name": "electricity_intent",
-                    "slots": [
-                        {
+                    "slots": [{
                             "name": "quantity",
-                            "type": "AMAZON.NUMBER"
+                            "type": "AMAZON.NUMBER",
+                            "samples": [
+                                "{quantity} units of electricity is consumed",
+                                "{quantity} KWh of electricity is consumed",
+                                "{quantity} KWh of electricity is used",
+                                "{quantity} units of electricity is used",
+                                "{quantity} KWh of electricity",
+                                "{quantity} units of electricity",
+                                "{quantity} KWh",
+                                "{quantity} units",
+                                "{quantity}"
+                            ]
                         },
                         {
                             "name": "country",
-                            "type": "AMAZON.Country"
+                            "type": "AMAZON.Country",
+                            "samples": [
+                                "I am asking about {country}",
+                                "I am asking for {country}",
+                                "{country}"
+                            ]
                         },
                         {
                             "name": "emission_type",
                             "type": "emission_type"
+                        },
+                        {
+                            "name": "about",
+                            "type": "about"
+                        },
+                        {
+                            "name": "dt",
+                            "type": "dt"
+                        },
+                        {
+                            "name": "em",
+                            "type": "em"
                         }
                     ],
                     "samples": [
-                        "how much emissions are produced due to {quantity} kwh of electricty consumed",
+                        "{about} electricity in {country}",
+                        "electricity in {country}",
+                        "{about} electricity",
+                        "electricity",
+                        "{about} {emission_type} {em} {dt} electricity consumed",
+                        "{about} {emission_type} {em} {dt} electricity consumed in {country}",
+                        "{about} {em} {dt} electricity consumed",
+                        "{about} {em} {dt} electricity consumed in {country}",
+                        "{about} {emission_type} {em} {dt} electricity in {country}",
+                        "{about} {em} {dt} electricity in {country}",
+                        "{about} electricity {em} in {country}",
+                        "{about} {emission_type} {em} {dt} electricity",
+                        "{about} {em} {dt} electricity",
+                        "{about} electricity {em}",
+                        "{about} how much emissions are produced due to {quantity} kwh of electricty consumption",
+                        "{about} {emission_type} emissions for {quantity} units of electricity consumed in {country}",
+                        "{about} {emission_type} emissions for electricity consumed in {country}",
+                        "{emission_type} {em} {dt} electricity consumed",
+                        "{emission_type} {em} {dt} electricity consumed in {country}",
+                        "{em} {dt} electricity consumed",
+                        "{em} {dt} electricity consumed in {country}",
+                        "{emission_type} {em} {dt} electricity in {country}",
+                        "{em} {dt} electricity in {country}",
+                        "electricity {em} in {country}",
+                        "{emission_type} {em} {dt} electricity",
+                        "{em} {dt} electricity",
+                        "electricity {em}",
+                        "how much emissions are produced due to {quantity} kwh of electricty consumption",
                         "{emission_type} emissions for {quantity} units of electricity consumed in {country}",
                         "{emission_type} emissions for electricity consumed in {country}"
                     ]
                 },
                 {
                     "name": "flight_intent",
-                    "slots": [
-                        {
-                            "name": "passangers",
-                            "type": "AMAZON.NUMBER"
+                    "slots": [{
+                            "name": "passengers",
+                            "type": "AMAZON.NUMBER",
+                            "samples": [
+                                "{passengers} passengers",
+                                "I am asking for {passengers} passengers",
+                                "{passengers}"
+                            ]
                         },
                         {
                             "name": "origin",
-                            "type": "flight"
+                            "type": "flight",
+                            "samples": [
+                                "the flight is originating from {origin}",
+                                "The flight's origin is {origin}",
+                                "{origin}"
+                            ]
                         },
                         {
                             "name": "destination",
-                            "type": "flight"
+                            "type": "flight",
+                            "samples": [
+                                "The flight's destiantion is {destination}",
+                                "{destination}"
+                            ]
                         },
                         {
                             "name": "emission_type",
                             "type": "emission_type"
+                        },
+                        {
+                            "name": "flight",
+                            "type": "fl"
+                        },
+                        {
+                            "name": "about",
+                            "type": "about"
+                        },
+                        {
+                            "name": "dt",
+                            "type": "dt"
+                        },
+                        {
+                            "name": "em",
+                            "type": "em"
                         }
                     ],
                     "samples": [
+                        "{about} {flight} from {origin} to {destination} with {passengers} passengers",
+                        "{about} {flight} from {origin} with {passengers} passengers to {destination}",
+                        "{about} {flight} with {passengers} passengers to {destination}",
+                        "{flight} from {origin} with {passengers} passengers",
+                        "{flight} from {origin} to {destination}",
+                        "{flight} to {destination} with {passengers} passengers",
+                        "{about} {flight} to {destination} with {passengers} passengers",
+                        "{about} {flight} from {origin} to {destination}",
+                        "{about} {flight} from {origin} with {passengers} passengers",
+                        "{about} {flight} with {passengers} passengers",
+                        "{flight} from {origin}",
+                        "{flight} to {destination}",
+                        "{flight} with {passengers} passengers",
+                        "{about} {flight} to {destination}",
+                        "{about} {flight} from {origin}",
+                        "{about} {flight}",
+                        "{flight}",
+                        "{about} {em} {dt} {flight} from {origin} to {destination} with {passengers} passengers",
+                        "{about} {emission_type} {em} {dt} {flight} from {origin} to {destination} with {passengers} passenegrs",
+                        "{about} {flight} {em} from {origin} to {destination} with {passengers} passengers",
+                        "{about} {em} {dt} {flight} to {destination} with {passengers} passengers",
+                        "{about} {emission_type} {em} {dt} {flight} to {destination} with {passengers} passengers",
+                        "{about} {flight} {em} to {destination} with {passengers} passengers",
+                        "{about} {em} {dt} {flight} from {origin} with {passengers} passengers",
+                        "{about} {emission_type} {em} {dt} {flight} from {origin} with {passengers} passengers",
+                        "{about} {flight} {em} from {origin} with {passengers} passengers",
+                        "{about} {em} {dt} {flight} with {passengers} passengers",
+                        "{about} {emission_type} {em} {dt} {flight} with {passengers} passengers",
+                        "{about} {flight} {em} with {passengers} passengers",
+                        "{about} {em} {dt} {flight} from {origin} to {destination}",
+                        "{about} {emission_type} {em} {dt} {flight} from {origin} to {destination}",
+                        "{about} {flight} {em} from {origin} to {destination}",
+                        "{about} {em} {dt} {flight} to {destination}",
+                        "{about} {emission_type} {em} {dt} {flight} to {destination}",
+                        "{about} {flight} {em} to {destination}",
+                        "{about} {em} {dt} {flight} from {origin}",
+                        "{about} {emission_type} {em} {dt} {flight} from {origin}",
+                        "{about} {flight} {em} from {origin}",
+                        "{about} {em} {dt} {flight}",
+                        "{about} {emission_type} {em} {dt} {flight}",
+                        "{about} {flight} {em}",
+                        "{about} emissions for flights from {origin} to {destination}",
+                        "{about} emissions for flight from {origin} to {destination} with {passengers} passengers",
+                        "{about} {emission_type} emissions for flight from {origin} to {destination}",
+                        "{em} {dt} {flight} from {origin} to {destination} with {passengers} passengers",
+                        "{emission_type} {em} {dt} {flight} from {origin} to {destination} with {passengers} passenegrs",
+                        "{flight} {em} from {origin} to {destination} with {passengers} passengers",
+                        "{em} {dt} {flight} to {destination} with {passengers} passengers",
+                        "{emission_type} {em} {dt} {flight} to {destination} with {passengers} passengers",
+                        "{flight} {em} to {destination} with {passengers} passengers",
+                        "{em} {dt} {flight} from {origin} with {passengers} passengers",
+                        "{emission_type} {em} {dt} {flight} from {origin} with {passengers} passengers",
+                        "{flight} {em} from {origin} with {passengers} passengers",
+                        "{em} {dt} {flight} with {passengers} passengers",
+                        "{emission_type} {em} {dt} {flight} with {passengers} passengers",
+                        "{flight} {em} with {passengers} passengers",
+                        "{em} {dt} {flight} from {origin} to {destination}",
+                        "{emission_type} {em} {dt} {flight} from {origin} to {destination}",
+                        "{flight} {em} from {origin} to {destination}",
+                        "{em} {dt} {flight} to {destination}",
+                        "{emission_type} {em} {dt} {flight} to {destination}",
+                        "{flight} {em} to {destination}",
+                        "{em} {dt} {flight} from {origin}",
+                        "{emission_type} {em} {dt} {flight} from {origin}",
+                        "{flight} {em} from {origin}",
+                        "{em} {dt} {flight}",
+                        "{emission_type} {em} {dt} {flight}",
+                        "{flight} {em}",
                         "emissions for flights from {origin} to {destination}",
-                        "emissions for flight from {origin} to {destination} with {passangers} passengers",
+                        "emissions for flight from {origin} to {destination} with {passengers} passengers",
                         "{emission_type} emissions for flight from {origin} to {destination}",
                         "what are {emission_type} emissions for a flight from {origin} to {destination}"
                     ]
                 },
                 {
                     "name": "fuel_intent",
-                    "slots": [
-                        {
+                    "slots": [{
                             "name": "emission_type",
                             "type": "emission_type"
                         },
                         {
                             "name": "fuel",
-                            "type": "fuel"
+                            "type": "fuel",
+                            "samples": [
+                                "{fuel} fuel",
+                                "I am talking about {fuel}",
+                                "{fuel}"
+                            ]
                         },
                         {
                             "name": "quantity",
-                            "type": "AMAZON.NUMBER"
+                            "type": "AMAZON.NUMBER",
+                            "samples": [
+                                "{quantity} Litre",
+                                "{quantity} L",
+                                "{quantity} kg",
+                                "{quantity}"
+                            ]
+                        },
+                        {
+                            "name": "about",
+                            "type": "about"
+                        },
+                        {
+                            "name": "dt",
+                            "type": "dt"
+                        },
+                        {
+                            "name": "em",
+                            "type": "em"
                         }
                     ],
                     "samples": [
-                        "emissions due to consumption of {quantity} Litres {fuel}",
-                        "{emission_type} emissions for consumption of {quantity} litres {fuel}",
-                        "emissions for {quantity} kg {fuel}",
-                        "{emission_type} emissions for {quantity} L of {fuel}"
+                        "{about} fuel",
+                        "fuel",
+                        "{about} {emission_type} {em} {dt} fuel burning",
+                        "{about} {emission_type} {em} {dt} burning of fuel",
+                        "{about} {emission_type} {em} when fuel is burnt",
+                        "{about} {em} {dt} fuel burning",
+                        "{about} {em} {dt} burning of fuel",
+                        "{about} {em} when fuel is burnt",
+                        "{about} {emission_type} {em} {dt} fuel",
+                        "{about} {em} {dt} fuel",
+                        "{about} fuel {em}",
+                        "{about} {em} when {quantity} kg is used",
+                        "{about} {em} {dt} consumption of {quantity} Litres {fuel}",
+                        "{about} {emission_type} {em} for consumption of {quantity} litres {fuel}",
+                        "{about} {em} for {quantity} kg {fuel}",
+                        "{about} {emission_type} {em} for {quantity} L of {fuel}",
+                        "{emission_type} {em} {dt} fuel burning",
+                        "{emission_type} {em} {dt} burning of fuel",
+                        "{emission_type} {em} when fuel is burnt",
+                        "{em} {dt} fuel burning",
+                        "{em} {dt} burning of fuel",
+                        "{em} when fuel is burnt",
+                        "{emission_type} {em} {dt} fuel",
+                        "{em} {dt} fuel",
+                        "fuel {em}",
+                        "{em} when {quantity} kg is used",
+                        "{em} {dt} consumption of {quantity} Litres {fuel}",
+                        "{emission_type} {em} for consumption of {quantity} litres {fuel}",
+                        "{em} for {quantity} kg {fuel}",
+                        "{emission_type} {em} for {quantity} L of {fuel}"
                     ]
                 },
                 {
                     "name": "train_intent",
-                    "slots": [
-                        {
+                    "slots": [{
                             "name": "torigin",
-                            "type": "AMAZON.City"
+                            "type": "AMAZON.City",
+                            "samples": [
+                                "train's origin is {torigin}",
+                                "train will originate from {torigin}",
+                                "The train will originate from {torigin}",
+                                "{torigin}"
+                            ]
                         },
                         {
                             "name": "passengers",
-                            "type": "AMAZON.NUMBER"
+                            "type": "AMAZON.NUMBER",
+                            "samples": [
+                                "{passengers} passenger",
+                                "{passengers} passengers",
+                                "{passengers}"
+                            ]
                         },
                         {
                             "name": "tdestination",
-                            "type": "AMAZON.City"
+                            "type": "AMAZON.City",
+                            "samples": [
+                                "My destination is {tdestination}",
+                                "{tdestination}"
+                            ]
                         },
                         {
                             "name": "emission_type",
                             "type": "emission_type"
+                        },
+                        {
+                            "name": "about",
+                            "type": "about"
+                        },
+                        {
+                            "name": "train",
+                            "type": "train"
+                        },
+                        {
+                            "name": "em",
+                            "type": "em"
+                        },
+                        {
+                            "name": "dt",
+                            "type": "dt"
                         }
                     ],
                     "samples": [
-                        "train's emission for travel from {torigin} to {tdestination}",
-                        "{emission_type} emitted while travelling from {torigin} to {tdestination} by train with {passengers} passengers",
-                        "{emission_type} emitted while travelling from {torigin} to {tdestination} by train",
-                        "emissions for train journey from {torigin} to {tdestination}",
-                        "emissions due travel from {torigin} to {tdestination} by train",
-                        "how much emissions are produced due to train journey from {torigin} to {tdestination} with {passengers} passengers onboard",
-                        "{emission_type} emissions to train journey from {torigin} to {tdestination} with {passengers} passenger"
+                        "{about} {train} {em} with {passengers} passengers from {torigin}",
+                        "{about} {train} {em} to {tdestination} with {passengers} passengers",
+                        "{about} {train} {em} from {torigin} with {passengers} passengers",
+                        "{about} {train} {em} with {passengers} passengers to {tdestination}",
+                        "{about} {train} {em} from {torigin} to {tdestination}",
+                        "{about} {train} {em} with {passengers} passengers",
+                        "{about} {train} {em} to {tdestination}",
+                        "{about} {train} {em} from {torigin}",
+                        "{about} {train} {em} from {torigin} to {tdestination} with {passengers} passengers",
+                        "{train} {em} from {torigin} to {tdestination} with {passengers} passengers",
+                        "{train} {em} with {passengers} passengers from {torigin}",
+                        "{train} {em} to {tdestination} with {passengers} passengers",
+                        "{train} {em} from {torigin} with {passengers} passengers",
+                        "{train} {em} with {passengers} passengers to {tdestination}",
+                        "{train} {em} from {torigin} to {tdestination}",
+                        "{train} {em} with {passengers} passengers",
+                        "{train} {em} to {tdestination}",
+                        "{train} {em} from {torigin}",
+                        "{about} {train} with {passengers} passengers from {torigin}",
+                        "{about} {train} to {tdestination} with {passengers} passengers",
+                        "{about} {train} from {torigin} with {passengers} passengers",
+                        "{about} {train} with {passengers} passengers to {tdestination}",
+                        "{about} {train} from {torigin} to {tdestination}",
+                        "{about} {train} with {passengers} passengers",
+                        "{about} {train} to {tdestination}",
+                        "{about} {train} from {torigin}",
+                        "{about} {train}",
+                        "{about} how much {em} are produced {dt} {train} journey from {torigin} to {tdestination} with {passengers} passengers onboard",
+                        "{about} {emission_type} {em} to {train} journey from {torigin} to {tdestination} with {passengers} passenger",
+                        "{about} {train} from {torigin} to {tdestination} with {passengers} passengers",
+                        "{train} from {torigin} to {tdestination} with {passengers} passengers",
+                        "{train} with {passengers} passengers from {torigin}",
+                        "{train} to {tdestination} with {passengers} passengers",
+                        "{train} from {torigin} with {passengers} passengers",
+                        "{train} with {passengers} passengers to {tdestination}",
+                        "{train} from {torigin} to {tdestination}",
+                        "{train} with {passengers} passengers",
+                        "{train} to {tdestination}",
+                        "{train} from {torigin}",
+                        "{train}",
+                        "{about} {emission_type} {em} {dt} {train}",
+                        "{about} {em} {dt} {train}",
+                        "{about} {train} {em}",
+                        "{about} {train} {em} for travel from {torigin} to {tdestination}",
+                        "{about} {emission_type} emitted while travelling from {torigin} to {tdestination} by {train} with {passengers} passengers",
+                        "{about} {emission_type} emitted while travelling from {torigin} to {tdestination} by {train}",
+                        "{about} {em} for {train} journey from {torigin} to {tdestination}",
+                        "{about} {em} {dt} travel from {torigin} to {tdestination} by {train}",
+                        "{emission_type} {em} {dt} {train}",
+                        "{em} {dt} {train}",
+                        "{train} {em}",
+                        "{train} {em} for travel from {torigin} to {tdestination}",
+                        "{emission_type} emitted while travelling from {torigin} to {tdestination} by {train} with {passengers} passengers",
+                        "{emission_type} emitted while travelling from {torigin} to {tdestination} by {train}",
+                        "{em} for {train} journey from {torigin} to {tdestination}",
+                        "{em} {dt} travel from {torigin} to {tdestination} by {train}",
+                        "how much {em} are produced {dt} {train} journey from {torigin} to {tdestination} with {passengers} passengers onboard",
+                        "{emission_type} {em} to {train} journey from {torigin} to {tdestination} with {passengers} passenger"
                     ]
                 },
                 {
                     "name": "poultry_intent",
-                    "slots": [
-                        {
+                    "slots": [{
                             "name": "poultry_region",
-                            "type": "poultry_regions"
+                            "type": "poultry_regions",
+                            "samples": [
+                                "I will go for {poultry_region}",
+                                "{poultry_region}"
+                            ]
                         },
                         {
                             "name": "poultry_list",
-                            "type": "poultry_list"
+                            "type": "poultry_list",
+                            "samples": [
+                                "I will go for {poultry_list}",
+                                "I will try {poultry_list}",
+                                "I want to ask for {poultry_list}",
+                                "{poultry_list}"
+                            ]
                         },
                         {
                             "name": "poultry_quantity",
-                            "type": "AMAZON.NUMBER"
+                            "type": "AMAZON.NUMBER",
+                            "samples": [
+                                "{poultry_quantity} kg {poultry_list} is produced",
+                                "{poultry_quantity} kg of {poultry_list} is produced",
+                                "{poultry_quantity} {poultry_list} are produced",
+                                "{poultry_quantity} {poultry_list} is produced",
+                                "{poultry_quantity} kg",
+                                "{poultry_quantity}"
+                            ]
+                        },
+                        {
+                            "name": "about",
+                            "type": "about"
+                        },
+                        {
+                            "name": "dt",
+                            "type": "dt"
+                        },
+                        {
+                            "name": "em",
+                            "type": "em"
                         }
                     ],
                     "samples": [
-                        "carbon emissions for {poultry_list} production in {poultry_region}",
-                        "carbon emissions for production of {poultry_quantity} {poultry_list} in {poultry_region}",
-                        "how much emissions are caused by {poultry_quantity} kg of {poultry_list} production in {poultry_region}",
-                        "emissions by production of {poultry_quantity} kg {poultry_list} meat",
-                        "emissions for {poultry_list} production in {poultry_region}",
-                        "emissions for {poultry_quantity} kg {poultry_list} production",
-                        "carbon emissions for {poultry_quantity} kg {poultry_list} production",
-                        "emissions for {poultry_list} production"
+                        "{about} {poultry_quantity} kg {poultry_list} in {poultry_region}",
+                        "{about} {poultry_quantity} kg {poultry_list} ",
+                        "{about} {em} {dt} {poultry_quantity} kg {poultry_list} ",
+                        "{about} {em} {dt} {poultry_quantity} kg production",
+                        "{about} {em} {dt} {poultry_list} in {poultry_region}",
+                        "{about} {em} {dt} poultry production in {poultry_region}",
+                        "{about} {em} {dt} poultry in {poultry_region}",
+                        "{about} poultry {em} in {poultry_region}",
+                        "{about} poultry in {poultry_region}",
+                        "{about} {em} {dt} {poultry_list} ",
+                        "{about} {em} {dt} poultry production",
+                        "{about} {em} {dt} poultry",
+                        "{about} poultry",
+                        "{poultry_quantity} kg {poultry_list} in {poultry_region}",
+                        "{poultry_quantity} kg {poultry_list} ",
+                        "{em} {dt} {poultry_quantity} kg {poultry_list} ",
+                        "{em} {dt} {poultry_quantity} kg production",
+                        "{em} {dt} {poultry_list} in {poultry_region}",
+                        "{em} {dt} poultry production in {poultry_region}",
+                        "{em} {dt} poultry in {poultry_region}",
+                        "poultry {em} in {poultry_region}",
+                        "poultry in {poultry_region}",
+                        "{em} {dt} {poultry_list} ",
+                        "{em} {dt} poultry production",
+                        "{em} {dt} poultry",
+                        "poultry {em}",
+                        "poultry",
+                        "{about} {em} {dt} production of {poultry_quantity} {poultry_list} in {poultry_region}",
+                        "{about} {em} {dt} production of {poultry_quantity} {poultry_list}",
+                        "{about} {em} {dt} production of {poultry_quantity} kg {poultry_list} in {poultry_region}",
+                        "{about} {em} {dt} production of {poultry_quantity} kg {poultry_list}",
+                        "{about} {em} {dt} {poultry_list} production",
+                        "{about} carbon {em} {dt} poultry production",
+                        "{about} carbon {em} {dt} {poultry_list} production in {poultry_region}",
+                        "{about} carbon {em} for production of {poultry_quantity} {poultry_list} in {poultry_region}",
+                        "{about} how much {em} are caused by {poultry_quantity} kg of {poultry_list} production in {poultry_region}",
+                        "{about} {em} by production of {poultry_quantity} kg {poultry_list} meat",
+                        "{about} {em} {dt} {poultry_list} production in {poultry_region}",
+                        "{about} {em} {dt} {poultry_quantity} kg {poultry_list} production",
+                        "{about} carbon {em} {dt} {poultry_quantity} kg {poultry_list} production",
+                        "{em} {dt} production of {poultry_quantity} {poultry_list} in {poultry_region}",
+                        "{em} {dt} production of {poultry_quantity} {poultry_list}",
+                        "{em} {dt} production of {poultry_quantity} kg {poultry_list} in {poultry_region}",
+                        "{em} {dt} production of {poultry_quantity} kg {poultry_list}",
+                        "carbon {em} {dt} poultry production",
+                        "{about} poultry {em}",
+                        "carbon {em} {dt} {poultry_list} production in {poultry_region}",
+                        "carbon {em} {dt} production of {poultry_quantity} {poultry_list} in {poultry_region}",
+                        "how much {em} are caused by {poultry_quantity} kg of {poultry_list} production in {poultry_region}",
+                        "{em} by production of {poultry_quantity} kg {poultry_list} meat",
+                        "{em} {dt} {poultry_list} production in {poultry_region}",
+                        "{em} {dt} {poultry_quantity} kg {poultry_list} production",
+                        "carbon {em} {dt} {poultry_quantity} kg {poultry_list} production",
+                        "{em} {dt} {poultry_list} production"
+                    ]
+                },
+                {
+                    "name": "vehicle_intent",
+                    "slots": [{
+                            "name": "vorigin",
+                            "type": "AMAZON.City",
+                            "samples": [
+                                "{vorigin} to {vdestination}",
+                                "My journey starts from {vorigin}",
+                                "{vorigin}"
+                            ]
+                        },
+                        {
+                            "name": "vdestination",
+                            "type": "AMAZON.City",
+                            "samples": [
+                                "my destiantion is {vdestination}",
+                                "{vdestination}"
+                            ]
+                        },
+                        {
+                            "name": "fuel_type",
+                            "type": "fuel",
+                            "samples": [
+                                "{fuel_type}"
+                            ]
+                        },
+                        {
+                            "name": "mileage",
+                            "type": "AMAZON.NUMBER",
+                            "samples": [
+                                "Mileage of my vehicle is {mileage} {kmpl}",
+                                "{mileage} {kmpl}"
+                            ]
+                        },
+                        {
+                            "name": "emission_type",
+                            "type": "emission_type"
+                        },
+                        {
+                            "name": "about",
+                            "type": "about"
+                        },
+                        {
+                            "name": "dt",
+                            "type": "dt"
+                        },
+                        {
+                            "name": "em",
+                            "type": "em"
+                        },
+                        {
+                            "name": "vehicle",
+                            "type": "vehicle"
+                        },
+                        {
+                            "name": "kmpl",
+                            "type": "kmpl"
+                        }
+                    ],
+                    "samples": [
+                        "{about} {em} in a journey from {vorigin} to {vdestination} {dt} {mileage} {kmpl} {vehicle}",
+                        "{about} {em} in a journey from {vorigin} in {mileage} {kmpl} mileage {vehicle}",
+                        "{about} {em} in a journey from {vorigin} to {vdestination}",
+                        "{about} {em} in a journey from {vorigin}",
+                        "{about} {vehicle} {emission_type} {em} in a car with {mileage} {kmpl} mileage from {vorigin} to {vdestination}",
+                        "{about} {emission_type} {em} {dt} {vehicle} in a car with {mileage} {kmpl} mileage from {vorigin} to {vdestination}",
+                        "{about} {em} {dt} {vehicle} in a car with {mileage} {kmpl} mileage from {vorigin} to {vdestination}",
+                        "{about} {vehicle} in a car with {mileage} {kmpl} mileage from {vorigin} to {vdestination}",
+                        "{about} {vehicle} {em} in car with {mileage} {kmpl} mileage from {vorigin} to {vdestination}",
+                        "{about} {vehicle} {emission_type} {em} in {mileage} {kmpl} {vehicle} from {vorigin} to {vdestination}",
+                        "{about} {emission_type} {em} {dt} {vehicle} in {mileage} {kmpl} {vehicle} from {vorigin} to {vdestination}",
+                        "{about} {em} {dt} {vehicle} in {mileage} {kmpl} {vehicle} from {vorigin} to {vdestination}",
+                        "{about} {vehicle} in {mileage} {kmpl} {vehicle} from {vorigin} to {vdestination}",
+                        "{about} {vehicle} {em} in {mileage} {kmpl} {vehicle} from {vorigin} to {vdestination}",
+                        "{about} {vehicle} {emission_type} {em} {dt} {vehicle} with {mileage} {kmpl} mileage to {vdestination}",
+                        "{about} {emission_type} {em} {dt} {vehicle} {dt} {vehicle} with {mileage} {kmpl} mileage to {vdestination} ",
+                        "{about} {em} {dt} {vehicle} {dt} {vehicle} with {mileage} {kmpl} mileage to {vdestination}",
+                        "{about} {vehicle} {dt} {vehicle} with {mileage} {kmpl} mileage to {vdestination}",
+                        "{about} {vehicle} {em} {dt} {vehicle} with {mileage} {kmpl} mileage to {vdestination}",
+                        "{about} {vehicle} {emission_type} {em} in {mileage} {kmpl} {vehicle} to {vdestination}",
+                        "{about} {emission_type} {em} {dt} {vehicle} in {mileage} {kmpl} {vehicle} to {vdestination}",
+                        "{about} {em} {dt} {vehicle} in {mileage} {kmpl} {vehicle} to {vdestination}",
+                        "{about} {vehicle} in {mileage} {kmpl} {vehicle} to {vdestination}",
+                        "{about} {vehicle} {em} in {mileage} {kmpl} {vehicle} to {vdestination}",
+                        "{about} {vehicle} {emission_type} {em} from {vorigin} to {vdestination}",
+                        "{about} {emission_type} {em} {dt} {vehicle} from {vorigin} to {vdestination}",
+                        "{about} {em} {dt} {vehicle} from {vorigin} to {vdestination}",
+                        "{about} {vehicle} from {vorigin} to {vdestination}",
+                        "{about} {vehicle} {em} from {vorigin} to {vdestination}",
+                        "{about} {fuel_type} {vehicle} {em} in {mileage} {kmpl} {vehicle}",
+                        "{about} {fuel_type} {vehicle} {emission_type} {em} to {vdestination}",
+                        "{about} {emission_type} {em} {dt} {fuel_type} {vehicle} to {vdestination}",
+                        "{about} {em} {dt} {fuel_type} {vehicle} to {vdestination}",
+                        "{about}  {fuel_type} {vehicle} to {vdestination}",
+                        "{about} {fuel_type} {vehicle} {em} to {vdestination}",
+                        "{about} {fuel_type} {vehicle} {emission_type} {em} from {vorigin}",
+                        "{about} {emission_type} {em} {dt} {fuel_type} {vehicle} from {vorigin}",
+                        "{about} {em} {dt} {fuel_type} {vehicle} from {vorigin}",
+                        "{about} {fuel_type} {vehicle} from {vorigin}",
+                        "{about} {fuel_type} {vehicle} {em} from {vorigin} ",
+                        "{about} {fuel_type} {vehicle} {emission_type} {emission_type}",
+                        "{about} {emission_type} {em} {dt} {fuel_type} {vehicle}",
+                        "{about} {em} {dt} {fuel_type} {vehicle}",
+                        "{about} {em} in {fuel_type} {vehicle}",
+                        "{about} {vehicle} {emission_type} {em} {dt} {vehicle} with {mileage} {kmpl} mileage",
+                        "{about} {emission_type} {em} {dt} {vehicle} {dt} {vehicle} with {mileage} {kmpl} mileage",
+                        "{about} {em} {dt} {vehicle} {dt} {vehicle} with {mileage} {kmpl} mileage",
+                        "{about} {vehicle} {dt} {vehicle} with {mileage} {kmpl} mileage",
+                        "{about} {vehicle} {em} {dt} {vehicle} with {mileage} {kmpl} mileage",
+                        "{about} {vehicle} {emission_type} {em} in {mileage} {kmpl} {vehicle}",
+                        "{about} {emission_type} {em} {dt} {vehicle} in {mileage} {kmpl} {vehicle}",
+                        "{about} {em} {dt} {vehicle} in {mileage} {kmpl} {vehicle}",
+                        "{about} {vehicle} in {mileage} {kmpl} {vehicle}",
+                        "{about} {vehicle} {em} in {mileage} {kmpl} {vehicle}",
+                        "{about} {vehicle} {emission_type} {em} to {vdestination}",
+                        "{about} {emission_type} {em} {dt} {vehicle} to {vdestination}",
+                        "{about} {em} {dt} {vehicle} to {vdestination}",
+                        "{about} {vehicle} to {vdestination}",
+                        "{about} {vehicle} {em} to {vdestination}",
+                        "{about} {vehicle} {emission_type} {em} from {vorigin}",
+                        "{about} {emission_type} {em} {dt} {vehicle} from {vorigin}",
+                        "{about} {em} {dt} {vehicle} from {vorigin}",
+                        "{about} {vehicle} from {vorigin}",
+                        "{about} {vehicle} {em} from {vorigin}",
+                        "{about} {vehicle} {emission_type} {emission_type}",
+                        "{about} {emission_type} {em} {dt} {vehicle}",
+                        "{about} {em} {dt} {vehicle}",
+                        "{about} {vehicle}",
+                        "{about} {vehicle} {em}",
+                        "{about} {em} for travel between {vorigin} and  {vdestination}",
+                        "{about} how much {em} are produced if I travel from {vorigin} to {vdestination} by car",
+                        "{about} {em} for travel from {vorigin} to {vdestination} in a {fuel_type} car",
+                        "{about} {em} for a road trip from {vorigin} to {vdestination} on a {fuel_type} vehicle",
+                        "{about} {em} for a road trip from {vorigin} to {vdestination} on a {mileage} km per litre mileage {fuel_type} car",
+                        "{about} How much {em} are released {dt} a {mileage} km per litre {fuel_type} car used from {vorigin} to {vdestination} ",
+                        "{vehicle} {emission_type} {em} in a car with {mileage} {kmpl} mileage from {vorigin} to {vdestination}",
+                        "{emission_type} {em} {dt} {vehicle} in a car with {mileage} {kmpl} mileage from {vorigin} to {vdestination}",
+                        "{em} {dt} {vehicle} in a car with {mileage} {kmpl} mileage from {vorigin} to {vdestination}",
+                        "{vehicle} in a car with {mileage} {kmpl} mileage from {vorigin} to {vdestination}",
+                        "{vehicle} {em} in car with {mileage} {kmpl} mileage from {vorigin} to {vdestination}",
+                        "{vehicle} {emission_type} {em} in {mileage} {kmpl} car from {vorigin} to {vdestination}",
+                        "{emission_type} {em} {dt} {vehicle} in {mileage} {kmpl} car from {vorigin} to {vdestination}",
+                        "{em} {dt} {vehicle} in {mileage} {kmpl} car from {vorigin} to {vdestination}",
+                        "{vehicle} in {mileage} {kmpl} car from {vorigin} to {vdestination}",
+                        "{vehicle} {em} in {mileage} {kmpl} car from {vorigin} to {vdestination}",
+                        "{vehicle} {emission_type} {em} in a car with {mileage} {kmpl} mileage to {vdestination}",
+                        "{emission_type} {em} {dt} {vehicle} in a car with {mileage} {kmpl} mileage to {vdestination} ",
+                        "{em} {dt} {vehicle} in a car with {mileage} {kmpl} mileage to {vdestination}",
+                        "{vehicle} in a car with {mileage} {kmpl} mileage to {vdestination}",
+                        "{vehicle} {em} in car with {mileage} {kmpl} mileage to {vdestination}",
+                        "{vehicle} {emission_type} {em} in {mileage} {kmpl} car to {vdestination}",
+                        "{emission_type} {em} {dt} {vehicle} in {mileage} {kmpl} car to {vdestination}",
+                        "{em} {dt} {vehicle} in {mileage} {kmpl} car to {vdestination}",
+                        "{vehicle} in {mileage} {kmpl} car to {vdestination}",
+                        "{vehicle} {em} in {mileage} {kmpl} car to {vdestination}",
+                        "{vehicle} {emission_type} {em} from {vorigin} to {vdestination}",
+                        "{emission_type} {em} {dt} {vehicle} from {vorigin} to {vdestination}",
+                        "{em} {dt} {vehicle} from {vorigin} to {vdestination}",
+                        "{vehicle} from {vorigin} to {vdestination}",
+                        "{vehicle} {em} from {vorigin} to {vdestination}",
+                        "{fuel_type} {vehicle} {em} in {mileage} {kmpl} car",
+                        "{fuel_type} {vehicle} {emission_type} {em} to {vdestination}",
+                        "{emission_type} {em} {dt} {fuel_type} {vehicle} to {vdestination}",
+                        "{em} {dt} {fuel_type} {vehicle} to {vdestination}",
+                        "{fuel_type} {vehicle} to {vdestination}",
+                        "{fuel_type} {vehicle} {em} to {vdestination}",
+                        "{fuel_type} {vehicle} {emission_type} {em} from {vorigin}",
+                        "{emission_type} {em} {dt} {fuel_type} {vehicle} from {vorigin}",
+                        "{em} {dt} {fuel_type} {vehicle} from {vorigin}",
+                        "{fuel_type} {vehicle} from {vorigin}",
+                        "{fuel_type} {vehicle} {em} from {vorigin}",
+                        "{fuel_type} {vehicle} {emission_type} {em}",
+                        "{emission_type} {em} {dt} {fuel_type} {vehicle}",
+                        "{em} {dt} {fuel_type} {vehicle}",
+                        "{em} in {fuel_type} {vehicle}",
+                        "{vehicle} {emission_type} {em} in a car with {mileage} {kmpl} mileage",
+                        "{emission_type} {em} {dt} {vehicle} in a car with {mileage} {kmpl} mileage",
+                        "{em} {dt} {vehicle} in a car with {mileage} {kmpl} mileage",
+                        "{vehicle} in a car with {mileage} {kmpl} mileage",
+                        "{vehicle} {em} in car with {mileage} {kmpl} mileage",
+                        "{vehicle} {emission_type} {em} in {mileage} {kmpl} car",
+                        "{emission_type} {em} {dt} {vehicle} in {mileage} {kmpl} car",
+                        "{em} {dt} {vehicle} in {mileage} {kmpl} car",
+                        "{vehicle} in {mileage} {kmpl} car",
+                        "{vehicle} {em} in {mileage} {kmpl} car",
+                        "{vehicle} {emission_type} {em} to {vdestination}",
+                        "{emission_type} {em} {dt} {vehicle} to {vdestination}",
+                        "{em} {dt} {vehicle} to {vdestination}",
+                        "{vehicle} to {vdestination}",
+                        "{vehicle} {em} to {vdestination}",
+                        "{vehicle} {emission_type} {em} from {vorigin}",
+                        "{emission_type} {em} {dt} {vehicle} from {vorigin}",
+                        "{em} {dt} {vehicle} from {vorigin}",
+                        "{vehicle} from {vorigin}",
+                        "{vehicle} {em} from {vorigin}",
+                        "{vehicle} {emission_type} {em}",
+                        "{emission_type} {em} {dt} {vehicle}",
+                        "{em} {dt} {vehicle}",
+                        "{vehicle}",
+                        "{vehicle} {em}",
+                        "{em} for travel between {vorigin} and  {vdestination}",
+                        "how much {em} are produced if I travel from {vorigin} to {vdestination} by car",
+                        "{em} for travel from {vorigin} to {vdestination} in a {fuel_type} car",
+                        "{emission_type} {em} if I travel from {vorigin} to {vdestination} in a {fuel_type} car with mileage of {mileage} km per litre",
+                        "{em} for a road trip from {vorigin} to {vdestination} on a {fuel_type} vehicle",
+                        "{em} for a road trip from {vorigin} to {vdestination} on a {mileage} km per litre mileage {fuel_type} car",
+                        "How much {em} are released {dt} a {mileage} km per litre {fuel_type} car used from {vorigin} to {vdestination} "
                     ]
                 }
             ],
-            "types": [
-                {
+            "types": [{
                     "name": "emission_type",
-                    "values": [
-                        {
+                    "values": [{
                             "name": {
                                 "value": "N2O",
                                 "synonyms": [
@@ -240,8 +972,7 @@
                 },
                 {
                     "name": "appliance_spec",
-                    "values": [
-                        {
+                    "values": [{
                             "name": {
                                 "value": "type",
                                 "synonyms": [
@@ -297,8 +1028,7 @@
                 },
                 {
                     "name": "appliances",
-                    "values": [
-                        {
+                    "values": [{
                             "name": {
                                 "value": "hair",
                                 "synonyms": [
@@ -824,23 +1554,20 @@
                 },
                 {
                     "name": "appliance_size",
-                    "values": [
-                        {
-                            "name": {
-                                "value": "size",
-                                "synonyms": [
-                                    "large",
-                                    "medium",
-                                    "small"
-                                ]
-                            }
+                    "values": [{
+                        "name": {
+                            "value": "size",
+                            "synonyms": [
+                                "large",
+                                "medium",
+                                "small"
+                            ]
                         }
-                    ]
+                    }]
                 },
                 {
                     "name": "fuel",
-                    "values": [
-                        {
+                    "values": [{
                             "name": {
                                 "value": "fuelCNG",
                                 "synonyms": [
@@ -945,8 +1672,7 @@
                 },
                 {
                     "name": "flight",
-                    "values": [
-                        {
+                    "values": [{
                             "id": "ICY",
                             "name": {
                                 "value": "ICY",
@@ -68565,8 +69291,7 @@
                 },
                 {
                     "name": "poultry_regions",
-                    "values": [
-                        {
+                    "values": [{
                             "name": {
                                 "value": "pennsylvania",
                                 "synonyms": [
@@ -68636,8 +69361,7 @@
                 },
                 {
                     "name": "poultry_list",
-                    "values": [
-                        {
+                    "values": [{
                             "name": {
                                 "value": "turkey",
                                 "synonyms": [
@@ -68665,7 +69389,7 @@
                             "name": {
                                 "value": "broiler chicken",
                                 "synonyms": [
-                                	"chicken",
+                                    "chicken",
                                     "broiler chicken"
                                 ]
                             }
@@ -68687,8 +69411,740 @@
                             }
                         }
                     ]
+                },
+                {
+                    "name": "about",
+                    "values": [{
+                        "name": {
+                            "value": "about",
+                            "synonyms": [
+                                "to inform",
+                                "to tell",
+                                "tell me about",
+                                "for",
+                                "about"
+                            ]
+                        }
+                    }]
+                },
+                {
+                    "name": "train",
+                    "values": [{
+                        "name": {
+                            "value": "train",
+                            "synonyms": [
+                                "trains'",
+                                "train's",
+                                "trains",
+                                "train"
+                            ]
+                        }
+                    }]
+                },
+                {
+                    "name": "dt",
+                    "values": [{
+                        "name": {
+                            "value": "due to",
+                            "synonyms": [
+                                "when consumed for",
+                                "when used for",
+                                "in a",
+                                "in",
+                                "for",
+                                "because of",
+                                "due to"
+                            ]
+                        }
+                    }]
+                },
+                {
+                    "name": "em",
+                    "values": [{
+                        "name": {
+                            "value": "emission",
+                            "synonyms": [
+                                "emissions",
+                                "emission"
+                            ]
+                        }
+                    }]
+                },
+                {
+                    "name": "fl",
+                    "values": [{
+                        "name": {
+                            "value": "flight",
+                            "synonyms": [
+                                "flights'",
+                                "flight's",
+                                "flights",
+                                "flight"
+                            ]
+                        }
+                    }]
+                },
+                {
+                    "name": "vehicle",
+                    "values": [{
+                        "name": {
+                            "value": "vehicle",
+                            "synonyms": [
+                                "truck",
+                                "car",
+                                "vehicles'",
+                                "vehicle's",
+                                "vehicles",
+                                "vehicle"
+                            ]
+                        }
+                    }]
+                },
+                {
+                    "name": "kmpl",
+                    "values": [{
+                        "name": {
+                            "value": "kmpl",
+                            "synonyms": [
+                                "kilo meter per litre",
+                                "kilo meter pl",
+                                "kmpl"
+                            ]
+                        }
+                    }]
                 }
             ]
-        }
+        },
+        "dialog": {
+            "intents": [{
+                    "name": "fuel_intent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [{
+                            "name": "emission_type",
+                            "type": "emission_type",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "fuel",
+                            "type": "fuel",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1004646146172.554001976223"
+                            }
+                        },
+                        {
+                            "name": "quantity",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1337007656673.1309148670119"
+                            }
+                        },
+                        {
+                            "name": "about",
+                            "type": "about",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "dt",
+                            "type": "dt",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "em",
+                            "type": "em",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        }
+                    ]
+                },
+                {
+                    "name": "flight_intent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [{
+                            "name": "passengers",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.43393333020.149777903287"
+                            }
+                        },
+                        {
+                            "name": "origin",
+                            "type": "flight",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.43393333020.760415523277"
+                            }
+                        },
+                        {
+                            "name": "destination",
+                            "type": "flight",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.43393333020.650432635455"
+                            }
+                        },
+                        {
+                            "name": "emission_type",
+                            "type": "emission_type",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "flight",
+                            "type": "fl",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "about",
+                            "type": "about",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "dt",
+                            "type": "dt",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "em",
+                            "type": "em",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        }
+                    ]
+                },
+                {
+                    "name": "electricity_intent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [{
+                            "name": "quantity",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1348178171585.810334678651"
+                            }
+                        },
+                        {
+                            "name": "country",
+                            "type": "AMAZON.Country",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.794268322642.283132767039"
+                            }
+                        },
+                        {
+                            "name": "emission_type",
+                            "type": "emission_type",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "about",
+                            "type": "about",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "dt",
+                            "type": "dt",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "em",
+                            "type": "em",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        }
+                    ]
+                },
+                {
+                    "name": "applianceIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [{
+                            "name": "time",
+                            "type": "AMAZON.DURATION",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1248012261379.72618427665"
+                            }
+                        },
+                        {
+                            "name": "quantity",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1248012261379.1093198433541"
+                            }
+                        },
+                        {
+                            "name": "appliances",
+                            "type": "appliances",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1098253408628.816129248692"
+                            }
+                        },
+                        {
+                            "name": "appliance_spec",
+                            "type": "appliance_spec",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "size",
+                            "type": "appliance_size",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "country",
+                            "type": "AMAZON.Country",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1098253408628.28344922088"
+                            }
+                        },
+                        {
+                            "name": "emission_type",
+                            "type": "emission_type",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "about",
+                            "type": "about",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "dt",
+                            "type": "dt",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "em",
+                            "type": "em",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        }
+                    ]
+                },
+                {
+                    "name": "train_intent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [{
+                            "name": "torigin",
+                            "type": "AMAZON.City",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.399007023537.961376027582"
+                            }
+                        },
+                        {
+                            "name": "passengers",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.866222316173.1175698628533"
+                            }
+                        },
+                        {
+                            "name": "tdestination",
+                            "type": "AMAZON.City",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.399007023537.1406181012022"
+                            }
+                        },
+                        {
+                            "name": "emission_type",
+                            "type": "emission_type",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "about",
+                            "type": "about",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "train",
+                            "type": "train",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "em",
+                            "type": "em",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "dt",
+                            "type": "dt",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        }
+                    ]
+                },
+                {
+                    "name": "poultry_intent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [{
+                            "name": "poultry_region",
+                            "type": "poultry_regions",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.386311131906.8403431045"
+                            }
+                        },
+                        {
+                            "name": "poultry_list",
+                            "type": "poultry_list",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.386311131906.295661865478"
+                            }
+                        },
+                        {
+                            "name": "poultry_quantity",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.293460169910.1386347074134"
+                            }
+                        },
+                        {
+                            "name": "about",
+                            "type": "about",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "dt",
+                            "type": "dt",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "em",
+                            "type": "em",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        }
+                    ]
+                },
+                {
+                    "name": "vehicle_intent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [{
+                            "name": "vorigin",
+                            "type": "AMAZON.City",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1498978994075.503276903230"
+                            }
+                        },
+                        {
+                            "name": "vdestination",
+                            "type": "AMAZON.City",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1498978994075.1109925481060"
+                            }
+                        },
+                        {
+                            "name": "fuel_type",
+                            "type": "fuel",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1498978994075.712337510913"
+                            }
+                        },
+                        {
+                            "name": "mileage",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1498978994075.1413993738307"
+                            }
+                        },
+                        {
+                            "name": "emission_type",
+                            "type": "emission_type",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "about",
+                            "type": "about",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "dt",
+                            "type": "dt",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "em",
+                            "type": "em",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "vehicle",
+                            "type": "vehicle",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "kmpl",
+                            "type": "kmpl",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        }
+                    ]
+                }
+            ],
+            "delegationStrategy": "ALWAYS"
+        },
+        "prompts": [{
+                "id": "Elicit.Slot.1004646146172.554001976223",
+                "variations": [{
+                    "type": "PlainText",
+                    "value": "which fuel are you talking about?"
+                }]
+            },
+            {
+                "id": "Elicit.Slot.43393333020.760415523277",
+                "variations": [{
+                    "type": "PlainText",
+                    "value": "What is the origin of the flight?"
+                }]
+            },
+            {
+                "id": "Elicit.Slot.43393333020.149777903287",
+                "variations": [{
+                    "type": "PlainText",
+                    "value": "How many passengers are you asking for?"
+                }]
+            },
+            {
+                "id": "Elicit.Slot.43393333020.650432635455",
+                "variations": [{
+                        "type": "PlainText",
+                        "value": "Where will flight land?"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "What is flight's destination?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.794268322642.283132767039",
+                "variations": [{
+                    "type": "PlainText",
+                    "value": "Which country are you asking about?"
+                }]
+            },
+            {
+                "id": "Elicit.Slot.1098253408628.28344922088",
+                "variations": [{
+                    "type": "PlainText",
+                    "value": "Which country are you asking for?"
+                }]
+            },
+            {
+                "id": "Elicit.Slot.1098253408628.1139828922684",
+                "variations": [{
+                    "type": "PlainText",
+                    "value": "What's the size of the appliance?"
+                }]
+            },
+            {
+                "id": "Elicit.Slot.1098253408628.816129248692",
+                "variations": [{
+                    "type": "PlainText",
+                    "value": "Which appliance do you want to ask for?"
+                }]
+            },
+            {
+                "id": "Elicit.Slot.399007023537.961376027582",
+                "variations": [{
+                        "type": "PlainText",
+                        "value": "Please tell me the origin of your journey."
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "From where will the train originate?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.399007023537.1406181012022",
+                "variations": [{
+                    "type": "PlainText",
+                    "value": "Please tell me your destination"
+                }]
+            },
+            {
+                "id": "Elicit.Slot.386311131906.8403431045",
+                "variations": [{
+                    "type": "PlainText",
+                    "value": "Please tell me the region. You can try ohio, idaho or british columbia"
+                }]
+            },
+            {
+                "id": "Elicit.Slot.386311131906.295661865478",
+                "variations": [{
+                    "type": "PlainText",
+                    "value": "Please tell me the food type. You can try chicken, egg, turkey or pork."
+                }]
+            },
+            {
+                "id": "Elicit.Slot.1348178171585.810334678651",
+                "variations": [{
+                    "type": "PlainText",
+                    "value": "Please tell me how much units of electricity is consumed"
+                }]
+            },
+            {
+                "id": "Elicit.Slot.1248012261379.72618427665",
+                "variations": [{
+                    "type": "PlainText",
+                    "value": "Please tell me the time for which the appliance is used."
+                }]
+            },
+            {
+                "id": "Elicit.Slot.1248012261379.1093198433541",
+                "variations": [{
+                    "type": "PlainText",
+                    "value": "Please tell me how many appliances are used"
+                }]
+            },
+            {
+                "id": "Elicit.Slot.1337007656673.1309148670119",
+                "variations": [{
+                    "type": "PlainText",
+                    "value": "How much fuel is consumed?"
+                }]
+            },
+            {
+                "id": "Elicit.Slot.866222316173.1175698628533",
+                "variations": [{
+                    "type": "PlainText",
+                    "value": "Please tell me the number of passengers"
+                }]
+            },
+            {
+                "id": "Elicit.Slot.293460169910.1386347074134",
+                "variations": [{
+                    "type": "PlainText",
+                    "value": "Please tell me the quantity of the product"
+                }]
+            },
+            {
+                "id": "Elicit.Slot.1498978994075.503276903230",
+                "variations": [{
+                    "type": "PlainText",
+                    "value": "Please tell me the starting point of your journey"
+                }]
+            },
+            {
+                "id": "Elicit.Slot.1498978994075.1109925481060",
+                "variations": [{
+                    "type": "PlainText",
+                    "value": "Please tell me your destination"
+                }]
+            },
+            {
+                "id": "Elicit.Slot.1498978994075.712337510913",
+                "variations": [{
+                    "type": "PlainText",
+                    "value": "Please tell me the type of fuel"
+                }]
+            },
+            {
+                "id": "Elicit.Slot.1498978994075.1413993738307",
+                "variations": [{
+                    "type": "PlainText",
+                    "value": "Please tell me the mileage of your vehicle"
+                }]
+            }
+        ]
     }
 }
