@@ -2,7 +2,8 @@
     "interactionModel": {
         "languageModel": {
             "invocationName": "carbon footprint",
-            "intents": [{
+            "intents": [
+                {
                     "name": "AMAZON.FallbackIntent",
                     "samples": []
                 },
@@ -24,7 +25,8 @@
                 },
                 {
                     "name": "applianceIntent",
-                    "slots": [{
+                    "slots": [
+                        {
                             "name": "time",
                             "type": "AMAZON.DURATION",
                             "samples": [
@@ -245,7 +247,8 @@
                 },
                 {
                     "name": "electricity_intent",
-                    "slots": [{
+                    "slots": [
+                        {
                             "name": "quantity",
                             "type": "AMAZON.NUMBER",
                             "samples": [
@@ -321,7 +324,8 @@
                 },
                 {
                     "name": "flight_intent",
-                    "slots": [{
+                    "slots": [
+                        {
                             "name": "passengers",
                             "type": "AMAZON.NUMBER",
                             "samples": [
@@ -445,7 +449,8 @@
                 },
                 {
                     "name": "fuel_intent",
-                    "slots": [{
+                    "slots": [
+                        {
                             "name": "emission_type",
                             "type": "emission_type"
                         },
@@ -516,7 +521,8 @@
                 },
                 {
                     "name": "train_intent",
-                    "slots": [{
+                    "slots": [
+                        {
                             "name": "torigin",
                             "type": "AMAZON.City",
                             "samples": [
@@ -627,7 +633,8 @@
                 },
                 {
                     "name": "poultry_intent",
-                    "slots": [{
+                    "slots": [
+                        {
                             "name": "poultry_region",
                             "type": "poultry_regions",
                             "samples": [
@@ -729,7 +736,8 @@
                 },
                 {
                     "name": "vehicle_intent",
-                    "slots": [{
+                    "slots": [
+                        {
                             "name": "vorigin",
                             "type": "AMAZON.City",
                             "samples": [
@@ -935,11 +943,101 @@
                         "{em} for a road trip from {vorigin} to {vdestination} on a {mileage} km per litre mileage {fuel_type} car",
                         "How much {em} are released {dt} a {mileage} km per litre {fuel_type} car used from {vorigin} to {vdestination} "
                     ]
+                },
+                {
+                    "name": "land_intent",
+                    "slots": [
+                        {
+                            "name": "dt",
+                            "type": "dt"
+                        },
+                        {
+                            "name": "em",
+                            "type": "em"
+                        },
+                        {
+                            "name": "about",
+                            "type": "about"
+                        },
+                        {
+                            "name": "land_type",
+                            "type": "land_type",
+                            "samples": [
+                                "{land_type}"
+                            ]
+                        },
+                        {
+                            "name": "region",
+                            "type": "AMAZON.Country",
+                            "samples": [
+                                "country's name is {region}",
+                                "the name of the country is {region}",
+                                "name of country is {region}",
+                                "{region}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "{about} I want to know {em} in land",
+                        "{about} What is the {em} due to land types",
+                        "{about} The {em} in land {dt} {land_type} in {region}",
+                        "{about} What will be total {em}  in {region} {dt} {land_type}",
+                        "{about} Net {em} in {region} {dt} {land_type}",
+                        "{about} In {region} net {em} for {land_type}",
+                        "{about} Net removal due to {land_type} in {region}",
+                        "{about} Net {em} due to {land_type} in the {region}",
+                        "{about} Total {em} because of  {land_type} in {region}",
+                        "{about} {em} for {land_type} in {region}",
+                        "{about} Total {em} because of {land_type} in {region}",
+                        "{about} {em} due to {land_type} in {region}",
+                        "{about} {dt} {land_type} {em} in {region}",
+                        "{about} {em} {dt} {land_type} {em} in {region}",
+                        "{about} {em} {dt} {land_type}  in {region}",
+                        "{about} {land_type} {em} in {region}",
+                        "{about} {em} {dt} land in {region}",
+                        "{about} land {em} in {region}",
+                        "{about} land in {region}",
+                        "{dt} {land_type} {em} in {region}",
+                        "{em} {dt} {land_type} {em} in {region}",
+                        "{em} {dt} {land_type}  in {region}",
+                        "{land_type} {em} in {region}",
+                        "{em} {dt} land in {region}",
+                        "land {em} in {region}",
+                        "land in {region} ",
+                        "{about} {dt} {land_type} {em}",
+                        "{about} {em} {dt} {land_type} {em}",
+                        "{about} {em} {dt} {land_type} ",
+                        "{about} {land_type} {em}",
+                        "{about} {em} {dt} land",
+                        "{about} land {em}",
+                        "{about} land",
+                        "{dt} {land_type} {em}",
+                        "{em} {dt} {land_type} {em}",
+                        "{em} {dt} {land_type} ",
+                        "{land_type} {em}",
+                        "{em} {dt} land",
+                        "land {em}",
+                        "land",
+                        "I want to know {em} in land",
+                        "What is the {em} due to land types",
+                        "The {em} in land {dt} {land_type} in {region}",
+                        "What will be total {em}  in {region} {dt} {land_type}",
+                        "Net {em} in {region} {dt} {land_type}",
+                        "In {region} net {em} for {land_type}",
+                        "Net removal due to {land_type} in {region}",
+                        "Net {em} due to {land_type} in the {region}",
+                        "Total {em} because of  {land_type} in {region}",
+                        "{em} for {land_type} in {region}",
+                        "Total {em} because of {land_type} in {region}",
+                        "{em} due to {land_type} in {region}"
+                    ]
                 }
             ],
-            "types": [{
+            "types": [
+                {
                     "name": "emission_type",
-                    "values": [{
+                    "values": [
+                        {
                             "name": {
                                 "value": "N2O",
                                 "synonyms": [
@@ -972,7 +1070,8 @@
                 },
                 {
                     "name": "appliance_spec",
-                    "values": [{
+                    "values": [
+                        {
                             "name": {
                                 "value": "type",
                                 "synonyms": [
@@ -1028,7 +1127,8 @@
                 },
                 {
                     "name": "appliances",
-                    "values": [{
+                    "values": [
+                        {
                             "name": {
                                 "value": "hair",
                                 "synonyms": [
@@ -1554,20 +1654,23 @@
                 },
                 {
                     "name": "appliance_size",
-                    "values": [{
-                        "name": {
-                            "value": "size",
-                            "synonyms": [
-                                "large",
-                                "medium",
-                                "small"
-                            ]
+                    "values": [
+                        {
+                            "name": {
+                                "value": "size",
+                                "synonyms": [
+                                    "large",
+                                    "medium",
+                                    "small"
+                                ]
+                            }
                         }
-                    }]
+                    ]
                 },
                 {
                     "name": "fuel",
-                    "values": [{
+                    "values": [
+                        {
                             "name": {
                                 "value": "fuelCNG",
                                 "synonyms": [
@@ -1672,7 +1775,8 @@
                 },
                 {
                     "name": "flight",
-                    "values": [{
+                    "values": [
+                        {
                             "id": "ICY",
                             "name": {
                                 "value": "ICY",
@@ -69291,7 +69395,8 @@
                 },
                 {
                     "name": "poultry_regions",
-                    "values": [{
+                    "values": [
+                        {
                             "name": {
                                 "value": "pennsylvania",
                                 "synonyms": [
@@ -69361,7 +69466,8 @@
                 },
                 {
                     "name": "poultry_list",
-                    "values": [{
+                    "values": [
+                        {
                             "name": {
                                 "value": "turkey",
                                 "synonyms": [
@@ -69414,113 +69520,166 @@
                 },
                 {
                     "name": "about",
-                    "values": [{
-                        "name": {
-                            "value": "about",
-                            "synonyms": [
-                                "to inform",
-                                "to tell",
-                                "tell me about",
-                                "for",
-                                "about"
-                            ]
+                    "values": [
+                        {
+                            "name": {
+                                "value": "about",
+                                "synonyms": [
+                                    "to inform",
+                                    "to tell",
+                                    "tell me about",
+                                    "for",
+                                    "about"
+                                ]
+                            }
                         }
-                    }]
+                    ]
                 },
                 {
                     "name": "train",
-                    "values": [{
-                        "name": {
-                            "value": "train",
-                            "synonyms": [
-                                "trains'",
-                                "train's",
-                                "trains",
-                                "train"
-                            ]
+                    "values": [
+                        {
+                            "name": {
+                                "value": "train",
+                                "synonyms": [
+                                    "trains'",
+                                    "train's",
+                                    "trains",
+                                    "train"
+                                ]
+                            }
                         }
-                    }]
+                    ]
                 },
                 {
                     "name": "dt",
-                    "values": [{
-                        "name": {
-                            "value": "due to",
-                            "synonyms": [
-                                "when consumed for",
-                                "when used for",
-                                "in a",
-                                "in",
-                                "for",
-                                "because of",
-                                "due to"
-                            ]
+                    "values": [
+                        {
+                            "name": {
+                                "value": "due to",
+                                "synonyms": [
+                                    "when consumed for",
+                                    "when used for",
+                                    "in a",
+                                    "in",
+                                    "for",
+                                    "because of",
+                                    "due to"
+                                ]
+                            }
                         }
-                    }]
+                    ]
                 },
                 {
                     "name": "em",
-                    "values": [{
-                        "name": {
-                            "value": "emission",
-                            "synonyms": [
-                                "emissions",
-                                "emission"
-                            ]
+                    "values": [
+                        {
+                            "name": {
+                                "value": "emission",
+                                "synonyms": [
+                                    "emissions",
+                                    "emission"
+                                ]
+                            }
                         }
-                    }]
+                    ]
                 },
                 {
                     "name": "fl",
-                    "values": [{
-                        "name": {
-                            "value": "flight",
-                            "synonyms": [
-                                "flights'",
-                                "flight's",
-                                "flights",
-                                "flight"
-                            ]
+                    "values": [
+                        {
+                            "name": {
+                                "value": "flight",
+                                "synonyms": [
+                                    "flights'",
+                                    "flight's",
+                                    "flights",
+                                    "flight"
+                                ]
+                            }
                         }
-                    }]
+                    ]
                 },
                 {
                     "name": "vehicle",
-                    "values": [{
-                        "name": {
-                            "value": "vehicle",
-                            "synonyms": [
-                                "truck",
-                                "car",
-                                "vehicles'",
-                                "vehicle's",
-                                "vehicles",
-                                "vehicle"
-                            ]
+                    "values": [
+                        {
+                            "name": {
+                                "value": "vehicle",
+                                "synonyms": [
+                                    "truck",
+                                    "car",
+                                    "vehicles'",
+                                    "vehicle's",
+                                    "vehicles",
+                                    "vehicle"
+                                ]
+                            }
                         }
-                    }]
+                    ]
                 },
                 {
                     "name": "kmpl",
-                    "values": [{
-                        "name": {
-                            "value": "kmpl",
-                            "synonyms": [
-                                "kilo meter per litre",
-                                "kilo meter pl",
-                                "kmpl"
-                            ]
+                    "values": [
+                        {
+                            "name": {
+                                "value": "kmpl",
+                                "synonyms": [
+                                    "kilo meter per litre",
+                                    "kilo meter pl",
+                                    "kmpl"
+                                ]
+                            }
                         }
-                    }]
+                    ]
+                },
+                {
+                    "name": "land_type",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "grassland",
+                                "synonyms": [
+                                    "grassland"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "forest land",
+                                "synonyms": [
+                                    "forest land"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "cropland",
+                                "synonyms": [
+                                    "cropland"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "burning biomass",
+                                "synonyms": [
+                                    "burning biomass"
+                                ]
+                            }
+                        }
+                    ]
                 }
             ]
         },
         "dialog": {
-            "intents": [{
+            "intents": [
+                {
                     "name": "fuel_intent",
                     "confirmationRequired": false,
                     "prompts": {},
-                    "slots": [{
+                    "slots": [
+                        {
                             "name": "emission_type",
                             "type": "emission_type",
                             "confirmationRequired": false,
@@ -69572,7 +69731,8 @@
                     "name": "flight_intent",
                     "confirmationRequired": false,
                     "prompts": {},
-                    "slots": [{
+                    "slots": [
+                        {
                             "name": "passengers",
                             "type": "AMAZON.NUMBER",
                             "confirmationRequired": false,
@@ -69640,7 +69800,8 @@
                     "name": "electricity_intent",
                     "confirmationRequired": false,
                     "prompts": {},
-                    "slots": [{
+                    "slots": [
+                        {
                             "name": "quantity",
                             "type": "AMAZON.NUMBER",
                             "confirmationRequired": false,
@@ -69692,7 +69853,8 @@
                     "name": "applianceIntent",
                     "confirmationRequired": false,
                     "prompts": {},
-                    "slots": [{
+                    "slots": [
+                        {
                             "name": "time",
                             "type": "AMAZON.DURATION",
                             "confirmationRequired": false,
@@ -69776,7 +69938,8 @@
                     "name": "train_intent",
                     "confirmationRequired": false,
                     "prompts": {},
-                    "slots": [{
+                    "slots": [
+                        {
                             "name": "torigin",
                             "type": "AMAZON.City",
                             "confirmationRequired": false,
@@ -69844,7 +70007,8 @@
                     "name": "poultry_intent",
                     "confirmationRequired": false,
                     "prompts": {},
-                    "slots": [{
+                    "slots": [
+                        {
                             "name": "poultry_region",
                             "type": "poultry_regions",
                             "confirmationRequired": false,
@@ -69898,7 +70062,8 @@
                     "name": "vehicle_intent",
                     "confirmationRequired": false,
                     "prompts": {},
-                    "slots": [{
+                    "slots": [
+                        {
                             "name": "vorigin",
                             "type": "AMAZON.City",
                             "confirmationRequired": false,
@@ -69977,34 +70142,88 @@
                             "prompts": {}
                         }
                     ]
+                },
+                {
+                    "name": "land_intent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "dt",
+                            "type": "dt",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "em",
+                            "type": "em",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "about",
+                            "type": "about",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "land_type",
+                            "type": "land_type",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.237668134525.309480785749"
+                            }
+                        },
+                        {
+                            "name": "region",
+                            "type": "AMAZON.Country",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.237668134525.99806958954"
+                            }
+                        }
+                    ]
                 }
             ],
             "delegationStrategy": "ALWAYS"
         },
-        "prompts": [{
+        "prompts": [
+            {
                 "id": "Elicit.Slot.1004646146172.554001976223",
-                "variations": [{
-                    "type": "PlainText",
-                    "value": "which fuel are you talking about?"
-                }]
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "which fuel are you talking about?"
+                    }
+                ]
             },
             {
                 "id": "Elicit.Slot.43393333020.760415523277",
-                "variations": [{
-                    "type": "PlainText",
-                    "value": "What is the origin of the flight?"
-                }]
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "What is the origin of the flight?"
+                    }
+                ]
             },
             {
                 "id": "Elicit.Slot.43393333020.149777903287",
-                "variations": [{
-                    "type": "PlainText",
-                    "value": "How many passengers are you asking for?"
-                }]
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "How many passengers are you asking for?"
+                    }
+                ]
             },
             {
                 "id": "Elicit.Slot.43393333020.650432635455",
-                "variations": [{
+                "variations": [
+                    {
                         "type": "PlainText",
                         "value": "Where will flight land?"
                     },
@@ -70016,35 +70235,44 @@
             },
             {
                 "id": "Elicit.Slot.794268322642.283132767039",
-                "variations": [{
-                    "type": "PlainText",
-                    "value": "Which country are you asking about?"
-                }]
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Which country are you asking about?"
+                    }
+                ]
             },
             {
                 "id": "Elicit.Slot.1098253408628.28344922088",
-                "variations": [{
-                    "type": "PlainText",
-                    "value": "Which country are you asking for?"
-                }]
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Which country are you asking for?"
+                    }
+                ]
             },
             {
                 "id": "Elicit.Slot.1098253408628.1139828922684",
-                "variations": [{
-                    "type": "PlainText",
-                    "value": "What's the size of the appliance?"
-                }]
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "What's the size of the appliance?"
+                    }
+                ]
             },
             {
                 "id": "Elicit.Slot.1098253408628.816129248692",
-                "variations": [{
-                    "type": "PlainText",
-                    "value": "Which appliance do you want to ask for?"
-                }]
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Which appliance do you want to ask for?"
+                    }
+                ]
             },
             {
                 "id": "Elicit.Slot.399007023537.961376027582",
-                "variations": [{
+                "variations": [
+                    {
                         "type": "PlainText",
                         "value": "Please tell me the origin of your journey."
                     },
@@ -70056,94 +70284,138 @@
             },
             {
                 "id": "Elicit.Slot.399007023537.1406181012022",
-                "variations": [{
-                    "type": "PlainText",
-                    "value": "Please tell me your destination"
-                }]
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Please tell me your destination"
+                    }
+                ]
             },
             {
                 "id": "Elicit.Slot.386311131906.8403431045",
-                "variations": [{
-                    "type": "PlainText",
-                    "value": "Please tell me the region. You can try ohio, idaho or british columbia"
-                }]
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Please tell me the region. You can try ohio, idaho or british columbia"
+                    }
+                ]
             },
             {
                 "id": "Elicit.Slot.386311131906.295661865478",
-                "variations": [{
-                    "type": "PlainText",
-                    "value": "Please tell me the food type. You can try chicken, egg, turkey or pork."
-                }]
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Please tell me the food type. You can try chicken, egg, turkey or pork."
+                    }
+                ]
             },
             {
                 "id": "Elicit.Slot.1348178171585.810334678651",
-                "variations": [{
-                    "type": "PlainText",
-                    "value": "Please tell me how much units of electricity is consumed"
-                }]
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Please tell me how much units of electricity is consumed"
+                    }
+                ]
             },
             {
                 "id": "Elicit.Slot.1248012261379.72618427665",
-                "variations": [{
-                    "type": "PlainText",
-                    "value": "Please tell me the time for which the appliance is used."
-                }]
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Please tell me the time for which the appliance is used."
+                    }
+                ]
             },
             {
                 "id": "Elicit.Slot.1248012261379.1093198433541",
-                "variations": [{
-                    "type": "PlainText",
-                    "value": "Please tell me how many appliances are used"
-                }]
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Please tell me how many appliances are used"
+                    }
+                ]
             },
             {
                 "id": "Elicit.Slot.1337007656673.1309148670119",
-                "variations": [{
-                    "type": "PlainText",
-                    "value": "How much fuel is consumed?"
-                }]
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "How much fuel is consumed?"
+                    }
+                ]
             },
             {
                 "id": "Elicit.Slot.866222316173.1175698628533",
-                "variations": [{
-                    "type": "PlainText",
-                    "value": "Please tell me the number of passengers"
-                }]
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Please tell me the number of passengers"
+                    }
+                ]
             },
             {
                 "id": "Elicit.Slot.293460169910.1386347074134",
-                "variations": [{
-                    "type": "PlainText",
-                    "value": "Please tell me the quantity of the product"
-                }]
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Please tell me the quantity of the product"
+                    }
+                ]
             },
             {
                 "id": "Elicit.Slot.1498978994075.503276903230",
-                "variations": [{
-                    "type": "PlainText",
-                    "value": "Please tell me the starting point of your journey"
-                }]
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Please tell me the starting point of your journey"
+                    }
+                ]
             },
             {
                 "id": "Elicit.Slot.1498978994075.1109925481060",
-                "variations": [{
-                    "type": "PlainText",
-                    "value": "Please tell me your destination"
-                }]
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Please tell me your destination"
+                    }
+                ]
             },
             {
                 "id": "Elicit.Slot.1498978994075.712337510913",
-                "variations": [{
-                    "type": "PlainText",
-                    "value": "Please tell me the type of fuel"
-                }]
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Please tell me the type of fuel"
+                    }
+                ]
             },
             {
                 "id": "Elicit.Slot.1498978994075.1413993738307",
-                "variations": [{
-                    "type": "PlainText",
-                    "value": "Please tell me the mileage of your vehicle"
-                }]
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Please tell me the mileage of your vehicle"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.237668134525.309480785749",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Please tell me the land type"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.237668134525.99806958954",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Please tell me the name of the country"
+                    }
+                ]
             }
         ]
     }
