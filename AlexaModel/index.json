@@ -1031,6 +1031,66 @@
                         "Total {em} because of {land_type} in {region}",
                         "{em} due to {land_type} in {region}"
                     ]
+                },
+                {
+                    "name": "sector_intent",
+                    "slots": [
+                        {
+                            "name": "sector",
+                            "type": "sector",
+                            "samples": [
+                                "I will try {sector} sector",
+                                "I will try {sector}",
+                                "{sector} sector",
+                                "{sector}"
+                            ]
+                        },
+                        {
+                            "name": "region",
+                            "type": "AMAZON.Country",
+                            "samples": [
+                                "Name of the country is {region}",
+                                "The name of country is {region}",
+                                "{region}"
+                            ]
+                        },
+                        {
+                            "name": "dt",
+                            "type": "dt"
+                        },
+                        {
+                            "name": "em",
+                            "type": "em"
+                        },
+                        {
+                            "name": "about",
+                            "type": "about"
+                        }
+                    ],
+                    "samples": [
+                        "{about} {em} {dt} {sector} in {region}",
+                        "{about} {em} in {region}",
+                        "{about} {sector} {em} in {region}",
+                        "{about} {sector} {em}",
+                        "{about} {em} {dt} {sector} sector in {region}",
+                        "{about} {em} {dt} {sector} sector",
+                        "{about} {em} {dt} {sector}",
+                        "{about} {sector} sector in {region}",
+                        "{about} {sector} in {region}",
+                        "{about} {sector} sector",
+                        "{about} {sector}",
+                        "{em} {dt} {sector} in {region}",
+                        "{em} in {region}",
+                        "{sector} {em} in {region}",
+                        "{sector} {em}",
+                        "{em} {dt} {sector} sector in {region}",
+                        "{em} {dt} {sector} sector",
+                        "{em} {dt} {sector}",
+                        "{sector} sector in {region}",
+                        "{sector} in {region}",
+                        "{sector} sector",
+                        "{sector}"
+                    ]
                 }
             ],
             "types": [
@@ -69669,6 +69729,37 @@
                             }
                         }
                     ]
+                },
+                {
+                    "name": "sector",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "waste",
+                                "synonyms": [
+                                    "waste products",
+                                    "wasteage",
+                                    "waste"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "industry",
+                                "synonyms": [
+                                    "industry"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "energy",
+                                "synonyms": [
+                                    "energy"
+                                ]
+                            }
+                        }
+                    ]
                 }
             ]
         },
@@ -70188,6 +70279,52 @@
                             }
                         }
                     ]
+                },
+                {
+                    "name": "sector_intent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "sector",
+                            "type": "sector",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.225161915442.1100432558962"
+                            }
+                        },
+                        {
+                            "name": "region",
+                            "type": "AMAZON.Country",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.225161915442.80711054151"
+                            }
+                        },
+                        {
+                            "name": "dt",
+                            "type": "dt",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "em",
+                            "type": "em",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "about",
+                            "type": "about",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        }
+                    ]
                 }
             ],
             "delegationStrategy": "ALWAYS"
@@ -70414,6 +70551,24 @@
                     {
                         "type": "PlainText",
                         "value": "Please tell me the name of the country"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.225161915442.1100432558962",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Please tell me the sector type. You can try energy, industry or waste"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.225161915442.80711054151",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Please tell me the country's name"
                     }
                 ]
             }
