@@ -1,0 +1,45 @@
+{
+    "name": "sector_intent",
+    "confirmationRequired": false,
+    "prompts": {},
+    "slots": [{
+            "name": "sector",
+            "type": "sector",
+            "confirmationRequired": false,
+            "elicitationRequired": true,
+            "prompts": {
+                "elicitation": "Elicit.Slot.225161915442.1100432558962"
+            }
+        },
+        {
+            "name": "region",
+            "type": "AMAZON.Country",
+            "confirmationRequired": false,
+            "elicitationRequired": true,
+            "prompts": {
+                "elicitation": "Elicit.Slot.225161915442.80711054151"
+            }
+        },
+        {
+            "name": "dt",
+            "type": "dt",
+            "confirmationRequired": false,
+            "elicitationRequired": false,
+            "prompts": {}
+        },
+        {
+            "name": "em",
+            "type": "em",
+            "confirmationRequired": false,
+            "elicitationRequired": false,
+            "prompts": {}
+        },
+        {
+            "name": "about",
+            "type": "about",
+            "confirmationRequired": false,
+            "elicitationRequired": false,
+            "prompts": {}
+        }
+    ]
+}

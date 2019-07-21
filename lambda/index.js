@@ -573,6 +573,59 @@ const poultry_intent = {
   }
 };
 
+// Handling Sector related utterences 
+const sector_intent = {
+  canHandle(handlerInput) {
+    const request = handlerInput.requestEnvelope.request;
+    return request.type === 'LaunchRequest'
+    ||(request.type === 'IntentRequest'
+        && request.intent.name === 'sector_intent');
+  },
+  async handle(handlerInput) {
+    let newParams = {};
+    let sector, region;
+
+// Getting values of slots and also handling in case of errors
+    sector = handlerInput.requestEnvelope.request.intent.slots.sector.value.resolutions.resolutionsPerAuthority[0].values[0].value.name;
+    region = handlerInput.requestEnvelope.request.intent.slots.region.value.value;
+    
+    newParams.sector = sector;
+    newParams.region = region;
+    
+// Setting up options to send request to API 
+    let options = {
+      method: 'POST',
+      url: "https://carbonhub.org/v1/sector",
+      headers: {
+        'cache-control': 'no-cache',
+        'access-key': API_KEY,
+        'Content-Type': 'application/json'
+      },
+      body: {
+        sector: newParams.sector,
+        region: newParams.region
+      },
+      json: true
+    };
+
+// Receiving response from API
+    let response = await callEmissionsApi(options);
+    let speechOutput = "";
+console.log("response is => " + response);
+// Setting up correct answer
+    let correct_answer;
+    let num, unit;
+    num = response.quantity;
+    unit = response.unit;
+    correct_answer = num.toFixed(2) + " " + unit + " of CO2 is produced due to " + newParams.sector + " in " + newParams.region + ".";
+    speechOutput = responseGen(response,newParams,correct_answer);
+    console.log(correct_answer);
+    return handlerInput.responseBuilder
+      .speak(speechOutput)
+      .getResponse();
+  }
+};
+
 // Handling Vehicle related utterences 
 const vehicle_intent = {
   canHandle(handlerInput) {
@@ -821,6 +874,7 @@ exports.handler = skillBuilder
     flight_intent,
     train_intent,
     poultry_intent,
+    sector_intent,
     vehicle_intent,
     land_intent,
     HelpHandler,

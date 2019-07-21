@@ -1,0 +1,30 @@
+{
+    "name": "sector",
+    "values": [{
+            "name": {
+                "value": "waste",
+                "synonyms": [
+                    "waste products",
+                    "wasteage",
+                    "waste"
+                ]
+            }
+        },
+        {
+            "name": {
+                "value": "industry",
+                "synonyms": [
+                    "industry"
+                ]
+            }
+        },
+        {
+            "name": {
+                "value": "energy",
+                "synonyms": [
+                    "energy"
+                ]
+            }
+        }
+    ]
+}
