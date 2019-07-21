@@ -1,0 +1,123 @@
+{
+    "name": "food_type",
+    "values": [{
+            "name": {
+                "value": "cereals excluding rice",
+                "synonyms": [
+                    "cereals excluding rice",
+                    "cereals without rice"
+                ]
+            }
+        },
+        {
+            "name": {
+                "value": "eggs, hen, in shell",
+                "synonyms": [
+                    "egg",
+                    "eggs",
+                    "eggs from hen",
+                    "eggs, hen",
+                    "eggs, hen, in shell"
+                ]
+            }
+        },
+        {
+            "name": {
+                "value": "meat, cattle",
+                "synonyms": [
+                    "cattle meat",
+                    "meat from cattle",
+                    "meat, cattle"
+                ]
+            }
+        },
+        {
+            "name": {
+                "value": "meat, chicken",
+                "synonyms": [
+                    "chicken",
+                    "chicken meat",
+                    "meat from chicken",
+                    "meat, chicken"
+                ]
+            }
+        },
+        {
+            "name": {
+                "value": "meat, goat",
+                "synonyms": [
+                    "mutton",
+                    "goat meat",
+                    "meat from goat",
+                    "meat, goat"
+                ]
+            }
+        },
+        {
+            "name": {
+                "value": "meat, sheep",
+                "synonyms": [
+                    "meat from sheep",
+                    "meat, sheep",
+                    "sheep meat",
+                    "mutton"
+                ]
+            }
+        },
+        {
+            "name": {
+                "value": "milk, whole fresh camel",
+                "synonyms": [
+                    "camel's milk",
+                    "milk from camel",
+                    "milk, camel",
+                    "milk, whole fresh camel"
+                ]
+            }
+        },
+        {
+            "name": {
+                "value": "milk, whole fresh cow",
+                "synonyms": [
+                    "cow's milk",
+                    "milk from cow",
+                    "milk, cow",
+                    "milk, whole fresh cow"
+                ]
+            }
+        },
+        {
+            "name": {
+                "value": "milk, whole fresh goat",
+                "synonyms": [
+                    "goat's milk",
+                    "milk from goat",
+                    "milk, goat",
+                    "milk, whole fresh goat"
+                ]
+            }
+        },
+        {
+            "name": {
+                "value": "milk, whole fresh sheep",
+                "synonyms": [
+                    "milk from sheep",
+                    "milk, sheep",
+                    "milk, whole fresh sheep",
+                    "sheep's milk"
+                ]
+            }
+        },
+        {
+            "name": {
+                "value": "rice, paddy",
+                "synonyms": [
+                    "paddy",
+                    "rice",
+                    "rice paddy",
+                    "rice, paddy"
+                ]
+            }
+        }
+    ]
+}

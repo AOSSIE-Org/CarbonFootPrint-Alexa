@@ -1091,6 +1091,73 @@
                         "{sector} sector",
                         "{sector}"
                     ]
+                },
+                {
+                    "name": "food_intent",
+                    "slots": [
+                        {
+                            "name": "food_type",
+                            "type": "food_type",
+                            "samples": [
+                                "{food_type}"
+                            ]
+                        },
+                        {
+                            "name": "food_region",
+                            "type": "AMAZON.Country",
+                            "samples": [
+                                "{food_region}"
+                            ]
+                        },
+                        {
+                            "name": "em",
+                            "type": "em"
+                        },
+                        {
+                            "name": "dt",
+                            "type": "dt"
+                        },
+                        {
+                            "name": "about",
+                            "type": "about"
+                        }
+                    ],
+                    "samples": [
+                        "{about} {food_type} {em} in {food_region}",
+                        "{about} {em} {dt} food in {food_region}",
+                        "{about} food {em} in {food_region}",
+                        "{about} {em} {dt} {food_type}",
+                        "{about} {food_type} {em} ",
+                        "{about} {em} {dt} food",
+                        "{about} food {em}",
+                        "{about} What is the net {em} {dt} {food_type} in {food_region}",
+                        "{about} In {food_region} {em} {dt} {food_type}",
+                        "{about} {em} in {food_region} {dt} {food_type}",
+                        "{about} {em} {dt} {food_type} in {food_region}",
+                        "{about} In {food_region} {em} {dt} food product like {food_type} will be",
+                        "{about} In {food_region} {em} {dt} {food_type} is",
+                        "{about} {em} {dt} food product {food_type} in {food_region}",
+                        "{about} {em} {dt} {food_type} in {food_region} is",
+                        "{about} What will be {em} {dt} {food_type} in {food_region} ",
+                        "{about} {em} {dt} food product like {food_type} in {food_region}",
+                        "{food_type} {em} in {food_region}",
+                        "{em} {dt} food in {food_region}",
+                        "food {em} in {food_region}",
+                        "{em} {dt} {food_type}",
+                        "{food_type} {em} ",
+                        "{em} {dt} food",
+                        "food {em}",
+                        "What is the net {em} {dt} {food_type} in {food_region}",
+                        "In {food_region} {em} {dt} {food_type}",
+                        "{em} in {food_region} {dt} {food_type}",
+                        "{em} {dt} {food_type} in {food_region}",
+                        "In {food_region} {em} {dt} food product like {food_type} will be",
+                        "In {food_region} {em} {dt} {food_type} is",
+                        "{em} {dt} food product {food_type} in {food_region}",
+                        "{em} {dt} {food_type} in {food_region} is",
+                        "What will be {em} {dt} {food_type} in {food_region} ",
+                        "{em} {dt} food product like {food_type} in {food_region}"
+                    ]
                 }
             ],
             "types": [
@@ -69760,6 +69827,130 @@
                             }
                         }
                     ]
+                },
+                {
+                    "name": "food_type",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "cereals excluding rice",
+                                "synonyms": [
+                                    "cereals excluding rice",
+                                    "cereals without rice"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "eggs, hen, in shell",
+                                "synonyms": [
+                                    "egg",
+                                    "eggs",
+                                    "eggs from hen",
+                                    "eggs, hen",
+                                    "eggs, hen, in shell"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "meat, cattle",
+                                "synonyms": [
+                                    "cattle meat",
+                                    "meat from cattle",
+                                    "meat, cattle"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "meat, chicken",
+                                "synonyms": [
+                                    "chicken",
+                                    "chicken meat",
+                                    "meat from chicken",
+                                    "meat, chicken"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "meat, goat",
+                                "synonyms": [
+                                    "mutton",
+                                    "goat meat",
+                                    "meat from goat",
+                                    "meat, goat"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "meat, sheep",
+                                "synonyms": [
+                                    "meat from sheep",
+                                    "meat, sheep",
+                                    "sheep meat", 
+                                    "mutton"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "milk, whole fresh camel",
+                                "synonyms": [
+                                    "camel's milk",
+                                    "milk from camel",
+                                    "milk, camel",
+                                    "milk, whole fresh camel"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "milk, whole fresh cow",
+                                "synonyms": [
+                                    "cow's milk",
+                                    "milk from cow",
+                                    "milk, cow",
+                                    "milk, whole fresh cow"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "milk, whole fresh goat",
+                                "synonyms": [
+                                    "goat's milk",
+                                    "milk from goat",
+                                    "milk, goat",
+                                    "milk, whole fresh goat"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "milk, whole fresh sheep",
+                                "synonyms": [
+                                    "milk from sheep",
+                                    "milk, sheep",
+                                    "milk, whole fresh sheep",
+                                    "sheep's milk"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "rice, paddy",
+                                "synonyms": [
+                                    "paddy",
+                                    "rice",
+                                    "rice paddy",
+                                    "rice, paddy"
+                                ]
+                            }
+                        }
+                    ]
                 }
             ]
         },
@@ -70325,6 +70516,52 @@
                             "prompts": {}
                         }
                     ]
+                },
+                {
+                    "name": "food_intent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "food_type",
+                            "type": "food_type",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1178912052628.1096702293645"
+                            }
+                        },
+                        {
+                            "name": "food_region",
+                            "type": "AMAZON.Country",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1178912052628.1235629830330"
+                            }
+                        },
+                        {
+                            "name": "em",
+                            "type": "em",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "dt",
+                            "type": "dt",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "about",
+                            "type": "about",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        }
+                    ]
                 }
             ],
             "delegationStrategy": "ALWAYS"
@@ -70569,6 +70806,24 @@
                     {
                         "type": "PlainText",
                         "value": "Please tell me the country's name"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1178912052628.1096702293645",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Please tell me the food type"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1178912052628.1235629830330",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Please tell me the region"
                     }
                 ]
             }

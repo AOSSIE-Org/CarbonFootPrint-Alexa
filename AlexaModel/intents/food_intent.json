@@ -1,0 +1,66 @@
+{
+    "name": "food_intent",
+    "slots": [{
+            "name": "food_type",
+            "type": "food_type",
+            "samples": [
+                "{food_type}"
+            ]
+        },
+        {
+            "name": "food_region",
+            "type": "AMAZON.Country",
+            "samples": [
+                "{food_region}"
+            ]
+        },
+        {
+            "name": "em",
+            "type": "em"
+        },
+        {
+            "name": "dt",
+            "type": "dt"
+        },
+        {
+            "name": "about",
+            "type": "about"
+        }
+    ],
+    "samples": [
+        "{about} {food_type} {em} in {food_region}",
+        "{about} {em} {dt} food in {food_region}",
+        "{about} food {em} in {food_region}",
+        "{about} {em} {dt} {food_type}",
+        "{about} {food_type} {em} ",
+        "{about} {em} {dt} food",
+        "{about} food {em}",
+        "{about} What is the net {em} {dt} {food_type} in {food_region}",
+        "{about} In {food_region} {em} {dt} {food_type}",
+        "{about} {em} in {food_region} {dt} {food_type}",
+        "{about} {em} {dt} {food_type} in {food_region}",
+        "{about} In {food_region} {em} {dt} food product like {food_type} will be",
+        "{about} In {food_region} {em} {dt} {food_type} is",
+        "{about} {em} {dt} food product {food_type} in {food_region}",
+        "{about} {em} {dt} {food_type} in {food_region} is",
+        "{about} What will be {em} {dt} {food_type} in {food_region} ",
+        "{about} {em} {dt} food product like {food_type} in {food_region}",
+        "{food_type} {em} in {food_region}",
+        "{em} {dt} food in {food_region}",
+        "food {em} in {food_region}",
+        "{em} {dt} {food_type}",
+        "{food_type} {em} ",
+        "{em} {dt} food",
+        "food {em}",
+        "What is the net {em} {dt} {food_type} in {food_region}",
+        "In {food_region} {em} {dt} {food_type}",
+        "{em} in {food_region} {dt} {food_type}",
+        "{em} {dt} {food_type} in {food_region}",
+        "In {food_region} {em} {dt} food product like {food_type} will be",
+        "In {food_region} {em} {dt} {food_type} is",
+        "{em} {dt} food product {food_type} in {food_region}",
+        "{em} {dt} {food_type} in {food_region} is",
+        "What will be {em} {dt} {food_type} in {food_region} ",
+        "{em} {dt} food product like {food_type} in {food_region}"
+    ]
+}
