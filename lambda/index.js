@@ -742,6 +742,57 @@ const land_intent = {
   }
 };
 
+// Handling Food related utterences 
+const food_intent = {
+  canHandle(handlerInput) {
+    const request = handlerInput.requestEnvelope.request;
+    return request.type === 'LaunchRequest'
+    ||(request.type === 'IntentRequest'
+        && request.intent.name === 'food_intent');
+  },
+  async handle(handlerInput) {
+    let newParams = {};
+    let food_region, food_type;
+
+// Getting values of slots and also handling in case of errors
+    food_type = handlerInput.requestEnvelope.request.intent.slots.food_type.value.resolutions.resolutionsPerAuthority[0].values[0].value.name;
+    food_region = handlerInput.requestEnvelope.request.intent.slots.food_region.value.value;
+    newParams.region = food_region;
+    newParams.item = food_type;
+
+// Setting up options to send request to API 
+    let options = {
+      method: 'POST',
+      url: "https://carbonhub.org/v1/food",
+      headers: {
+        'cache-control': 'no-cache',
+        'access-key': API_KEY,
+        'Content-Type': 'application/json'
+      },
+      body: {
+        item: newParams.item,
+        region: newParams.region
+      },
+      json: true
+    };
+
+// Receiving response from API
+    let response = await callEmissionsApi(options);
+    let speechOutput = "";
+    let emission_type = 'CO2';
+// Setting up correct answer
+    let correct_answer;
+    let num, unit;
+    num = response.quantity;
+    unit = response.unit;
+    correct_answer = "Emissions for " + newParams.item + " in " + newParams.region + " is " + num.toFixed(2) + " " + unit + ".";
+    speechOutput = responseGen(response,newParams,correct_answer);
+    return handlerInput.responseBuilder
+      .speak(speechOutput)
+      .getResponse();
+  }
+};
+
 // Generate skill's response from API's response
 let responseGen = function (response,newParams, correct_answer) {
   let speechOutput = "";
@@ -877,6 +928,7 @@ exports.handler = skillBuilder
     sector_intent,
     vehicle_intent,
     land_intent,
+    food_intent,
     HelpHandler,
     ExitHandler,
     SessionEndedRequestHandler
