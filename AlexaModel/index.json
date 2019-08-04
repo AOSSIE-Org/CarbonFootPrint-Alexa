@@ -1158,6 +1158,55 @@
                         "What will be {em} {dt} {food_type} in {food_region} ",
                         "{em} {dt} food product like {food_type} in {food_region}"
                     ]
+                },
+                {
+                    "name": "agriculture_intent",
+                    "slots": [
+                        {
+                            "name": "crop_type",
+                            "type": "crop_type",
+                            "samples": [
+                                "{crop_type}"
+                            ]
+                        },
+                        {
+                            "name": "crop_region",
+                            "type": "AMAZON.Country",
+                            "samples": [
+                                "{crop_region}"
+                            ]
+                        },
+                        {
+                            "name": "about",
+                            "type": "about"
+                        },
+                        {
+                            "name": "dt",
+                            "type": "dt"
+                        },
+                        {
+                            "name": "em",
+                            "type": "em"
+                        }
+                    ],
+                    "samples": [
+                        "{about} {crop_type} {em} in {crop_region}",
+                        "{about} {em} {dt} agriculture in {crop_region}",
+                        "{about} {em} {dt} {crop_type} in {crop_region}",
+                        "{about} agriculture {em} in {crop_region}",
+                        "{about} {crop_type} {em}",
+                        "{about} {em} {dt} agriculture",
+                        "{about} {em} {dt} {crop_type}",
+                        "{about} agriculture {em}",
+                        "{crop_type} {em} in {crop_region}",
+                        "{em} {dt} agriculture in {crop_region}",
+                        "{em} {dt} {crop_type} in {crop_region}",
+                        "agriculture {em} in {crop_region}",
+                        "{crop_type} {em}",
+                        "{em} {dt} agriculture",
+                        "{em} {dt} {crop_type}",
+                        "agriculture {em}"
+                    ]
                 }
             ],
             "types": [
@@ -69652,6 +69701,8 @@
                             "name": {
                                 "value": "about",
                                 "synonyms": [
+                                    "what is",
+                                    "what",
                                     "to inform",
                                     "to tell",
                                     "tell me about",
@@ -69889,9 +69940,9 @@
                                 "value": "meat, sheep",
                                 "synonyms": [
                                     "meat from sheep",
+                                    "mutton",
                                     "meat, sheep",
-                                    "sheep meat", 
-                                    "mutton"
+                                    "sheep meat"
                                 ]
                             }
                         },
@@ -69947,6 +69998,107 @@
                                     "rice",
                                     "rice paddy",
                                     "rice, paddy"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "crop_type",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "Burning - Savanna",
+                                "synonyms": [
+                                    "savanna",
+                                    "Burning Savanna",
+                                    "Burning - Savanna"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Burning - Crop residues",
+                                "synonyms": [
+                                    "burning residue",
+                                    "Burning - Crop residue",
+                                    "burning residues",
+                                    "Burning - Crop residues"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "cultivation of organic soils",
+                                "synonyms": [
+                                    "cultivation of organic soils"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "crop residues",
+                                "synonyms": [
+                                    "crop residue",
+                                    "residues",
+                                    "residue",
+                                    "crop residues"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Manure left on Pasture",
+                                "synonyms": [
+                                    "pasture manure",
+                                    "Manure left on Pasture"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "manure applied to soils",
+                                "synonyms": [
+                                    "soil manure",
+                                    "manure applied to soil",
+                                    "manure applied to soils"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "synthetic fertilizers",
+                                "synonyms": [
+                                    "synthetic fertilizers",
+                                    "fertilizer",
+                                    "synthetic fertilizer"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "rice cultivation",
+                                "synonyms": [
+                                    "rice",
+                                    "rice cultivation"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "manure management",
+                                "synonyms": [
+                                    "manure",
+                                    "manure management"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "enteric fermentation",
+                                "synonyms": [
+                                    "fermentation",
+                                    "enteric fermentation"
                                 ]
                             }
                         }
@@ -70537,7 +70689,7 @@
                             "confirmationRequired": false,
                             "elicitationRequired": true,
                             "prompts": {
-                                "elicitation": "Elicit.Slot.1178912052628.1235629830330"
+                                "elicitation": "Elicit.Slot.1490309860602.1198804571304"
                             }
                         },
                         {
@@ -70562,9 +70714,55 @@
                             "prompts": {}
                         }
                     ]
+                },
+                {
+                    "name": "agriculture_intent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "crop_type",
+                            "type": "crop_type",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.150290423048.1430994782868"
+                            }
+                        },
+                        {
+                            "name": "crop_region",
+                            "type": "AMAZON.Country",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.150290423048.786162727871"
+                            }
+                        },
+                        {
+                            "name": "about",
+                            "type": "about",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "dt",
+                            "type": "dt",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "em",
+                            "type": "em",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        }
+                    ]
                 }
             ],
-            "delegationStrategy": "ALWAYS"
+            "delegationStrategy": "SKILL_RESPONSE"
         },
         "prompts": [
             {
@@ -70820,6 +71018,37 @@
             },
             {
                 "id": "Elicit.Slot.1178912052628.1235629830330",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Please tell me the region"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.150290423048.1430994782868",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Please tell me the type of crop"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "Please tell me the crop type"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.150290423048.786162727871",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Please tell me the region"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1490309860602.1198804571304",
                 "variations": [
                     {
                         "type": "PlainText",

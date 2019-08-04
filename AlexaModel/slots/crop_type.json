@@ -1,0 +1,100 @@
+{
+    "name": "crop_type",
+    "values": [{
+            "name": {
+                "value": "Burning - Savanna",
+                "synonyms": [
+                    "savanna",
+                    "Burning Savanna",
+                    "Burning - Savanna"
+                ]
+            }
+        },
+        {
+            "name": {
+                "value": "Burning - Crop residues",
+                "synonyms": [
+                    "burning residue",
+                    "Burning - Crop residue",
+                    "burning residues",
+                    "Burning - Crop residues"
+                ]
+            }
+        },
+        {
+            "name": {
+                "value": "cultivation of organic soils",
+                "synonyms": [
+                    "cultivation of organic soils"
+                ]
+            }
+        },
+        {
+            "name": {
+                "value": "crop residues",
+                "synonyms": [
+                    "crop residue",
+                    "residues",
+                    "residue",
+                    "crop residues"
+                ]
+            }
+        },
+        {
+            "name": {
+                "value": "Manure left on Pasture",
+                "synonyms": [
+                    "pasture manure",
+                    "Manure left on Pasture"
+                ]
+            }
+        },
+        {
+            "name": {
+                "value": "manure applied to soils",
+                "synonyms": [
+                    "soil manure",
+                    "manure applied to soil",
+                    "manure applied to soils"
+                ]
+            }
+        },
+        {
+            "name": {
+                "value": "synthetic fertilizers",
+                "synonyms": [
+                    "synthetic fertilizers",
+                    "fertilizer",
+                    "synthetic fertilizer"
+                ]
+            }
+        },
+        {
+            "name": {
+                "value": "rice cultivation",
+                "synonyms": [
+                    "rice",
+                    "rice cultivation"
+                ]
+            }
+        },
+        {
+            "name": {
+                "value": "manure management",
+                "synonyms": [
+                    "manure",
+                    "manure management"
+                ]
+            }
+        },
+        {
+            "name": {
+                "value": "enteric fermentation",
+                "synonyms": [
+                    "fermentation",
+                    "enteric fermentation"
+                ]
+            }
+        }
+    ]
+}
