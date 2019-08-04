@@ -1,0 +1,48 @@
+{
+    "name": "agriculture_intent",
+    "slots": [{
+            "name": "crop_type",
+            "type": "crop_type",
+            "samples": [
+                "{crop_type}"
+            ]
+        },
+        {
+            "name": "crop_region",
+            "type": "AMAZON.Country",
+            "samples": [
+                "{crop_region}"
+            ]
+        },
+        {
+            "name": "about",
+            "type": "about"
+        },
+        {
+            "name": "dt",
+            "type": "dt"
+        },
+        {
+            "name": "em",
+            "type": "em"
+        }
+    ],
+    "samples": [
+        "{about} {crop_type} {em} in {crop_region}",
+        "{about} {em} {dt} agriculture in {crop_region}",
+        "{about} {em} {dt} {crop_type} in {crop_region}",
+        "{about} agriculture {em} in {crop_region}",
+        "{about} {crop_type} {em}",
+        "{about} {em} {dt} agriculture",
+        "{about} {em} {dt} {crop_type}",
+        "{about} agriculture {em}",
+        "{crop_type} {em} in {crop_region}",
+        "{em} {dt} agriculture in {crop_region}",
+        "{em} {dt} {crop_type} in {crop_region}",
+        "agriculture {em} in {crop_region}",
+        "{crop_type} {em}",
+        "{em} {dt} agriculture",
+        "{em} {dt} {crop_type}",
+        "agriculture {em}"
+    ]
+}
