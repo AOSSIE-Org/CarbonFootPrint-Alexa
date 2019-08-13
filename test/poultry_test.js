@@ -58,10 +58,7 @@ describe('Carbon footprint', function() {
                     "source": "USER"
                 }
             }),
-            says: 'CO2 emission for production of 1 egg is 4.82 kg in idaho',
-            repromptsNothing: true,
-            shouldEndSession: true,
-            hasAttributes: {}
+            says: 'CO2 emission for production of 1 egg is 4.82 kg in idaho. Try another one?'
         }]);
 
         alexaTest.test([{
@@ -112,10 +109,7 @@ describe('Carbon footprint', function() {
                     "source": "USER"
                 }
             }),
-            says: 'CO2 emission for production of 1kg broiler chicken is 6.88 kg in ohio',
-            repromptsNothing: true,
-            shouldEndSession: true,
-            hasAttributes: {}
+            says: 'CO2 emission for production of 1kg broiler chicken is 6.88 kg in ohio. Try another one?'
         }]);
 
         alexaTest.test([{
@@ -151,10 +145,7 @@ describe('Carbon footprint', function() {
                     "source": "USER"
                 }
             }),
-            says: 'CO2 emission for production of 10kg turkey is 108.96 kg',
-            repromptsNothing: true,
-            shouldEndSession: true,
-            hasAttributes: {}
+            says: 'CO2 emission for production of 10kg turkey is 108.96 kg. Try another one?'
         }]);
     });
 });

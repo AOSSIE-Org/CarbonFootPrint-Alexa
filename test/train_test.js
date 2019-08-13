@@ -37,10 +37,7 @@ describe('Carbon footprint', function() {
                             }
                         }
                     ),
-                says: 'Train produces 1874.50 kg of CO2 while travelling from Delhi to Amritsar with 100 passengers.',
-                repromptsNothing: true,
-                shouldEndSession: true,
-                hasAttributes: {}
+                says: 'Train produces 1874.50 kg of CO2 while travelling from Delhi to Amritsar with 100 passengers. Try another one?'
             }]);
 
             alexaTest.test([{
@@ -70,10 +67,7 @@ describe('Carbon footprint', function() {
                             }
                         }
                     ),
-                says: 'Train produces 37.49 kg of CO2 while travelling from Delhi to Amritsar with 2 passengers.',
-                repromptsNothing: true,
-                shouldEndSession: true,
-                hasAttributes: {}
+                says: 'Train produces 37.49 kg of CO2 while travelling from Delhi to Amritsar with 2 passengers. Try another one?'
             }]);
 
             alexaTest.test([{
@@ -103,10 +97,7 @@ describe('Carbon footprint', function() {
                             }
                         }
                     ),
-                says: 'Train produces 18.74 kg of CO2 while travelling from Delhi to Amritsar with 1 passengers.',
-                repromptsNothing: true,
-                shouldEndSession: true,
-                hasAttributes: {}
+                says: 'Train produces 18.74 kg of CO2 while travelling from Delhi to Amritsar with 1 passengers. Try another one?'
             }]);
 
     });

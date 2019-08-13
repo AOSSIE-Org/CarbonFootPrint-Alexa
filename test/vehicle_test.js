@@ -55,10 +55,7 @@ describe('Carbon footprint', function() {
                     "source": "USER"
                 }
             }),
-            says: '111.54 kg of CO2 is produced in a journey from Delhi to Mumbai on a vehicle with mileage of 30 kmpl.',
-            repromptsNothing: true,
-            shouldEndSession: true,
-            hasAttributes: {}
+            says: '111.54 kg of CO2 is produced in a journey from Delhi to Mumbai on a vehicle with mileage of 30 kmpl. Try another one?'
         }]);
 
         alexaTest.test([{
@@ -106,10 +103,7 @@ describe('Carbon footprint', function() {
                     "source": "USER"
                 }
             }),
-            says: '334.62 kg of CO2 is produced in a journey from Delhi to Mumbai on a vehicle with mileage of 10 kmpl.',
-            repromptsNothing: true,
-            shouldEndSession: true,
-            hasAttributes: {}
+            says: '334.62 kg of CO2 is produced in a journey from Delhi to Mumbai on a vehicle with mileage of 10 kmpl. Try another one?'
         }]);
 
         alexaTest.test([{
@@ -157,10 +151,7 @@ describe('Carbon footprint', function() {
                     "source": "USER"
                 }
             }),
-            says: '71.98 kg of CO2 is produced in a journey from Mumbai to Goa on a vehicle with mileage of 20 kmpl.',
-            repromptsNothing: true,
-            shouldEndSession: true,
-            hasAttributes: {}
+            says: '71.98 kg of CO2 is produced in a journey from Mumbai to Goa on a vehicle with mileage of 20 kmpl. Try another one?'
         }]);
 
     });

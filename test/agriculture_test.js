@@ -38,10 +38,13 @@ describe('Carbon footprint', function() {
                     "source": "USER"
                 }
             }),
-            says: 'Emissions due to Burning - Savanna in India is 238.44 gigagrams.',
-            repromptsNothing: true,
-            shouldEndSession: true,
-            hasAttributes: {}
+            says: 'Emissions due to Burning - Savanna in India is 238.44 gigagrams. Try another one?',
+            reprompts: "Try another one?",
+            shouldEndSession: false,
+            hasAttributes: {
+                "crop_type": "Burning - Savanna",
+                "crop_region": "India"
+            }
         }]);
 
         alexaTest.test([{
@@ -72,10 +75,13 @@ describe('Carbon footprint', function() {
                     "source": "USER"
                 }
             }),
-            says: 'Emissions due to rice cultivation in India is 95243.05 gigagrams.',
-            repromptsNothing: true,
-            shouldEndSession: true,
-            hasAttributes: {}
+            says: 'Emissions due to rice cultivation in India is 95243.05 gigagrams. Try another one?',
+            reprompts: "Try another one?",
+            shouldEndSession: false,
+            hasAttributes: {
+                "crop_type": "rice cultivation",
+                "crop_region": "India"
+            }
         }]);
 
         alexaTest.test([{
@@ -106,10 +112,13 @@ describe('Carbon footprint', function() {
                     "source": "USER"
                 }
             }),
-            says: 'Emissions due to rice cultivation in China is 112339.57 gigagrams.',
-            repromptsNothing: true,
-            shouldEndSession: true,
-            hasAttributes: {}
+            says: 'Emissions due to rice cultivation in China is 112339.57 gigagrams. Try another one?',
+            reprompts: "Try another one?",
+            shouldEndSession: false,
+            hasAttributes: {
+                "crop_type": "rice cultivation",
+                "crop_region": "China"
+            }
         }]);
 
     });
