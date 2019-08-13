@@ -49,10 +49,7 @@ describe('Carbon footprint', function() {
                     'source': 'USER'
                 }
             }),
-            says: 'Flight produces 8338.85 kg of CO2 while travelling from BOM to TRR with 100 passengers.',
-            repromptsNothing: true,
-            shouldEndSession: true,
-            hasAttributes: {}
+            says: 'Flight produces 8338.85 kg of CO2 while travelling from BOM to TRR with 100 passengers. Try another one?'
         }]);
         alexaTest.test([{
             request: alexaTest.getIntentRequest('flight_intent', {
@@ -94,10 +91,7 @@ describe('Carbon footprint', function() {
                     'source': 'USER'
                 }
             }),
-            says: 'Flight produces 344.42 kg of CO2 while travelling from DEL to ATQ with 10 passengers.',
-            repromptsNothing: true,
-            shouldEndSession: true,
-            hasAttributes: {}
+            says: 'Flight produces 344.42 kg of CO2 while travelling from DEL to ATQ with 10 passengers. Try another one?'
         }]);
         alexaTest.test([{
             request: alexaTest.getIntentRequest('flight_intent', {
@@ -139,10 +133,7 @@ describe('Carbon footprint', function() {
                     'source': 'USER'
                 }
             }),
-            says: 'Flight produces 105.03 kg of CO2 while travelling from BOM to PNQ with 10 passengers.',
-            repromptsNothing: true,
-            shouldEndSession: true,
-            hasAttributes: {}
+            says: 'Flight produces 105.03 kg of CO2 while travelling from BOM to PNQ with 10 passengers. Try another one?'
         }]);
         alexaTest.test([{
             request: alexaTest.getIntentRequest('flight_intent', {
@@ -184,10 +175,7 @@ describe('Carbon footprint', function() {
                     'source': 'USER'
                 }
             }),
-            says: 'Flight produces 303.70 kg of CO2 while travelling from NDC to PNQ with 10 passengers.',
-            repromptsNothing: true,
-            shouldEndSession: true,
-            hasAttributes: {}
+            says: 'Flight produces 303.70 kg of CO2 while travelling from NDC to PNQ with 10 passengers. Try another one?'
         }]);
         alexaTest.test([{
             request: alexaTest.getIntentRequest('flight_intent', {
@@ -229,10 +217,7 @@ describe('Carbon footprint', function() {
                     'source': 'USER'
                 }
             }),
-            says: 'Flight produces 2015.76 kg of CO2 while travelling from LGA to SEA with 10 passengers.',
-            repromptsNothing: true,
-            shouldEndSession: true,
-            hasAttributes: {}
+            says: 'Flight produces 2015.76 kg of CO2 while travelling from LGA to SEA with 10 passengers. Try another one?'
         }]);
     });
 });

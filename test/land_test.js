@@ -39,10 +39,7 @@ describe('Carbon footprint', function() {
                     "source": "USER"
                 }
             }),
-            says: 'CO2 emissions due to grassland in India is 25.65 gigagrams.',
-            repromptsNothing: true,
-            shouldEndSession: true,
-            hasAttributes: {}
+            says: 'CO2 emissions due to grassland in India is 25.65 gigagrams. Try another one?'
         }]);
 
         alexaTest.test([{
@@ -74,10 +71,7 @@ describe('Carbon footprint', function() {
                     "source": "USER"
                 }
             }),
-            says: 'CO2 emissions due to grassland in China is 163.93 gigagrams.',
-            repromptsNothing: true,
-            shouldEndSession: true,
-            hasAttributes: {}
+            says: 'CO2 emissions due to grassland in China is 163.93 gigagrams. Try another one?'
         }]);
 
         alexaTest.test([{
@@ -109,10 +103,7 @@ describe('Carbon footprint', function() {
                     "source": "USER"
                 }
             }),
-            says: 'CO2 emissions due to cropland in China is 1051.54 gigagrams.',
-            repromptsNothing: true,
-            shouldEndSession: true,
-            hasAttributes: {}
+            says: 'CO2 emissions due to cropland in China is 1051.54 gigagrams. Try another one?'
         }]);
     });
 });

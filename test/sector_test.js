@@ -38,10 +38,7 @@ describe('Carbon footprint', function() {
                     "source": "USER"
                 }
             }),
-            says: '135322.80 gigagrams of CO2 is produced due to industry in India.',
-            repromptsNothing: true,
-            shouldEndSession: true,
-            hasAttributes: {}
+            says: '135322.80 gigagrams of CO2 is produced due to industry in India. Try another one?'
         }]);
 
         alexaTest.test([{
@@ -72,10 +69,7 @@ describe('Carbon footprint', function() {
                     "source": "USER"
                 }
             }),
-            says: '932.85 gigagrams of CO2 is produced due to waste in China.',
-            repromptsNothing: true,
-            shouldEndSession: true,
-            hasAttributes: {}
+            says: '932.85 gigagrams of CO2 is produced due to waste in China. Try another one?'
         }]);
 
         alexaTest.test([{
@@ -106,10 +100,7 @@ describe('Carbon footprint', function() {
                     "source": "USER"
                 }
             }),
-            says: '263100.00 gigagrams of CO2 is produced due to energy in Canada.',
-            repromptsNothing: true,
-            shouldEndSession: true,
-            hasAttributes: {}
+            says: '263100.00 gigagrams of CO2 is produced due to energy in Canada. Try another one?'
         }]);
     });
 });

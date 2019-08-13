@@ -38,10 +38,7 @@ describe('Carbon footprint', function() {
                     "source": "USER"
                 }
             }),
-            says: 'Emissions for meat, goat in India is 22478.86 gigagrams.',
-            repromptsNothing: true,
-            shouldEndSession: true,
-            hasAttributes: {}
+            says: 'Emissions for meat, goat in India is 22478.86 gigagrams. Try another one?'
         }]);
 
         alexaTest.test([{
@@ -72,10 +69,7 @@ describe('Carbon footprint', function() {
                     "source": "USER"
                 }
             }),
-            says: 'Emissions for eggs, hen, in shell in India is 2427.21 gigagrams.',
-            repromptsNothing: true,
-            shouldEndSession: true,
-            hasAttributes: {}
+            says: 'Emissions for eggs, hen, in shell in India is 2427.21 gigagrams. Try another one?'
         }]);
 
         alexaTest.test([{
@@ -106,10 +100,7 @@ describe('Carbon footprint', function() {
                     "source": "USER"
                 }
             }),
-            says: 'Emissions for meat, chicken in China is 8473.81 gigagrams.',
-            repromptsNothing: true,
-            shouldEndSession: true,
-            hasAttributes: {}
+            says: 'Emissions for meat, chicken in China is 8473.81 gigagrams. Try another one?'
         }]);
     });
 });
