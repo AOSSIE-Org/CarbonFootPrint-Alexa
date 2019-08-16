@@ -7,20 +7,20 @@ alexaTest.initialize(
     'amzn1.ask.account.VOID');
 
 describe('Carbon footprint', function() {
-    describe('sector_intent', function() {
+    describe('fuel_intent', function() {
         this.timeout(20000);
 
         alexaTest.test([{
-            request: alexaTest.getIntentRequest('sector_intent', {
-                "region": {
-                    "name": "region",
-                    "value": "India",
+            request: alexaTest.getIntentRequest('fuel_intent', {
+                "quantity": {
+                    "name": "quantity",
+                    "value": "10",
                     "confirmationStatus": "NONE",
                     "source": "USER"
                 },
-                "sector": {
-                    "name": "sector",
-                    "value": "industry",
+                "fuel": {
+                    "name": "fuel",
+                    "value": "diesel",
                     "resolutions": {
                         "resolutionsPerAuthority": [{
                             "status": {
@@ -28,8 +28,8 @@ describe('Carbon footprint', function() {
                             },
                             "values": [{
                                 "value": {
-                                    "name": "industry",
-                                    "id": "05e7d19a6d002118deef70d21ff4226e"
+                                    "name": "fuelDiesel",
+                                    "id": "be1323f67b2d23f4474a1e2d170e5b6a"
                                 }
                             }]
                         }]
@@ -38,20 +38,22 @@ describe('Carbon footprint', function() {
                     "source": "USER"
                 }
             }),
-            says: '135322.80 gigagrams of CO2 is produced due to industry in India. Try another one?'
+            says: '26.14 kg of CO2 is produced when 10 units of fuelDiesel is used. Try another one?',
+            reprompts: "Try another one?",
+            shouldEndSession: false
         }]);
 
         alexaTest.test([{
-            request: alexaTest.getIntentRequest('sector_intent', {
-                "region": {
-                    "name": "region",
-                    "value": "China",
+            request: alexaTest.getIntentRequest('fuel_intent', {
+                "quantity": {
+                    "name": "quantity",
+                    "value": "1",
                     "confirmationStatus": "NONE",
                     "source": "USER"
                 },
-                "sector": {
-                    "name": "sector",
-                    "value": "waste",
+                "fuel": {
+                    "name": "fuel",
+                    "value": "petrol",
                     "resolutions": {
                         "resolutionsPerAuthority": [{
                             "status": {
@@ -59,8 +61,8 @@ describe('Carbon footprint', function() {
                             },
                             "values": [{
                                 "value": {
-                                    "name": "waste",
-                                    "id": "05e7d19a6d002118deef70d21ff4226e"
+                                    "name": "fuelPetrol",
+                                    "id": "4d88df02b17aa2e54e3b58c2f84622d0"
                                 }
                             }]
                         }]
@@ -69,20 +71,22 @@ describe('Carbon footprint', function() {
                     "source": "USER"
                 }
             }),
-            says: '932.85 gigagrams of CO2 is produced due to waste in China. Try another one?'
+            says: '2.33 kg of CO2 is produced when 1 units of fuelPetrol is used. Try another one?',
+            reprompts: "Try another one?",
+            shouldEndSession: false
         }]);
 
         alexaTest.test([{
-            request: alexaTest.getIntentRequest('sector_intent', {
-                "region": {
-                    "name": "region",
-                    "value": "Canada",
+            request: alexaTest.getIntentRequest('fuel_intent', {
+                "quantity": {
+                    "name": "quantity",
+                    "value": "10",
                     "confirmationStatus": "NONE",
                     "source": "USER"
                 },
-                "sector": {
-                    "name": "sector",
-                    "value": "energy",
+                "fuel": {
+                    "name": "fuel",
+                    "value": "petrol",
                     "resolutions": {
                         "resolutionsPerAuthority": [{
                             "status": {
@@ -90,8 +94,8 @@ describe('Carbon footprint', function() {
                             },
                             "values": [{
                                 "value": {
-                                    "name": "energy",
-                                    "id": "05e7d19a6d002118deef70d21ff4226e"
+                                    "name": "fuelPetrol",
+                                    "id": "4d88df02b17aa2e54e3b58c2f84622d0"
                                 }
                             }]
                         }]
@@ -100,7 +104,10 @@ describe('Carbon footprint', function() {
                     "source": "USER"
                 }
             }),
-            says: '263100.00 gigagrams of CO2 is produced due to energy in Canada. Try another one?'
+            says: '23.28 kg of CO2 is produced when 10 units of fuelPetrol is used. Try another one?',
+            reprompts: "Try another one?",
+            shouldEndSession: false
         }]);
+
     });
 });
