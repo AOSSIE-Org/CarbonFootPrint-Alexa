@@ -8,7 +8,7 @@ alexaTest.initialize(
 
 describe('Carbon footprint', function() {
     describe('poultry_intent', function() {
-        this.timeout(10000);
+        this.timeout(20000);
 
         alexaTest.test([{
             request: alexaTest.getIntentRequest('poultry_intent', {

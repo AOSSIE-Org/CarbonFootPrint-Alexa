@@ -302,7 +302,7 @@ const electricity_intent = {
       },
       body: {
         item: 'electricity',
-        region: newParams.region,
+        region: newParams.country,
         quantity: newParams.quantity,
         unit: 'KWh'
       },

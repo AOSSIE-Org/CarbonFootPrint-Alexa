@@ -7,121 +7,31 @@ alexaTest.initialize(
     'amzn1.ask.account.VOID');
 
 describe('Carbon footprint', function() {
-    describe('vehicle_intent', function() {
+    describe('applianceIntent', function() {
         this.timeout(20000);
 
         alexaTest.test([{
-            request: alexaTest.getIntentRequest('vehicle_intent', {
-                "vdestination": {
-                    "name": "vdestination",
-                    "value": "Mumbai",
+            request: alexaTest.getIntentRequest('applianceIntent', {
+                "country": {
+                    "name": "country",
+                    "value": "India",
                     "confirmationStatus": "NONE",
                     "source": "USER"
                 },
-                "emission_type": {
-                    "name": "emission_type",
-                    "confirmationStatus": "NONE",
-                    "source": "USER"
-                },
-                "fuel_type": {
-                    "name": "fuel_type",
-                    "value": "petrol",
-                    "resolutions": {
-                        "resolutionsPerAuthority": [{
-                            "status": {
-                                "code": "ER_SUCCESS_MATCH"
-                            },
-                            "values": [{
-                                "value": {
-                                    "name": "fuelPetrol",
-                                    "id": "4d88df02b17aa2e54e3b58c2f84622d0"
-                                }
-                            }]
-                        }]
-                    },
-                    "confirmationStatus": "NONE",
-                    "source": "USER"
-                },
-                "vorigin": {
-                    "name": "vorigin",
-                    "value": "Delhi",
-                    "confirmationStatus": "NONE",
-                    "source": "USER"
-                },
-                "mileage": {
-                    "name": "mileage",
-                    "value": "30",
-                    "confirmationStatus": "NONE",
-                    "source": "USER"
-                }
-            }),
-            says: '111.54 kg of CO2 is produced in a journey from Delhi to Mumbai on a vehicle with mileage of 30 kmpl. Try another one?'
-        }]);
-
-        alexaTest.test([{
-            request: alexaTest.getIntentRequest('vehicle_intent', {
-                "vdestination": {
-                    "name": "vdestination",
-                    "value": "Mumbai",
-                    "confirmationStatus": "NONE",
-                    "source": "USER"
-                },
-                "emission_type": {
-                    "name": "emission_type",
-                    "confirmationStatus": "NONE",
-                    "source": "USER"
-                },
-                "fuel_type": {
-                    "name": "fuel_type",
-                    "value": "petrol",
-                    "resolutions": {
-                        "resolutionsPerAuthority": [{
-                            "status": {
-                                "code": "ER_SUCCESS_MATCH"
-                            },
-                            "values": [{
-                                "value": {
-                                    "name": "fuelPetrol",
-                                    "id": "4d88df02b17aa2e54e3b58c2f84622d0"
-                                }
-                            }]
-                        }]
-                    },
-                    "confirmationStatus": "NONE",
-                    "source": "USER"
-                },
-                "vorigin": {
-                    "name": "vorigin",
-                    "value": "Delhi",
-                    "confirmationStatus": "NONE",
-                    "source": "USER"
-                },
-                "mileage": {
-                    "name": "mileage",
+                "quantity": {
+                    "name": "quantity",
                     "value": "10",
                     "confirmationStatus": "NONE",
                     "source": "USER"
-                }
-            }),
-            says: '334.62 kg of CO2 is produced in a journey from Delhi to Mumbai on a vehicle with mileage of 10 kmpl. Try another one?'
-        }]);
-
-        alexaTest.test([{
-            request: alexaTest.getIntentRequest('vehicle_intent', {
-                "vdestination": {
-                    "name": "vdestination",
-                    "value": "Goa",
+                },
+                "size": {
+                    "name": "size",
                     "confirmationStatus": "NONE",
                     "source": "USER"
                 },
-                "emission_type": {
-                    "name": "emission_type",
-                    "confirmationStatus": "NONE",
-                    "source": "USER"
-                },
-                "fuel_type": {
-                    "name": "fuel_type",
-                    "value": "petrol",
+                "appliances": {
+                    "name": "appliances",
+                    "value": "iron",
                     "resolutions": {
                         "resolutionsPerAuthority": [{
                             "status": {
@@ -129,8 +39,8 @@ describe('Carbon footprint', function() {
                             },
                             "values": [{
                                 "value": {
-                                    "name": "fuelPetrol",
-                                    "id": "4d88df02b17aa2e54e3b58c2f84622d0"
+                                    "name": "Iron",
+                                    "id": "cefa8a9606819ed409dc761ca6080887"
                                 }
                             }]
                         }]
@@ -138,20 +48,128 @@ describe('Carbon footprint', function() {
                     "confirmationStatus": "NONE",
                     "source": "USER"
                 },
-                "vorigin": {
-                    "name": "vorigin",
-                    "value": "Mumbai",
+                "time": {
+                    "name": "time",
+                    "value": "PT10H",
                     "confirmationStatus": "NONE",
                     "source": "USER"
                 },
-                "mileage": {
-                    "name": "mileage",
-                    "value": "20",
+                "appliance_spec": {
+                    "name": "appliance_spec",
                     "confirmationStatus": "NONE",
                     "source": "USER"
                 }
             }),
-            says: '71.98 kg of CO2 is produced in a journey from Mumbai to Goa on a vehicle with mileage of 20 kmpl. Try another one?'
+            says: 'Usage of iron produces 85.06 kg of CO2. Try another one?',
+            shouldEndSession: false
+        }]);
+
+        alexaTest.test([{
+            request: alexaTest.getIntentRequest('applianceIntent', {
+                "country": {
+                    "name": "country",
+                    "value": "India",
+                    "confirmationStatus": "NONE",
+                    "source": "USER"
+                },
+                "quantity": {
+                    "name": "quantity",
+                    "value": "100",
+                    "confirmationStatus": "NONE",
+                    "source": "USER"
+                },
+                "size": {
+                    "name": "size",
+                    "confirmationStatus": "NONE",
+                    "source": "USER"
+                },
+                "appliances": {
+                    "name": "appliances",
+                    "value": "iron",
+                    "resolutions": {
+                        "resolutionsPerAuthority": [{
+                            "status": {
+                                "code": "ER_SUCCESS_MATCH"
+                            },
+                            "values": [{
+                                "value": {
+                                    "name": "Iron",
+                                    "id": "cefa8a9606819ed409dc761ca6080887"
+                                }
+                            }]
+                        }]
+                    },
+                    "confirmationStatus": "NONE",
+                    "source": "USER"
+                },
+                "time": {
+                    "name": "time",
+                    "value": "PT10H",
+                    "confirmationStatus": "NONE",
+                    "source": "USER"
+                },
+                "appliance_spec": {
+                    "name": "appliance_spec",
+                    "confirmationStatus": "NONE",
+                    "source": "USER"
+                }
+            }),
+            says: 'Usage of iron produces 850.58 kg of CO2. Try another one?',
+            shouldEndSession: false
+        }]);
+
+        alexaTest.test([{
+            request: alexaTest.getIntentRequest('applianceIntent', {
+                "country": {
+                    "name": "country",
+                    "value": "India",
+                    "confirmationStatus": "NONE",
+                    "source": "USER"
+                },
+                "quantity": {
+                    "name": "quantity",
+                    "value": "100",
+                    "confirmationStatus": "NONE",
+                    "source": "USER"
+                },
+                "size": {
+                    "name": "size",
+                    "confirmationStatus": "NONE",
+                    "source": "USER"
+                },
+                "appliances": {
+                    "name": "appliances",
+                    "value": "iron",
+                    "resolutions": {
+                        "resolutionsPerAuthority": [{
+                            "status": {
+                                "code": "ER_SUCCESS_MATCH"
+                            },
+                            "values": [{
+                                "value": {
+                                    "name": "Iron",
+                                    "id": "cefa8a9606819ed409dc761ca6080887"
+                                }
+                            }]
+                        }]
+                    },
+                    "confirmationStatus": "NONE",
+                    "source": "USER"
+                },
+                "time": {
+                    "name": "time",
+                    "value": "PT20H",
+                    "confirmationStatus": "NONE",
+                    "source": "USER"
+                },
+                "appliance_spec": {
+                    "name": "appliance_spec",
+                    "confirmationStatus": "NONE",
+                    "source": "USER"
+                }
+            }),
+            says: 'Usage of iron produces 1701.16 kg of CO2. Try another one?',
+            shouldEndSession: false
         }]);
 
     });
