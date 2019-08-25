@@ -2,7 +2,7 @@
 const alexaTest = require('alexa-skill-test-framework')
 
 alexaTest.initialize(
-  require('../lambda/index.js'),
+  require('../lambda/custom/index.js'),
   'amzn1.ask.skill.00000000-0000-0000-0000-000000000000',
   'amzn1.ask.account.VOID')
 

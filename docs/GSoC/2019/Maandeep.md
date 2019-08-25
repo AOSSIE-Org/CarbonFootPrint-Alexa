@@ -73,3 +73,5 @@ I would like to thank all the Aossie members especially my mentor Varun Chitre. 
  14. [Carbon-footprint-Alexa: Refactor lambda function](https://gitlab.com/aossie/carbonfootprint-alexa/merge_requests/60) - Created different JS files for each intent and finally connected them to index.js file.
  
  15. [Carbon-footprint-Alexa: Documentation Update](https://gitlab.com/aossie/carbonfootprint-alexa/merge_requests/61) - Added testing, linting and deployment details to Readme.md file.  
+
+ 16. [Carbon-footprint-alexa: Add automated deployment](https://gitlab.com/aossie/carbonfootprint-alexa/merge_requests/63) - Add ask cli support to alexa skill and integerated it with gitlab CI/CD. If any commit occurs in master branch, it gets automatically deployed in alexa skill.

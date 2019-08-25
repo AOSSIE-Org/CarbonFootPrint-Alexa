@@ -4,6 +4,7 @@ image: node:8.10
 stages:
     - install # install all npm dependencies
     - test    # execute unit tests
+    - deploy
 
 npmInstall:
     stage: install
@@ -25,3 +26,20 @@ unittesting:
         # install dev-dependency mocha
         - npm install
         - npm test
+
+deployment:
+    stage: deploy
+    variables:
+        API_KEY: $API_KEY
+        ASK_ACCESS_TOKEN: $ASK_ACCESS_TOKEN
+        ASK_DEFAULT_PROFILE: $ASK_DEFAULT_PROFILE
+        ASK_REFRESH_TOKEN: $ASK_REFRESH_TOKEN
+        ASK_VENDOR_ID: $ASK_VENDOR_ID
+        AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+        AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+    script:
+        - npm install -g ask-cli --no-optional 
+        - chmod +x ./deploy.sh
+        - ./deploy.sh
+    only:
+        - master
