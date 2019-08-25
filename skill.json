@@ -1,0 +1,31 @@
+{
+  "manifest": {
+    "publishingInformation": {
+      "locales": {
+        "en-US": {
+          "summary": "Carbon footprint will tell users the amount of carbon emitted due to various human actions.",
+          "examplePhrases": [
+            "Alexa ask carbon footprint food emissions",
+            "Alexa ask carbon footprint emissions due to fuel",
+            "Alexa ask ask carbon footprint flight emissions"
+          ],
+          "name": "Carbon Footprint",
+          "description": "This skill tells you the amount of carbon emitted due vrious human actions such as appliance usage, electricity usage, fuel, travelling through flights, trains, vehicles, due to food, agriculture, land and many more."
+        }
+      },
+      "isAvailableWorldwide": true,
+      "testingInstructions": "Sample Testing Instructions.",
+      "category": "KNOWLEDGE_AND_TRIVIA",
+      "distributionCountries": []
+    },
+    "apis": {
+      "custom": {
+        "endpoint": {
+          "sourceDir": "lambda/custom",
+          "uri": "ask-custom-carbonfootprint-default"
+        }
+      }
+    },
+    "manifestVersion": "1.0"
+  }
+}
